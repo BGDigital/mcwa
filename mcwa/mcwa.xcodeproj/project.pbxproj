@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E67E03E51BC6C46D002058DF /* contributionListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67E03E41BC6C46D002058DF /* contributionListController.swift */; settings = {ASSET_TAGS = (); }; };
 		E68962981BC613A300548875 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68962971BC613A300548875 /* AppDelegate.swift */; };
 		E689629A1BC613A300548875 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68962991BC613A300548875 /* ViewController.swift */; };
 		E689629D1BC613A300548875 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E689629B1BC613A300548875 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E67E03E41BC6C46D002058DF /* contributionListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = contributionListController.swift; sourceTree = "<group>"; };
 		E68962941BC613A300548875 /* mcwa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mcwa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E68962971BC613A300548875 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E68962991BC613A300548875 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				E689629E1BC613A300548875 /* Assets.xcassets */,
 				E68962A01BC613A300548875 /* LaunchScreen.storyboard */,
 				E68962A31BC613A300548875 /* Info.plist */,
+				E67E03E41BC6C46D002058DF /* contributionListController.swift */,
 			);
 			path = mcwa;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			files = (
 				E689629A1BC613A300548875 /* ViewController.swift in Sources */,
 				E68962981BC613A300548875 /* AppDelegate.swift in Sources */,
+				E67E03E51BC6C46D002058DF /* contributionListController.swift in Sources */,
 				E68962CA1BC65B4300548875 /* SwiftColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,6 +499,7 @@
 				E68962BE1BC613A400548875 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E68962BF1BC613A400548875 /* Build configuration list for PBXNativeTarget "mcwaTests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +508,7 @@
 				E68962C11BC613A400548875 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E68962C21BC613A400548875 /* Build configuration list for PBXNativeTarget "mcwaUITests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +517,7 @@
 				E68962C41BC613A400548875 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
