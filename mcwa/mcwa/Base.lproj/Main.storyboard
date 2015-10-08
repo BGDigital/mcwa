@@ -16,7 +16,21 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mnx-Lq-Cam">
+                                <rect key="frame" x="258" y="253" width="84" height="30"/>
+                                <animations/>
+                                <state key="normal" title="开始挖挖挖!!"/>
+                                <connections>
+                                    <segue destination="Ayf-ga-SxV" kind="modal" id="6X6-I7-h6O"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
+                        <constraints>
+                            <constraint firstItem="Mnx-Lq-Cam" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7qr-sB-53d"/>
+                            <constraint firstItem="Mnx-Lq-Cam" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kA0-ab-t04"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Tbu-BU-GeU">
                         <barButtonItem key="leftBarButtonItem" title="头像" id="1VN-Bh-dmD">
@@ -41,6 +55,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1045" y="973"/>
+        </scene>
+        <!--准备答题-->
+        <scene sceneID="fGI-KM-Q8q">
+            <objects>
+                <viewController title="准备答题" id="Ayf-ga-SxV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tey-wa-Bmz"/>
+                        <viewControllerLayoutGuide type="bottom" id="hXN-hC-kbf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xra-DN-fdZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="倒计时,准备答题!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aI6-8x-wsM">
+                                <rect key="frame" x="235" y="289" width="129" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aI6-8x-wsM" firstAttribute="centerX" secondItem="xra-DN-fdZ" secondAttribute="centerX" id="ZBS-8O-gnd"/>
+                            <constraint firstItem="aI6-8x-wsM" firstAttribute="centerY" secondItem="xra-DN-fdZ" secondAttribute="centerY" id="qld-MA-7DT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="lec-dj-cNk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mLq-Zb-G1n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1684" y="973"/>
         </scene>
         <!--个人中心-->
         <scene sceneID="4Jh-kw-ozv">
