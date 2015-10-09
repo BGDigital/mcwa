@@ -16,6 +16,7 @@
 		E68962AD1BC613A300548875 /* mcwaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68962AC1BC613A300548875 /* mcwaTests.swift */; };
 		E68962B81BC613A400548875 /* mcwaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68962B71BC613A400548875 /* mcwaUITests.swift */; };
 		E68962CA1BC65B4300548875 /* SwiftColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68962C91BC65B4300548875 /* SwiftColors.swift */; settings = {ASSET_TAGS = (); }; };
+		E6E32BD71BC81EE9007D04C2 /* rankinglistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E32BD61BC81EE9007D04C2 /* rankinglistController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		E68962B71BC613A400548875 /* mcwaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mcwaUITests.swift; sourceTree = "<group>"; };
 		E68962B91BC613A400548875 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E68962C91BC65B4300548875 /* SwiftColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftColors.swift; sourceTree = "<group>"; };
+		E6E32BD61BC81EE9007D04C2 /* rankinglistController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rankinglistController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				E68962A01BC613A300548875 /* LaunchScreen.storyboard */,
 				E68962A31BC613A300548875 /* Info.plist */,
 				E67E03E41BC6C46D002058DF /* contributionListController.swift */,
+				E6E32BD61BC81EE9007D04C2 /* rankinglistController.swift */,
 			);
 			path = mcwa;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				E68962981BC613A300548875 /* AppDelegate.swift in Sources */,
 				E67E03E51BC6C46D002058DF /* contributionListController.swift in Sources */,
 				E68962CA1BC65B4300548875 /* SwiftColors.swift in Sources */,
+				E6E32BD71BC81EE9007D04C2 /* rankinglistController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
