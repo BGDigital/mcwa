@@ -219,7 +219,7 @@
                                 </variation>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="贡献者:萌萌哒的小先先" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXA-4u-pJU">
-                                <rect key="frame" x="212" y="559" width="175" height="20.5"/>
+                                <rect key="frame" x="212" y="569.5" width="175" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.77254901960784317" alpha="1" colorSpace="calibratedRGB"/>
