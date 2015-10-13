@@ -461,9 +461,6 @@
                                         <include reference="Hoc-Ib-3KC"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <segue destination="46I-WV-LkZ" kind="presentation" id="Ysu-Lx-24L"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3YB-hd-Kh1">
                                 <rect key="frame" x="20" y="344" width="560" height="48"/>
@@ -547,7 +544,6 @@
             </objects>
             <point key="canvasLocation" x="2343" y="973"/>
         </scene>
-<<<<<<< Updated upstream
         <!--结果页-->
         <scene sceneID="7YK-Zp-Btg">
             <objects>
@@ -961,46 +957,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fhs-Hm-PT8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4003.5" y="973"/>
-=======
-        <!--Share-->
-        <scene sceneID="Rp1-cM-pE8">
-            <objects>
-                <viewController id="46I-WV-LkZ" customClass="share" customModule="mcwa" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="aJs-JU-vg2"/>
-                        <viewControllerLayoutGuide type="bottom" id="cKb-Wj-ua1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8pI-Ve-kQ7">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pm7-ko-w0O">
-                                <rect key="frame" x="212" y="218" width="34" height="30"/>
-                                <state key="normal" title="login"/>
-                                <connections>
-                                    <action selector="loginAction:" destination="46I-WV-LkZ" eventType="touchUpInside" id="PFl-fQ-4Kh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjV-Nd-QcC">
-                                <rect key="frame" x="216" y="275" width="38" height="30"/>
-                                <state key="normal" title="share"/>
-                                <connections>
-                                    <action selector="shareAction:" destination="46I-WV-LkZ" eventType="touchUpInside" id="59h-yx-8c1"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="iQM-vG-kWZ"/>
-                    <connections>
-                        <outlet property="loginBtn" destination="Pm7-ko-w0O" id="A86-3w-XlX"/>
-                        <outlet property="shareBtn" destination="cjV-Nd-QcC" id="EQ7-Rx-8mh"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EQC-8R-kBV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3049" y="973"/>
->>>>>>> Stashed changes
         </scene>
         <!--排行榜-->
         <scene sceneID="A7p-M4-7du">
