@@ -66,7 +66,7 @@ class rankinglistController: UITableViewController {
         lb_userName.text = "萌萌哒的小仙仙"
         headView.addSubview(lb_userName)
         //添加用户分数
-        let lb_userSource = UILabel(frame: CGRectMake(300, 18, 71, 21))
+        let lb_userSource = UILabel(frame: CGRectMake(tableView.bounds.size.width - 75, 18, 71, 21))
         lb_userSource.textColor = UIColor.whiteColor()
         lb_userSource.text = "1234 分"
         headView.addSubview(lb_userSource)
