@@ -24,6 +24,7 @@ class share: UIViewController,UMSocialUIDelegate,UMSocialDataDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     @IBAction func loginAction(sender: UIButton) {
         print("login")
         let snsPlatform:UMSocialSnsPlatform = UMSocialSnsPlatformManager.getSocialPlatformWithName(UMShareToQQ)
