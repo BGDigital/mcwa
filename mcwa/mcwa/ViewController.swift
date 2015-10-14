@@ -21,10 +21,13 @@ class ViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
         //主界面背景渐变
-        let background = turquoiseColor()
-        background.frame = self.view.bounds
-        self.view.layer.insertSublayer(background, atIndex: 0)
-        
+//        let background = turquoiseColor()
+//        background.frame = self.view.bounds
+//        self.view.layer.insertSublayer(background, atIndex: 0)
+        //方法一
+        self.view.layer.contents = UIImage(named: "main_bg")!.CGImage
+        //方法二 说的是占内存
+        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "main_bg")!)
 
     }
 
