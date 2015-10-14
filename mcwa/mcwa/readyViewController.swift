@@ -11,19 +11,45 @@ import UIKit
 class readyViewController: UIViewController, UICollectionViewDataSource {
 
     @IBOutlet weak var collectionTa: UICollectionView!
+    
     let ta = ["test", "test", "test", "test", "test", "test"]
+    var countDownTimer: NSTimer?
+    var countDownNum = 10
+    
+    @IBOutlet weak var lb_countDown: UILabel!
+    @IBOutlet weak var lb_S: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "准备中..."
         self.collectionTa.backgroundColor = UIColor.clearColor()
         self.collectionTa.dataSource = self
 
+        //开始倒计时
+        self.countDownTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "run", userInfo: nil, repeats: true)
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func run() {
+        self.countDownNum--
+        self.lb_countDown.text = "\(self.countDownNum)"
+        if countDownNum == 0 {
+            self.countDownTimer?.invalidate()
+            
+            self.lb_S.hidden = true
+            self.lb_countDown.text = "GO!"
+            
+            //跳转到做题界面
+            //let doWork = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("doWorkViewController") as! doWorkViewController
+            //self.navigationController?.presentViewController(doWork, animated: true, completion: nil)
+            //方法2
+            self.performSegueWithIdentifier("doWork", sender: self)
+        }
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -40,7 +66,7 @@ class readyViewController: UIViewController, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Identifier, forIndexPath: indexPath)
         cell.backgroundColor = UIColor.clearColor()
         
-        let iv = UIImageView(frame: CGRectMake(0, 0, 30, 30))
+        let iv = UIImageView(frame: cell.bounds)
         iv.image = UIImage(named: ta[indexPath.row])
         iv.layer.cornerRadius = 15
         cell.addSubview(iv)

@@ -269,12 +269,12 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FpC-et-Qii">
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FpC-et-Qii">
                                                 <rect key="frame" x="270" y="298" width="60" height="30"/>
                                                 <animations/>
                                                 <state key="normal" title="做题界面"/>
                                                 <connections>
-                                                    <segue destination="iTA-rT-1RJ" kind="presentation" id="PKH-CP-DiZ"/>
+                                                    <segue destination="iTA-rT-1RJ" kind="presentation" identifier="doWork" id="PKH-CP-DiZ"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KqX-iU-BHh">
@@ -297,7 +297,7 @@
                                         <constraints>
                                             <constraint firstItem="mb3-DG-ebF" firstAttribute="centerX" secondItem="4kl-fF-3Qh" secondAttribute="centerX" id="58s-Bw-gjY"/>
                                             <constraint firstItem="KqX-iU-BHh" firstAttribute="centerX" secondItem="4kl-fF-3Qh" secondAttribute="centerX" id="Kox-hH-x1m">
-                                                <variation key="widthClass=compact" constant="-14.5"/>
+                                                <variation key="widthClass=compact" constant="0.0"/>
                                             </constraint>
                                             <constraint firstItem="dHu-S9-1OZ" firstAttribute="baseline" secondItem="KqX-iU-BHh" secondAttribute="baseline" id="M5c-7t-iJa"/>
                                             <constraint firstItem="KqX-iU-BHh" firstAttribute="top" secondItem="mb3-DG-ebF" secondAttribute="bottom" constant="-3.5" id="PyK-ns-UEN"/>
@@ -494,6 +494,8 @@
                     <navigationItem key="navigationItem" id="lec-dj-cNk"/>
                     <connections>
                         <outlet property="collectionTa" destination="U6r-5C-6kk" id="nW0-bM-B0S"/>
+                        <outlet property="lb_S" destination="dHu-S9-1OZ" id="3JL-Px-41N"/>
+                        <outlet property="lb_countDown" destination="KqX-iU-BHh" id="0cS-yc-N0u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mLq-Zb-G1n" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -503,7 +505,7 @@
         <!--做题-->
         <scene sceneID="Ar4-uM-fQR">
             <objects>
-                <viewController title="做题" id="iTA-rT-1RJ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="doWorkViewController" title="做题" id="iTA-rT-1RJ" customClass="doWorkViewController" customModule="mcwa" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="raj-MH-rF9"/>
                         <viewControllerLayoutGuide type="bottom" id="Eyg-4i-ptY"/>

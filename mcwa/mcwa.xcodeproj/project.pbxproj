@@ -46,6 +46,7 @@
 		E68962CA1BC65B4300548875 /* SwiftColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68962C91BC65B4300548875 /* SwiftColors.swift */; settings = {ASSET_TAGS = (); }; };
 		E6CFE3001BCE56C300657F36 /* readyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CFE2FF1BCE56C300657F36 /* readyViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		E6E32BD71BC81EE9007D04C2 /* rankinglistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E32BD61BC81EE9007D04C2 /* rankinglistController.swift */; settings = {ASSET_TAGS = (); }; };
+		E6F8FC0E1BCEC113001ADE37 /* doWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F8FC0D1BCEC113001ADE37 /* doWorkViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		E68962C91BC65B4300548875 /* SwiftColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftColors.swift; sourceTree = "<group>"; };
 		E6CFE2FF1BCE56C300657F36 /* readyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = readyViewController.swift; sourceTree = "<group>"; };
 		E6E32BD61BC81EE9007D04C2 /* rankinglistController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rankinglistController.swift; sourceTree = "<group>"; };
+		E6F8FC0D1BCEC113001ADE37 /* doWorkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = doWorkViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +290,7 @@
 				0B60CE0D1BCC127F00B26089 /* McUtils.swift */,
 				0B60CE551BCC1D5400B26089 /* ShareUtil.swift */,
 				E6CFE2FF1BCE56C300657F36 /* readyViewController.swift */,
+				E6F8FC0D1BCEC113001ADE37 /* doWorkViewController.swift */,
 			);
 			path = mcwa;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6F8FC0E1BCEC113001ADE37 /* doWorkViewController.swift in Sources */,
 				E689629A1BC613A300548875 /* ViewController.swift in Sources */,
 				0B60CE081BCC0ED700B26089 /* share.swift in Sources */,
 				E68962981BC613A300548875 /* AppDelegate.swift in Sources */,
