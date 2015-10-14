@@ -16,6 +16,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //友盟分享
+        UMSocialData.setAppKey(UMAppKey)
+        UMSocialQQHandler.setQQWithAppId(qq_AppId, appKey: qq_AppKey, url: share_url)
+        UMSocialWechatHandler.setWXAppId(wx_AppId, appSecret: wx_AppKey, url: share_url)
+        UMSocialConfig.hiddenNotInstallPlatforms(shareToNames)
+        
+        // 友盟统计 nil为空时 默认appstore渠道 不同渠道 统计数据都算到第一个安装渠道
+        MobClick.startWithAppkey(UMAppKey, reportPolicy: BATCH, channelId: nil)
+        //版本号
+        let infoDictionary = NSBundle.mainBundle().infoDictionary
+        let majorVersion: AnyObject? = infoDictionary!["CFBundleShortVersionString"]
+        let appversion = majorVersion as! String
+        MobClick.setAppVersion(appversion)
+        MobClick.setLogEnabled(true)//集成测试
         return true
     }
 
@@ -39,6 +54,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        var result:Bool = UMSocialSnsService.handleOpenURL(url);
+        if (result == false) {
+            //调用其他SDK，例如新浪微博SDK等
+            result =  TencentOAuth.HandleOpenURL(url)
+            
+        }
+        return result
+        
+    }
+    
+    func application(application:UIApplication,handleOpenURL url:NSURL) -> Bool {
+        var result:Bool = UMSocialSnsService.handleOpenURL(url);
+        if (result == false) {
+            //调用其他SDK，例如新浪微博SDK等
+            result =  TencentOAuth.HandleOpenURL(url)
+            
+        }
+        return result
     }
 
 
