@@ -34,13 +34,14 @@
                                         <exclude reference="Rwu-m0-6PA"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="146" y="187" width="108" height="108"/>
                                     <mask key="constraints">
                                         <include reference="Rwu-m0-6PA"/>
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="Ayf-ga-SxV" kind="push" id="DfV-oQ-iXq"/>
+                                    <segue destination="Ayf-ga-SxV" kind="push" identifier="showReady" id="DfV-oQ-iXq"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="挖一下" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wA9-IK-k77">

@@ -43,7 +43,7 @@ class ViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         self.navigationItem.title = "MC哇!"
     }
-    
+        
     //颜色渐变
     func turquoiseColor() -> CAGradientLayer {
         
