@@ -21,7 +21,7 @@ class readyViewController: UIViewController, UICollectionViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "准备中..."
+        self.navigationItem.title = "准备"
         self.collectionTa.backgroundColor = UIColor.clearColor()
         self.collectionTa.dataSource = self
 
