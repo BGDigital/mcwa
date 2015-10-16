@@ -12,9 +12,12 @@ class readyViewController: UIViewController, UICollectionViewDataSource {
 
     @IBOutlet weak var collectionTa: UICollectionView!
     
-    let ta = ["test", "test", "test", "test", "test", "test"]
     var countDownTimer: NSTimer?
     var countDownNum = 10
+    
+    var questions: Array<JSON>?
+    var users: Array<JSON>?
+
     
     @IBOutlet weak var lb_countDown: UILabel!
     @IBOutlet weak var lb_S: UILabel!
@@ -52,13 +55,24 @@ class readyViewController: UIViewController, UICollectionViewDataSource {
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "doWork" {
+            let receive = segue.destinationViewController as! doWorkViewController
+            receive.questions = self.questions
+        }
+    }
+    
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         //#warning Incomplete method implementation -- Return the number of sections
         return 1
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ta.count
+        if let count = self.users?.count {
+            return count
+        } else{
+            return 0
+        }
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -67,7 +81,7 @@ class readyViewController: UIViewController, UICollectionViewDataSource {
         cell.backgroundColor = UIColor.clearColor()
         
         let iv = UIImageView(frame: cell.bounds)
-        iv.image = UIImage(named: ta[indexPath.row])
+        iv.sd_setImageWithURL(NSURL(string: (self.users?[indexPath.row]["headImg"].stringValue)!)!, placeholderImage: UIImage(named: "test"))
         iv.layer.cornerRadius = 15
         cell.addSubview(iv)
         

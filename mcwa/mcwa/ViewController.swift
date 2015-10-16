@@ -10,6 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let manager = AFHTTPRequestOperationManager()
+    var json: JSON! {
+        didSet {
+            if "ok" == self.json["state"].stringValue {
+                if let d = self.json["dataObject", "question"].array {
+                    self.questions = d
+                }
+                if let users = self.json["dataObject", "user"].array {
+                    self.users = users
+                }
+            }
+        }
+    }
+    var questions: Array<JSON>?
+    var users: Array<JSON>?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -34,6 +50,30 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func beginWa(sender: UIButton) {
+        manager.GET(
+            "http://221.237.152.39:8081/interface.do?act=question",
+            parameters: nil,
+            success: {
+                (operation, responseObject) -> Void in
+                self.json = JSON(responseObject)
+                
+                //收到数据,跳转到准备页面
+                self.performSegueWithIdentifier("showReady", sender: self)
+            }) { (operation, error) -> Void in
+                print(error)
+        }
+    }
+    
+    //跳转Segue传值
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {        
+        if segue.identifier == "showReady" {
+            let receive = segue.destinationViewController as! readyViewController
+            receive.questions = self.questions
+            receive.users = self.users
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {

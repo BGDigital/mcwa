@@ -6,3 +6,6 @@
 #import "UMSocialQQHandler.h"
 #import "UMSocialWechatHandler.h"
 #import "MobClick.h"
+
+#import "AFNetWorking.h"
+#import "UIImageView+WebCache.h"
