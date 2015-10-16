@@ -135,13 +135,13 @@
 		E68962C91BC65B4300548875 /* SwiftColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftColors.swift; sourceTree = "<group>"; };
 		E6CFE2FF1BCE56C300657F36 /* readyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = readyViewController.swift; sourceTree = "<group>"; };
 		E6E32BD61BC81EE9007D04C2 /* rankinglistController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rankinglistController.swift; sourceTree = "<group>"; };
-<<<<<<< Updated upstream
+
 		E6F8FC0D1BCEC113001ADE37 /* doWorkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = doWorkViewController.swift; sourceTree = "<group>"; };
 		E6F8FCDB1BCF5F3E001ADE37 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
-=======
+
 		E74987A27D9C99F4B2D91185 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FFD4D7169038EF249970EA38 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
->>>>>>> Stashed changes
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,12 +320,11 @@
 				0B60CE091BCC11B200B26089 /* mcwa-Bridging-Header.h */,
 				0B60CE0D1BCC127F00B26089 /* McUtils.swift */,
 				0B60CE551BCC1D5400B26089 /* ShareUtil.swift */,
-<<<<<<< Updated upstream
+
 				E6CFE2FF1BCE56C300657F36 /* readyViewController.swift */,
 				E6F8FC0D1BCEC113001ADE37 /* doWorkViewController.swift */,
-=======
 				0B60CE601BCCEBF300B26089 /*  addQuestionController.swift */,
->>>>>>> Stashed changes
+
 			);
 			path = mcwa;
 			sourceTree = "<group>";
