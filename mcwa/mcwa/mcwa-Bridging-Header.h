@@ -6,3 +6,5 @@
 #import "UMSocialQQHandler.h"
 #import "UMSocialWechatHandler.h"
 #import "MobClick.h"
+#import "DBCameraViewController.h"
+#import "DBCameraContainerViewController.h"

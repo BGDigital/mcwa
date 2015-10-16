@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class share: UIViewController,UMSocialUIDelegate,UMSocialDataDelegate {
+class share: UIViewController,UMSocialUIDelegate {
     @IBOutlet weak var loginBtn: UIButton!
     
     @IBOutlet weak var shareBtn: UIButton!
@@ -45,10 +45,6 @@ class share: UIViewController,UMSocialUIDelegate,UMSocialDataDelegate {
         })
 
         
-    }
-    
-    func didFinishGetUMSocialDataResponse(response: UMSocialResponseEntity!) {
-        print(response.data)
     }
 
     @IBAction func shareAction(sender: UIButton) {

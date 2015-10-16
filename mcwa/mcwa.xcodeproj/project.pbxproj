@@ -26,7 +26,6 @@
 		0B60CE3E1BCC13FA00B26089 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE3D1BCC13FA00B26089 /* Security.framework */; };
 		0B60CE421BCC187A00B26089 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE411BCC187A00B26089 /* SystemConfiguration.framework */; };
 		0B60CE441BCC188800B26089 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE431BCC188800B26089 /* CoreGraphics.framework */; };
-		0B60CE461BCC18C600B26089 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE451BCC18C600B26089 /* libsqlite3.dylib */; };
 		0B60CE481BCC18D700B26089 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE471BCC18D700B26089 /* CoreTelephony.framework */; };
 		0B60CE531BCC1AB800B26089 /* libSocialWechat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE4E1BCC1AB800B26089 /* libSocialWechat.a */; settings = {ASSET_TAGS = (); }; };
 		0B60CE541BCC1AB800B26089 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE4F1BCC1AB800B26089 /* libWeChatSDK.a */; settings = {ASSET_TAGS = (); }; };
@@ -35,6 +34,9 @@
 		0B60CE5A1BCCA34E00B26089 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE591BCCA34E00B26089 /* libiconv.tbd */; };
 		0B60CE5C1BCCA38E00B26089 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE5B1BCCA38E00B26089 /* libstdc++.tbd */; };
 		0B60CE5F1BCCA5D600B26089 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE5D1BCCA5D600B26089 /* libMobClickLibrary.a */; settings = {ASSET_TAGS = (); }; };
+		0B60CE611BCCEBF300B26089 /*  addQuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B60CE601BCCEBF300B26089 /*  addQuestionController.swift */; settings = {ASSET_TAGS = (); }; };
+		0B60CE631BCCED8800B26089 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE621BCCED8800B26089 /* libsqlite3.tbd */; };
+		4A5236A9B99061F69357149B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFD4D7169038EF249970EA38 /* libPods.a */; };
 		E67E03E51BC6C46D002058DF /* contributionListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67E03E41BC6C46D002058DF /* contributionListController.swift */; settings = {ASSET_TAGS = (); }; };
 		E68962981BC613A300548875 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68962971BC613A300548875 /* AppDelegate.swift */; };
 		E689629A1BC613A300548875 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68962991BC613A300548875 /* ViewController.swift */; };
@@ -101,7 +103,6 @@
 		0B60CE3D1BCC13FA00B26089 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		0B60CE411BCC187A00B26089 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0B60CE431BCC188800B26089 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		0B60CE451BCC18C600B26089 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = ../../../../../../usr/lib/libsqlite3.dylib; sourceTree = "<group>"; };
 		0B60CE471BCC18D700B26089 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		0B60CE4E1BCC1AB800B26089 /* libSocialWechat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialWechat.a; sourceTree = "<group>"; };
 		0B60CE4F1BCC1AB800B26089 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
@@ -114,6 +115,9 @@
 		0B60CE5B1BCCA38E00B26089 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		0B60CE5D1BCCA5D600B26089 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		0B60CE5E1BCCA5D600B26089 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		0B60CE601BCCEBF300B26089 /*  addQuestionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = " addQuestionController.swift"; sourceTree = "<group>"; };
+		0B60CE621BCCED8800B26089 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		CBE329A6BF7F65E39E99C449 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E67E03E41BC6C46D002058DF /* contributionListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = contributionListController.swift; sourceTree = "<group>"; };
 		E68962941BC613A300548875 /* mcwa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mcwa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E68962971BC613A300548875 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,8 +135,13 @@
 		E68962C91BC65B4300548875 /* SwiftColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftColors.swift; sourceTree = "<group>"; };
 		E6CFE2FF1BCE56C300657F36 /* readyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = readyViewController.swift; sourceTree = "<group>"; };
 		E6E32BD61BC81EE9007D04C2 /* rankinglistController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rankinglistController.swift; sourceTree = "<group>"; };
+<<<<<<< Updated upstream
 		E6F8FC0D1BCEC113001ADE37 /* doWorkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = doWorkViewController.swift; sourceTree = "<group>"; };
 		E6F8FCDB1BCF5F3E001ADE37 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+=======
+		E74987A27D9C99F4B2D91185 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FFD4D7169038EF249970EA38 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+>>>>>>> Stashed changes
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,11 +149,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B60CE631BCCED8800B26089 /* libsqlite3.tbd in Frameworks */,
 				0B60CE5C1BCCA38E00B26089 /* libstdc++.tbd in Frameworks */,
 				0B60CE5A1BCCA34E00B26089 /* libiconv.tbd in Frameworks */,
 				0B60CE581BCCA33400B26089 /* libz.tbd in Frameworks */,
 				0B60CE481BCC18D700B26089 /* CoreTelephony.framework in Frameworks */,
-				0B60CE461BCC18C600B26089 /* libsqlite3.dylib in Frameworks */,
 				0B60CE5F1BCCA5D600B26089 /* libMobClickLibrary.a in Frameworks */,
 				0B60CE541BCC1AB800B26089 /* libWeChatSDK.a in Frameworks */,
 				0B60CE441BCC188800B26089 /* CoreGraphics.framework in Frameworks */,
@@ -154,6 +163,7 @@
 				0B60CE3B1BCC13C200B26089 /* TencentOpenAPI.framework in Frameworks */,
 				0B60CE531BCC1AB800B26089 /* libSocialWechat.a in Frameworks */,
 				0B60CE2B1BCC134B00B26089 /* libUMSocial_Sdk_4.2.5.a in Frameworks */,
+				4A5236A9B99061F69357149B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,14 +252,31 @@
 			path = Wechat;
 			sourceTree = "<group>";
 		};
+		2A13070317A6050E0C47D4C1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E74987A27D9C99F4B2D91185 /* Pods.debug.xcconfig */,
+				CBE329A6BF7F65E39E99C449 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		96DF044299A3099D9E1453AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FFD4D7169038EF249970EA38 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E689628B1BC613A300548875 = {
 			isa = PBXGroup;
 			children = (
+				0B60CE621BCCED8800B26089 /* libsqlite3.tbd */,
 				0B60CE5B1BCCA38E00B26089 /* libstdc++.tbd */,
 				0B60CE591BCCA34E00B26089 /* libiconv.tbd */,
 				0B60CE571BCCA33300B26089 /* libz.tbd */,
 				0B60CE471BCC18D700B26089 /* CoreTelephony.framework */,
-				0B60CE451BCC18C600B26089 /* libsqlite3.dylib */,
 				0B60CE431BCC188800B26089 /* CoreGraphics.framework */,
 				0B60CE411BCC187A00B26089 /* SystemConfiguration.framework */,
 				0B60CE3D1BCC13FA00B26089 /* Security.framework */,
@@ -257,6 +284,8 @@
 				E68962AB1BC613A300548875 /* mcwaTests */,
 				E68962B61BC613A400548875 /* mcwaUITests */,
 				E68962951BC613A300548875 /* Products */,
+				2A13070317A6050E0C47D4C1 /* Pods */,
+				96DF044299A3099D9E1453AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -291,8 +320,12 @@
 				0B60CE091BCC11B200B26089 /* mcwa-Bridging-Header.h */,
 				0B60CE0D1BCC127F00B26089 /* McUtils.swift */,
 				0B60CE551BCC1D5400B26089 /* ShareUtil.swift */,
+<<<<<<< Updated upstream
 				E6CFE2FF1BCE56C300657F36 /* readyViewController.swift */,
 				E6F8FC0D1BCEC113001ADE37 /* doWorkViewController.swift */,
+=======
+				0B60CE601BCCEBF300B26089 /*  addQuestionController.swift */,
+>>>>>>> Stashed changes
 			);
 			path = mcwa;
 			sourceTree = "<group>";
@@ -331,9 +364,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E68962BC1BC613A400548875 /* Build configuration list for PBXNativeTarget "mcwa" */;
 			buildPhases = (
+				4E2E8489119685394F1D04EB /* Check Pods Manifest.lock */,
 				E68962901BC613A300548875 /* Sources */,
 				E68962911BC613A300548875 /* Frameworks */,
 				E68962921BC613A300548875 /* Resources */,
+				F7968E8422F58BAD6B4E7349 /* Embed Pods Frameworks */,
+				1DBBC8C43E0C557C4F90FC26 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -463,6 +499,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1DBBC8C43E0C557C4F90FC26 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E2E8489119685394F1D04EB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F7968E8422F58BAD6B4E7349 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E68962901BC613A300548875 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -470,6 +554,7 @@
 			files = (
 				E6F8FC0E1BCEC113001ADE37 /* doWorkViewController.swift in Sources */,
 				E689629A1BC613A300548875 /* ViewController.swift in Sources */,
+				0B60CE611BCCEBF300B26089 /*  addQuestionController.swift in Sources */,
 				0B60CE081BCC0ED700B26089 /* share.swift in Sources */,
 				E6F8FCDC1BCF5F3E001ADE37 /* SwiftyJSON.swift in Sources */,
 				E68962981BC613A300548875 /* AppDelegate.swift in Sources */,
@@ -627,7 +712,9 @@
 		};
 		E68962BD1BC613A400548875 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E74987A27D9C99F4B2D91185 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				ENABLE_BITCODE = NO;
@@ -645,18 +732,21 @@
 					"$(PROJECT_DIR)/mcwa/Wechat",
 					"$(PROJECT_DIR)/mcwa",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tars.mcwa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "mcwa/mcwa-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
 		E68962BE1BC613A400548875 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBE329A6BF7F65E39E99C449 /* Pods.release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				ENABLE_BITCODE = NO;
@@ -674,11 +764,12 @@
 					"$(PROJECT_DIR)/mcwa/Wechat",
 					"$(PROJECT_DIR)/mcwa",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tars.mcwa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "mcwa/mcwa-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
