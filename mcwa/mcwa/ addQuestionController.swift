@@ -35,10 +35,11 @@ class  addQuestionController: UIViewController,UITextFieldDelegate,UMSocialUIDel
     @IBOutlet weak var answerThree: UILabel!
     @IBOutlet weak var answerFour: UILabel!
     var answerFlag:Int = 1
-    var isAddTitle:Int = 0
     
-    var questionType:String!
+    var questionType:String! = "选择题"
     var reallyAnswer:String! = "正确"
+    var icon:UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.titleView.tag = 10
@@ -270,6 +271,7 @@ class  addQuestionController: UIViewController,UITextFieldDelegate,UMSocialUIDel
     
     func camera(cameraViewController: AnyObject!, didFinishWithImage image: UIImage!, withMetadata metadata: [NSObject : AnyObject]!) {
         imageBtn.image = image
+//        self.icon = image
         cameraViewController.restoreFullScreenMode()
         self.presentedViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -342,7 +344,7 @@ class  addQuestionController: UIViewController,UITextFieldDelegate,UMSocialUIDel
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        MobClick.beginLogPageView("talkDetail")
+        MobClick.beginLogPageView("addQuestion")
         //        //注册键盘通知事件
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidHidden:", name: UIKeyboardWillHideNotification, object: nil)
@@ -350,8 +352,50 @@ class  addQuestionController: UIViewController,UITextFieldDelegate,UMSocialUIDel
     }
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        MobClick.endLogPageView("talkDetail")
+        MobClick.endLogPageView("addQuestion")
         NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    @IBAction func addQuestionAction(sender: UIButton) {
+        var type = "choice"
+        let answerTitle = self.titleView.text
+        var icon = ""
+        var one = self.answerOne.text
+        var two = self.answerTwo.text
+        var three = self.answerThree.text
+        var four = self.answerFour.text
+        
+        if(answerTitle.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == "" || answerTitle == "   这里写题目"){
+            print("题目不能为空,必填项")
+            return
+        }
+        if(answerTitle.characters.count > 50){
+            print("题目字数不能超过50字")
+            return
+        }
+        
+        if(self.questionType == "判断题"){
+            one = reallyAnswer
+            type = "judge"
+        }else{
+            if(one!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == "" || one == "正确答案"){
+                print("答案不能为空,必填项")
+                return
+            }
+            if(two!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == "" || two == "错误答案"){
+                print("答案不能为空,必填项")
+                return
+            }
+            if(three!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == "" || three == "错误答案"){
+                print("答案不能为空,必填项")
+                return
+            }
+            if(four!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == "" || four == "错误答案"){
+                print("答案不能为空,必填项")
+                return
+            }
+        }
+        
+        
     }
     
     
