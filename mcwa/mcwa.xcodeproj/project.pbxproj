@@ -34,6 +34,7 @@
 		0B60CE5A1BCCA34E00B26089 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE591BCCA34E00B26089 /* libiconv.tbd */; };
 		0B60CE5C1BCCA38E00B26089 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE5B1BCCA38E00B26089 /* libstdc++.tbd */; };
 		0B60CE5F1BCCA5D600B26089 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE5D1BCCA5D600B26089 /* libMobClickLibrary.a */; settings = {ASSET_TAGS = (); }; };
+		36FA0220FE9034A203007BE2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2764C8C3690247D33931EAD4 /* libPods.a */; };
 		65B12AF8A152F6A72CA93097 /* libPods-mcwa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 841A6C177989C191E2481B5C /* libPods-mcwa.a */; };
 		E67E03E51BC6C46D002058DF /* contributionListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67E03E41BC6C46D002058DF /* contributionListController.swift */; settings = {ASSET_TAGS = (); }; };
 		E68962981BC613A300548875 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68962971BC613A300548875 /* AppDelegate.swift */; };
@@ -47,6 +48,7 @@
 		E6CFE3001BCE56C300657F36 /* readyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CFE2FF1BCE56C300657F36 /* readyViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		E6E32BD71BC81EE9007D04C2 /* rankinglistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E32BD61BC81EE9007D04C2 /* rankinglistController.swift */; settings = {ASSET_TAGS = (); }; };
 		E6EBB3691BD0A70100E90C3B /* SwiftyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EBB3681BD0A70100E90C3B /* SwiftyTimer.swift */; settings = {ASSET_TAGS = (); }; };
+		E6EBB36B1BD4EE2300E90C3B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EBB36A1BD4EE2300E90C3B /* libsqlite3.tbd */; };
 		E6F8FC0E1BCEC113001ADE37 /* doWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F8FC0D1BCEC113001ADE37 /* doWorkViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		E6F8FCDC1BCF5F3E001ADE37 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F8FCDB1BCF5F3E001ADE37 /* SwiftyJSON.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -69,7 +71,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05FCD0CBD9FAAB2E629ECDC7 /* Pods-mcwa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mcwa.release.xcconfig"; path = "Pods/Target Support Files/Pods-mcwa/Pods-mcwa.release.xcconfig"; sourceTree = "<group>"; };
 		0B60CE071BCC0ED700B26089 /* share.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = share.swift; sourceTree = "<group>"; };
 		0B60CE091BCC11B200B26089 /* mcwa-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mcwa-Bridging-Header.h"; sourceTree = "<group>"; };
 		0B60CE0D1BCC127F00B26089 /* McUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = McUtils.swift; sourceTree = "<group>"; };
@@ -115,8 +116,10 @@
 		0B60CE5B1BCCA38E00B26089 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		0B60CE5D1BCCA5D600B26089 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		0B60CE5E1BCCA5D600B26089 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
-		479CC6E24685468399D2FE72 /* Pods-mcwa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mcwa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mcwa/Pods-mcwa.debug.xcconfig"; sourceTree = "<group>"; };
+		2764C8C3690247D33931EAD4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D80F592DCAE4E563E5BC4FB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		841A6C177989C191E2481B5C /* libPods-mcwa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mcwa.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0FCB9F095E671DDC8FF847C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E67E03E41BC6C46D002058DF /* contributionListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = contributionListController.swift; sourceTree = "<group>"; };
 		E68962941BC613A300548875 /* mcwa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mcwa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E68962971BC613A300548875 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -135,12 +138,9 @@
 		E6CFE2FF1BCE56C300657F36 /* readyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = readyViewController.swift; sourceTree = "<group>"; };
 		E6E32BD61BC81EE9007D04C2 /* rankinglistController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rankinglistController.swift; sourceTree = "<group>"; };
 		E6EBB3681BD0A70100E90C3B /* SwiftyTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyTimer.swift; sourceTree = "<group>"; };
+		E6EBB36A1BD4EE2300E90C3B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		E6F8FC0D1BCEC113001ADE37 /* doWorkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = doWorkViewController.swift; sourceTree = "<group>"; };
 		E6F8FCDB1BCF5F3E001ADE37 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
-
-		E74987A27D9C99F4B2D91185 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		FFD4D7169038EF249970EA38 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B60CE631BCCED8800B26089 /* libsqlite3.tbd in Frameworks */,
+				E6EBB36B1BD4EE2300E90C3B /* libsqlite3.tbd in Frameworks */,
 				0B60CE5C1BCCA38E00B26089 /* libstdc++.tbd in Frameworks */,
 				0B60CE5A1BCCA34E00B26089 /* libiconv.tbd in Frameworks */,
 				0B60CE581BCCA33400B26089 /* libz.tbd in Frameworks */,
@@ -163,6 +163,7 @@
 				0B60CE531BCC1AB800B26089 /* libSocialWechat.a in Frameworks */,
 				0B60CE2B1BCC134B00B26089 /* libUMSocial_Sdk_4.2.5.a in Frameworks */,
 				65B12AF8A152F6A72CA93097 /* libPods-mcwa.a in Frameworks */,
+				36FA0220FE9034A203007BE2 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,7 +255,9 @@
 		177A8160BD584F99A44B8805 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E6EBB36A1BD4EE2300E90C3B /* libsqlite3.tbd */,
 				841A6C177989C191E2481B5C /* libPods-mcwa.a */,
+				2764C8C3690247D33931EAD4 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -262,8 +265,8 @@
 		7DD1616E3CC7D56A7E2C3E09 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				479CC6E24685468399D2FE72 /* Pods-mcwa.debug.xcconfig */,
-				05FCD0CBD9FAAB2E629ECDC7 /* Pods-mcwa.release.xcconfig */,
+				2D80F592DCAE4E563E5BC4FB /* Pods.debug.xcconfig */,
+				E0FCB9F095E671DDC8FF847C /* Pods.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -271,7 +274,6 @@
 		E689628B1BC613A300548875 = {
 			isa = PBXGroup;
 			children = (
-				0B60CE621BCCED8800B26089 /* libsqlite3.tbd */,
 				0B60CE5B1BCCA38E00B26089 /* libstdc++.tbd */,
 				0B60CE591BCCA34E00B26089 /* libiconv.tbd */,
 				0B60CE571BCCA33300B26089 /* libz.tbd */,
@@ -319,11 +321,8 @@
 				0B60CE091BCC11B200B26089 /* mcwa-Bridging-Header.h */,
 				0B60CE0D1BCC127F00B26089 /* McUtils.swift */,
 				0B60CE551BCC1D5400B26089 /* ShareUtil.swift */,
-
 				E6CFE2FF1BCE56C300657F36 /* readyViewController.swift */,
 				E6F8FC0D1BCEC113001ADE37 /* doWorkViewController.swift */,
-				0B60CE601BCCEBF300B26089 /*  addQuestionController.swift */,
-
 			);
 			path = mcwa;
 			sourceTree = "<group>";
@@ -511,7 +510,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mcwa/Pods-mcwa-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8C6B1055B4AB7D2CB4BEC6F7 /* Embed Pods Frameworks */ = {
@@ -526,7 +525,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mcwa/Pods-mcwa-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		985CF6D456160DBC647A64A7 /* Check Pods Manifest.lock */ = {
@@ -553,7 +552,6 @@
 			files = (
 				E6F8FC0E1BCEC113001ADE37 /* doWorkViewController.swift in Sources */,
 				E689629A1BC613A300548875 /* ViewController.swift in Sources */,
-				0B60CE611BCCEBF300B26089 /*  addQuestionController.swift in Sources */,
 				0B60CE081BCC0ED700B26089 /* share.swift in Sources */,
 				E6EBB3691BD0A70100E90C3B /* SwiftyTimer.swift in Sources */,
 				E6F8FCDC1BCF5F3E001ADE37 /* SwiftyJSON.swift in Sources */,
@@ -712,7 +710,7 @@
 		};
 		E68962BD1BC613A400548875 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 479CC6E24685468399D2FE72 /* Pods-mcwa.debug.xcconfig */;
+			baseConfigurationReference = 2D80F592DCAE4E563E5BC4FB /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -741,13 +739,13 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "mcwa/mcwa-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = "armv7 armv7s arm64";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
 		E68962BE1BC613A400548875 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 05FCD0CBD9FAAB2E629ECDC7 /* Pods-mcwa.release.xcconfig */;
+			baseConfigurationReference = E0FCB9F095E671DDC8FF847C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -775,7 +773,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "mcwa/mcwa-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = "armv7 armv7s arm64";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};
