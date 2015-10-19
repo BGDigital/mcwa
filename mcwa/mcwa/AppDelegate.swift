@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UMSocialData.setAppKey(UMAppKey)
         UMSocialQQHandler.setQQWithAppId(qq_AppId, appKey: qq_AppKey, url: share_url)
         UMSocialWechatHandler.setWXAppId(wx_AppId, appSecret: wx_AppKey, url: share_url)
-        UMSocialConfig.hiddenNotInstallPlatforms(shareToNames)
+//        UMSocialConfig.hiddenNotInstallPlatforms(shareToNames)
         
         // 友盟统计 nil为空时 默认appstore渠道 不同渠道 统计数据都算到第一个安装渠道
         MobClick.startWithAppkey(UMAppKey, reportPolicy: BATCH, channelId: nil)

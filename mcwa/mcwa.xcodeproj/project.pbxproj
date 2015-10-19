@@ -26,7 +26,6 @@
 		0B60CE3E1BCC13FA00B26089 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE3D1BCC13FA00B26089 /* Security.framework */; };
 		0B60CE421BCC187A00B26089 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE411BCC187A00B26089 /* SystemConfiguration.framework */; };
 		0B60CE441BCC188800B26089 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE431BCC188800B26089 /* CoreGraphics.framework */; };
-		0B60CE461BCC18C600B26089 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE451BCC18C600B26089 /* libsqlite3.dylib */; };
 		0B60CE481BCC18D700B26089 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE471BCC18D700B26089 /* CoreTelephony.framework */; };
 		0B60CE531BCC1AB800B26089 /* libSocialWechat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE4E1BCC1AB800B26089 /* libSocialWechat.a */; settings = {ASSET_TAGS = (); }; };
 		0B60CE541BCC1AB800B26089 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE4F1BCC1AB800B26089 /* libWeChatSDK.a */; settings = {ASSET_TAGS = (); }; };
@@ -104,7 +103,6 @@
 		0B60CE3D1BCC13FA00B26089 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		0B60CE411BCC187A00B26089 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0B60CE431BCC188800B26089 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		0B60CE451BCC18C600B26089 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = ../../../../../../usr/lib/libsqlite3.dylib; sourceTree = "<group>"; };
 		0B60CE471BCC18D700B26089 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		0B60CE4E1BCC1AB800B26089 /* libSocialWechat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialWechat.a; sourceTree = "<group>"; };
 		0B60CE4F1BCC1AB800B26089 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
@@ -139,6 +137,10 @@
 		E6EBB3681BD0A70100E90C3B /* SwiftyTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyTimer.swift; sourceTree = "<group>"; };
 		E6F8FC0D1BCEC113001ADE37 /* doWorkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = doWorkViewController.swift; sourceTree = "<group>"; };
 		E6F8FCDB1BCF5F3E001ADE37 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+
+		E74987A27D9C99F4B2D91185 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FFD4D7169038EF249970EA38 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,11 +148,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B60CE631BCCED8800B26089 /* libsqlite3.tbd in Frameworks */,
 				0B60CE5C1BCCA38E00B26089 /* libstdc++.tbd in Frameworks */,
 				0B60CE5A1BCCA34E00B26089 /* libiconv.tbd in Frameworks */,
 				0B60CE581BCCA33400B26089 /* libz.tbd in Frameworks */,
 				0B60CE481BCC18D700B26089 /* CoreTelephony.framework in Frameworks */,
-				0B60CE461BCC18C600B26089 /* libsqlite3.dylib in Frameworks */,
 				0B60CE5F1BCCA5D600B26089 /* libMobClickLibrary.a in Frameworks */,
 				0B60CE541BCC1AB800B26089 /* libWeChatSDK.a in Frameworks */,
 				0B60CE441BCC188800B26089 /* CoreGraphics.framework in Frameworks */,
@@ -269,11 +271,11 @@
 		E689628B1BC613A300548875 = {
 			isa = PBXGroup;
 			children = (
+				0B60CE621BCCED8800B26089 /* libsqlite3.tbd */,
 				0B60CE5B1BCCA38E00B26089 /* libstdc++.tbd */,
 				0B60CE591BCCA34E00B26089 /* libiconv.tbd */,
 				0B60CE571BCCA33300B26089 /* libz.tbd */,
 				0B60CE471BCC18D700B26089 /* CoreTelephony.framework */,
-				0B60CE451BCC18C600B26089 /* libsqlite3.dylib */,
 				0B60CE431BCC188800B26089 /* CoreGraphics.framework */,
 				0B60CE411BCC187A00B26089 /* SystemConfiguration.framework */,
 				0B60CE3D1BCC13FA00B26089 /* Security.framework */,
@@ -317,8 +319,11 @@
 				0B60CE091BCC11B200B26089 /* mcwa-Bridging-Header.h */,
 				0B60CE0D1BCC127F00B26089 /* McUtils.swift */,
 				0B60CE551BCC1D5400B26089 /* ShareUtil.swift */,
+
 				E6CFE2FF1BCE56C300657F36 /* readyViewController.swift */,
 				E6F8FC0D1BCEC113001ADE37 /* doWorkViewController.swift */,
+				0B60CE601BCCEBF300B26089 /*  addQuestionController.swift */,
+
 			);
 			path = mcwa;
 			sourceTree = "<group>";
@@ -548,6 +553,7 @@
 			files = (
 				E6F8FC0E1BCEC113001ADE37 /* doWorkViewController.swift in Sources */,
 				E689629A1BC613A300548875 /* ViewController.swift in Sources */,
+				0B60CE611BCCEBF300B26089 /*  addQuestionController.swift in Sources */,
 				0B60CE081BCC0ED700B26089 /* share.swift in Sources */,
 				E6EBB3691BD0A70100E90C3B /* SwiftyTimer.swift in Sources */,
 				E6F8FCDC1BCF5F3E001ADE37 /* SwiftyJSON.swift in Sources */,
@@ -708,6 +714,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 479CC6E24685468399D2FE72 /* Pods-mcwa.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				ENABLE_BITCODE = NO;
@@ -734,6 +741,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "mcwa/mcwa-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -741,6 +749,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 05FCD0CBD9FAAB2E629ECDC7 /* Pods-mcwa.release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				ENABLE_BITCODE = NO;
@@ -766,6 +775,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "mcwa/mcwa-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
