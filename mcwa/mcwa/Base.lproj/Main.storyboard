@@ -717,11 +717,11 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.99" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KP-oF-EUg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KP-oF-EUg">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="53" id="TSR-CV-THg"/>
+                                    <constraint firstAttribute="width" constant="38" id="TSR-CV-THg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -793,6 +793,7 @@
                                 <exclude reference="UF0-Pu-Kqd"/>
                                 <exclude reference="886-du-EI7"/>
                                 <exclude reference="QUq-tx-czI"/>
+                                <exclude reference="HiQ-2n-Gke"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -814,6 +815,7 @@
                                 <include reference="UF0-Pu-Kqd"/>
                                 <include reference="886-du-EI7"/>
                                 <include reference="QUq-tx-czI"/>
+                                <include reference="HiQ-2n-Gke"/>
                             </mask>
                         </variation>
                     </view>

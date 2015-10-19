@@ -10,8 +10,8 @@ import UIKit
 
 class doWorkViewController: UIViewController {
 
-    var countDownTimer: NSTimer?  //每个题的倒计时
-    var countDownNum: Float?      //到计时时间 10秒
+    var countDownTimer: NSTimer?
+    var countDownNum: Float = 100      //到计时时间 10秒
     var currentQuestion: Int = 0  //当前做到的题目Idx
     var rightAnswer: String?      //当前题目的正确答案
     var rightBtn: UIButton?
@@ -38,10 +38,12 @@ class doWorkViewController: UIViewController {
         super.viewDidLoad()
         lb_addSource.hidden = true
         lb_Source.text = "0"
-        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         self.refresh(currentQuestion)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -53,7 +55,8 @@ class doWorkViewController: UIViewController {
             
             rightBtn = nil
             rightAnswer = ""
-            v_Ques_Image.hidden = false
+            
+            v_Ques_Image.hidden = true
             btn_Ques_One.hidden = false
             btn_Ques_Two.hidden = false
             btn_Ques_Three.hidden = false
@@ -72,15 +75,19 @@ class doWorkViewController: UIViewController {
             let questionType = singleQuestion["questionType"].stringValue
             rightAnswer = singleQuestion["rightAnswer"].stringValue
             lb_Ques_Title.text = singleQuestion["title"].stringValue
-            let questionImage = singleQuestion["id"].intValue
             //是否显示图片
-            if questionImage == 2 {
-                v_Ques_Image.hidden = true
-                co_Ques_One.constant = -v_Ques_Image.bounds.size.height
-            } else {
+            if let icon = singleQuestion["icon"].string  {
+                //有图
+                print("有图")
                 v_Ques_Image.hidden = false
-                co_Ques_One.constant = 10
+                self.co_Ques_One.constant = 10
+                iv_Ques_Image.sd_setImageWithURL(NSURL(string: icon), placeholderImage: UIImage(named: "test"))
+            } else {
+                print("无图")
+                v_Ques_Image.hidden = true
+                self.co_Ques_One.constant = -v_Ques_Image.bounds.size.height
             }
+
             //题目类型
             if questionType == "judge" {
                 //判断题目
@@ -128,8 +135,32 @@ class doWorkViewController: UIViewController {
             //这里应该要等一下,有个加载过程
             
             //开始倒计时
-            countDownNum = 1000
-            self.countDownTimer = NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector: "run", userInfo: nil, repeats: true)
+//            countDownNum = 100
+            countDownNum = 50
+            //做题目倒计时
+            self.countDownTimer = NSTimer.new(every: 0.1.second, { () -> Void in
+                self.countDownNum--
+                if self.countDownNum <= 40 {
+                    self.lb_time.textColor = UIColor.redColor()
+                } else {
+                    self.lb_time.textColor = UIColor.whiteColor()
+                }
+                self.lb_time.text = "\(self.countDownNum / 10)"
+                
+                //时间到了,没有选出答案,取下一到题目
+                if self.countDownNum == 0 {
+                    self.countDownTimer?.invalidate()
+                    
+                    self.currentQuestion++
+                    print(self.currentQuestion)
+                    if self.currentQuestion < self.questions?.count {
+                        self.refresh(self.currentQuestion)
+                    } else {
+                        print("做完了,自动!")
+                    }
+                }
+            })
+            self.countDownTimer?.start()
         }
     }
     
@@ -146,23 +177,16 @@ class doWorkViewController: UIViewController {
             rightBtn?.backgroundColor = UIColor(hexString: "#5BB524")
         }
         //刷新题目,准备下一题
-        
-    }
-    
-    //做题目倒计时
-    func run() {
-        self.countDownNum!--
-        self.lb_time.text = "\(self.countDownNum!)"
-        if countDownNum == 0 {
-            self.countDownTimer?.invalidate()
-            print(currentQuestion)
-            if currentQuestion < self.questions?.count {
-                self.refresh(self.currentQuestion++)
+        NSTimer.after(2) { () -> Void in
+            self.currentQuestion++
+            print(self.currentQuestion)
+            if self.currentQuestion < self.questions?.count {
+                self.refresh(self.currentQuestion)
+            } else {
+                print("做完啦,手动")
             }
-            //时间到了,没有选出答案,取下一到题目
         }
     }
-
     
 
     /*

@@ -47,6 +47,7 @@
 		E68962CA1BC65B4300548875 /* SwiftColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68962C91BC65B4300548875 /* SwiftColors.swift */; settings = {ASSET_TAGS = (); }; };
 		E6CFE3001BCE56C300657F36 /* readyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CFE2FF1BCE56C300657F36 /* readyViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		E6E32BD71BC81EE9007D04C2 /* rankinglistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E32BD61BC81EE9007D04C2 /* rankinglistController.swift */; settings = {ASSET_TAGS = (); }; };
+		E6EBB3691BD0A70100E90C3B /* SwiftyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EBB3681BD0A70100E90C3B /* SwiftyTimer.swift */; settings = {ASSET_TAGS = (); }; };
 		E6F8FC0E1BCEC113001ADE37 /* doWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F8FC0D1BCEC113001ADE37 /* doWorkViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		E6F8FCDC1BCF5F3E001ADE37 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F8FCDB1BCF5F3E001ADE37 /* SwiftyJSON.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -135,6 +136,7 @@
 		E68962C91BC65B4300548875 /* SwiftColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftColors.swift; sourceTree = "<group>"; };
 		E6CFE2FF1BCE56C300657F36 /* readyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = readyViewController.swift; sourceTree = "<group>"; };
 		E6E32BD61BC81EE9007D04C2 /* rankinglistController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rankinglistController.swift; sourceTree = "<group>"; };
+		E6EBB3681BD0A70100E90C3B /* SwiftyTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyTimer.swift; sourceTree = "<group>"; };
 		E6F8FC0D1BCEC113001ADE37 /* doWorkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = doWorkViewController.swift; sourceTree = "<group>"; };
 		E6F8FCDB1BCF5F3E001ADE37 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -342,6 +344,7 @@
 		E68962C81BC65B2E00548875 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				E6EBB3681BD0A70100E90C3B /* SwiftyTimer.swift */,
 				E6F8FCDB1BCF5F3E001ADE37 /* SwiftyJSON.swift */,
 				E68962C91BC65B4300548875 /* SwiftColors.swift */,
 			);
@@ -546,6 +549,7 @@
 				E6F8FC0E1BCEC113001ADE37 /* doWorkViewController.swift in Sources */,
 				E689629A1BC613A300548875 /* ViewController.swift in Sources */,
 				0B60CE081BCC0ED700B26089 /* share.swift in Sources */,
+				E6EBB3691BD0A70100E90C3B /* SwiftyTimer.swift in Sources */,
 				E6F8FCDC1BCF5F3E001ADE37 /* SwiftyJSON.swift in Sources */,
 				E68962981BC613A300548875 /* AppDelegate.swift in Sources */,
 				E6CFE3001BCE56C300657F36 /* readyViewController.swift in Sources */,

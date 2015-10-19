@@ -12,9 +12,8 @@ class readyViewController: UIViewController, UICollectionViewDataSource {
 
     @IBOutlet weak var collectionTa: UICollectionView!
     
+    var countDownNum = 3
     var countDownTimer: NSTimer?
-    var countDownNum = 10
-    
     var questions: Array<JSON>?
     var users: Array<JSON>?
 
@@ -29,7 +28,22 @@ class readyViewController: UIViewController, UICollectionViewDataSource {
         self.collectionTa.dataSource = self
 
         //开始倒计时
-        self.countDownTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "run", userInfo: nil, repeats: true)
+        //self.countDownTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "run", userInfo: nil, repeats: true)
+        self.countDownTimer = NSTimer.new(every:1, { () -> Void in
+                self.countDownNum--
+                self.lb_countDown.text = "\(self.countDownNum)"
+                print(self.countDownNum)
+            if self.countDownNum == 0 {
+                self.countDownTimer?.invalidate()
+                self.lb_S.hidden = true
+                self.lb_countDown.text = "GO!"
+                
+                //跳转到做题界面
+                self.performSegueWithIdentifier("doWork", sender: self)
+            }
+        })
+        
+        self.countDownTimer?.start()
         // Do any additional setup after loading the view.
     }
 
@@ -38,22 +52,22 @@ class readyViewController: UIViewController, UICollectionViewDataSource {
         // Dispose of any resources that can be recreated.
     }
     
-    func run() {
-        self.countDownNum--
-        self.lb_countDown.text = "\(self.countDownNum)"
-        if countDownNum == 0 {
-            self.countDownTimer?.invalidate()
-            
-            self.lb_S.hidden = true
-            self.lb_countDown.text = "GO!"
-            
-            //跳转到做题界面
-            //let doWork = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("doWorkViewController") as! doWorkViewController
-            //self.navigationController?.presentViewController(doWork, animated: true, completion: nil)
-            //方法2
-            self.performSegueWithIdentifier("doWork", sender: self)
-        }
-    }
+//    func run() {
+//        self.countDownNum--
+//        self.lb_countDown.text = "\(self.countDownNum)"
+//        if countDownNum == 0 {
+//            self.countDownTimer?.invalidate()
+//            
+//            self.lb_S.hidden = true
+//            self.lb_countDown.text = "GO!"
+//            
+//            //跳转到做题界面
+//            //let doWork = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("doWorkViewController") as! doWorkViewController
+//            //self.navigationController?.presentViewController(doWork, animated: true, completion: nil)
+//            //方法2
+//            self.performSegueWithIdentifier("doWork", sender: self)
+//        }
+//    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "doWork" {
@@ -82,7 +96,7 @@ class readyViewController: UIViewController, UICollectionViewDataSource {
         
         let iv = UIImageView(frame: cell.bounds)
         iv.sd_setImageWithURL(NSURL(string: (self.users?[indexPath.row]["headImg"].stringValue)!)!, placeholderImage: UIImage(named: "test"))
-        iv.layer.cornerRadius = 15
+        iv.layer.cornerRadius = cell.bounds.size.height / 2
         cell.addSubview(iv)
         
         return cell
