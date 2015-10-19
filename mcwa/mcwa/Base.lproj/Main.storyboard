@@ -1957,7 +1957,7 @@
         <!--新增题目-->
         <scene sceneID="h2I-X9-3fN">
             <objects>
-                <viewController title="新增题目" id="nDK-a7-8J5" customClass="addQuestionController" sceneMemberID="viewController">
+                <viewController title="新增题目" id="nDK-a7-8J5" customClass="addQuestionController" customModule="mcwa" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vcK-Ww-ZdO"/>
                         <viewControllerLayoutGuide type="bottom" id="dzj-jK-8Sd"/>
