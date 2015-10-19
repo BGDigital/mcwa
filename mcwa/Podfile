@@ -6,6 +6,7 @@
 target 'mcwa' do
 pod "AFNetworking", "~> 2.0"
 pod 'SDWebImage', '~>3.7'
+pod 'DBCamera', '~> 2.4'
 end
 
 target 'mcwaTests' do
