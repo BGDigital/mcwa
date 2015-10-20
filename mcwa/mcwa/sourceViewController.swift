@@ -16,6 +16,7 @@ class sourceViewController: UIViewController {
     @IBOutlet weak var lb_top_source: UILabel!
     
     @IBOutlet weak var v_center: UIView!
+    @IBOutlet weak var lb_center_no: UILabel!
     @IBOutlet weak var iv_center_avatar: UIImageView!
     @IBOutlet weak var lb_center_source: UILabel!
     
