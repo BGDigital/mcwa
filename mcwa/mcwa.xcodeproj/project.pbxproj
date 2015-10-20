@@ -52,6 +52,7 @@
 		E6EBB36D1BD4EF6000E90C3B /*  addQuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EBB36C1BD4EF6000E90C3B /*  addQuestionController.swift */; settings = {ASSET_TAGS = (); }; };
 		E6F8FC0E1BCEC113001ADE37 /* doWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F8FC0D1BCEC113001ADE37 /* doWorkViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		E6F8FCDC1BCF5F3E001ADE37 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F8FCDB1BCF5F3E001ADE37 /* SwiftyJSON.swift */; settings = {ASSET_TAGS = (); }; };
+		FBA0064B62B6B48BFE4C5C0F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2764C8C3690247D33931EAD4 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
