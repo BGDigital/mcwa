@@ -35,7 +35,6 @@
 		0B60CE5C1BCCA38E00B26089 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE5B1BCCA38E00B26089 /* libstdc++.tbd */; };
 		0B60CE5F1BCCA5D600B26089 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE5D1BCCA5D600B26089 /* libMobClickLibrary.a */; settings = {ASSET_TAGS = (); }; };
 		36FA0220FE9034A203007BE2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2764C8C3690247D33931EAD4 /* libPods.a */; };
-		65B12AF8A152F6A72CA93097 /* libPods-mcwa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 841A6C177989C191E2481B5C /* libPods-mcwa.a */; };
 		E67E03E51BC6C46D002058DF /* contributionListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67E03E41BC6C46D002058DF /* contributionListController.swift */; settings = {ASSET_TAGS = (); }; };
 		E68962981BC613A300548875 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68962971BC613A300548875 /* AppDelegate.swift */; };
 		E689629A1BC613A300548875 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68962991BC613A300548875 /* ViewController.swift */; };
@@ -45,6 +44,7 @@
 		E68962AD1BC613A300548875 /* mcwaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68962AC1BC613A300548875 /* mcwaTests.swift */; };
 		E68962B81BC613A400548875 /* mcwaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68962B71BC613A400548875 /* mcwaUITests.swift */; };
 		E68962CA1BC65B4300548875 /* SwiftColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68962C91BC65B4300548875 /* SwiftColors.swift */; settings = {ASSET_TAGS = (); }; };
+		E68D4B6B1BD5EF4500FC8FDF /* sourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68D4B6A1BD5EF4500FC8FDF /* sourceViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		E6CFE3001BCE56C300657F36 /* readyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CFE2FF1BCE56C300657F36 /* readyViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		E6E32BD71BC81EE9007D04C2 /* rankinglistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E32BD61BC81EE9007D04C2 /* rankinglistController.swift */; settings = {ASSET_TAGS = (); }; };
 		E6EBB3691BD0A70100E90C3B /* SwiftyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EBB3681BD0A70100E90C3B /* SwiftyTimer.swift */; settings = {ASSET_TAGS = (); }; };
@@ -136,6 +136,7 @@
 		E68962B71BC613A400548875 /* mcwaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mcwaUITests.swift; sourceTree = "<group>"; };
 		E68962B91BC613A400548875 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E68962C91BC65B4300548875 /* SwiftColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftColors.swift; sourceTree = "<group>"; };
+		E68D4B6A1BD5EF4500FC8FDF /* sourceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sourceViewController.swift; sourceTree = "<group>"; };
 		E6CFE2FF1BCE56C300657F36 /* readyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = readyViewController.swift; sourceTree = "<group>"; };
 		E6E32BD61BC81EE9007D04C2 /* rankinglistController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rankinglistController.swift; sourceTree = "<group>"; };
 		E6EBB3681BD0A70100E90C3B /* SwiftyTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyTimer.swift; sourceTree = "<group>"; };
@@ -164,7 +165,6 @@
 				0B60CE3B1BCC13C200B26089 /* TencentOpenAPI.framework in Frameworks */,
 				0B60CE531BCC1AB800B26089 /* libSocialWechat.a in Frameworks */,
 				0B60CE2B1BCC134B00B26089 /* libUMSocial_Sdk_4.2.5.a in Frameworks */,
-				65B12AF8A152F6A72CA93097 /* libPods-mcwa.a in Frameworks */,
 				36FA0220FE9034A203007BE2 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +326,7 @@
 				0B60CE551BCC1D5400B26089 /* ShareUtil.swift */,
 				E6CFE2FF1BCE56C300657F36 /* readyViewController.swift */,
 				E6F8FC0D1BCEC113001ADE37 /* doWorkViewController.swift */,
+				E68D4B6A1BD5EF4500FC8FDF /* sourceViewController.swift */,
 			);
 			path = mcwa;
 			sourceTree = "<group>";
@@ -562,6 +563,7 @@
 				E68962981BC613A300548875 /* AppDelegate.swift in Sources */,
 				E6CFE3001BCE56C300657F36 /* readyViewController.swift in Sources */,
 				E67E03E51BC6C46D002058DF /* contributionListController.swift in Sources */,
+				E68D4B6B1BD5EF4500FC8FDF /* sourceViewController.swift in Sources */,
 				E68962CA1BC65B4300548875 /* SwiftColors.swift in Sources */,
 				0B60CE0E1BCC127F00B26089 /* McUtils.swift in Sources */,
 				E6E32BD71BC81EE9007D04C2 /* rankinglistController.swift in Sources */,
