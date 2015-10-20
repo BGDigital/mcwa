@@ -15,6 +15,7 @@ class sourceViewController: UIViewController {
     @IBOutlet weak var iv_top_avatar: UIImageView!
     @IBOutlet weak var lb_top_source: UILabel!
     
+    @IBOutlet weak var v_center: UIView!
     @IBOutlet weak var iv_center_avatar: UIImageView!
     @IBOutlet weak var lb_center_source: UILabel!
     
@@ -29,6 +30,10 @@ class sourceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "成绩"
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
 
         //self.view.layer.contents = UIImage(named: "main_bg")!.CGImage
         v_top.layer.contents = UIImage(named: "source_top")!.CGImage
@@ -36,8 +41,11 @@ class sourceViewController: UIViewController {
         
         iv_center_avatar.layer.masksToBounds = true
         iv_center_avatar.layer.cornerRadius = 37.5
-        iv_center_avatar.layer.borderWidth = 1
+        iv_center_avatar.layer.borderWidth = 0.5
         iv_center_avatar.layer.borderColor = UIColor(hexString: "#30174F")!.CGColor
+        
+        v_center.layer.borderWidth = 0.5
+        v_center.layer.borderColor = UIColor(hexString: "#645093")!.CGColor
         
         // Do any additional setup after loading the view.
     }
@@ -47,6 +55,11 @@ class sourceViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //这里想返回到主界面
+    @IBAction func backToMain(sender: UIButton) {
+        let main = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("mainViewController") as! ViewController
+        //self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     
 

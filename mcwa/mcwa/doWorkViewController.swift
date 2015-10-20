@@ -184,6 +184,12 @@ class doWorkViewController: UIViewController {
     @IBAction func chooseAnswer(sender: UIButton) {
         //点了按钮,先停计时器
         self.countDownTimer?.invalidate()
+        //设置按钮不能点击
+        btn_Ques_One.enabled = false
+        btn_Ques_Two.enabled = false
+        btn_Ques_Three.enabled = false
+        btn_Ques_Four.enabled = false
+        
         //判断对错,颜色区分
         if (sender.tag == 1) {
             //回答正确,加分
@@ -202,6 +208,12 @@ class doWorkViewController: UIViewController {
         }
         //刷新题目,准备下一题
         NSTimer.after(2) { () -> Void in
+            //设置按钮不能点击
+            self.btn_Ques_One.enabled = true
+            self.btn_Ques_Two.enabled = true
+            self.btn_Ques_Three.enabled = true
+            self.btn_Ques_Four.enabled = true
+            
             self.currentQuestion++
             print(self.currentQuestion)
             if self.currentQuestion < self.questions?.count {
