@@ -166,7 +166,7 @@
 				0B60CE3B1BCC13C200B26089 /* TencentOpenAPI.framework in Frameworks */,
 				0B60CE531BCC1AB800B26089 /* libSocialWechat.a in Frameworks */,
 				0B60CE2B1BCC134B00B26089 /* libUMSocial_Sdk_4.2.5.a in Frameworks */,
-				36FA0220FE9034A203007BE2 /* libPods.a in Frameworks */,
+				FBA0064B62B6B48BFE4C5C0F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
