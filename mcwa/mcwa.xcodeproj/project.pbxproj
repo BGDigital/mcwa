@@ -34,8 +34,6 @@
 		0B60CE5A1BCCA34E00B26089 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE591BCCA34E00B26089 /* libiconv.tbd */; };
 		0B60CE5C1BCCA38E00B26089 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE5B1BCCA38E00B26089 /* libstdc++.tbd */; };
 		0B60CE5F1BCCA5D600B26089 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE5D1BCCA5D600B26089 /* libMobClickLibrary.a */; settings = {ASSET_TAGS = (); }; };
-		36FA0220FE9034A203007BE2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2764C8C3690247D33931EAD4 /* libPods.a */; };
-		65B12AF8A152F6A72CA93097 /* libPods-mcwa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 841A6C177989C191E2481B5C /* libPods-mcwa.a */; };
 		E67E03E51BC6C46D002058DF /* contributionListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67E03E41BC6C46D002058DF /* contributionListController.swift */; settings = {ASSET_TAGS = (); }; };
 		E68962981BC613A300548875 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68962971BC613A300548875 /* AppDelegate.swift */; };
 		E689629A1BC613A300548875 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68962991BC613A300548875 /* ViewController.swift */; };
@@ -52,6 +50,7 @@
 		E6EBB36D1BD4EF6000E90C3B /*  addQuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EBB36C1BD4EF6000E90C3B /*  addQuestionController.swift */; settings = {ASSET_TAGS = (); }; };
 		E6F8FC0E1BCEC113001ADE37 /* doWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F8FC0D1BCEC113001ADE37 /* doWorkViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		E6F8FCDC1BCF5F3E001ADE37 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F8FCDB1BCF5F3E001ADE37 /* SwiftyJSON.swift */; settings = {ASSET_TAGS = (); }; };
+		FBA0064B62B6B48BFE4C5C0F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2764C8C3690247D33931EAD4 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,8 +163,7 @@
 				0B60CE3B1BCC13C200B26089 /* TencentOpenAPI.framework in Frameworks */,
 				0B60CE531BCC1AB800B26089 /* libSocialWechat.a in Frameworks */,
 				0B60CE2B1BCC134B00B26089 /* libUMSocial_Sdk_4.2.5.a in Frameworks */,
-				65B12AF8A152F6A72CA93097 /* libPods-mcwa.a in Frameworks */,
-				36FA0220FE9034A203007BE2 /* libPods.a in Frameworks */,
+				FBA0064B62B6B48BFE4C5C0F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

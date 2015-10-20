@@ -12,3 +12,5 @@
 
 #import "DBCameraViewController.h"
 #import "DBCameraContainerViewController.h"
+
+#import "TSMessage.h"

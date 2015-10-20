@@ -14,3 +14,37 @@ let qq_AppKey = "DbdC0Qvfkj4yOLsG"
 let wx_AppId = "wx49ba2c7147d2368d"
 let wx_AppKey = "85aa75ddb9b37d47698f24417a373134"
 let share_url = "http://www.mckuai.com"
+
+let URL_MC = "http://192.168.10.106/interface.do?"
+//上传头像/图片
+let upload_url = URL_MC+"act=uploadImg"
+let addTalk_url = URL_MC+"act=uploadQuestion"
+
+class MCUtils {
+
+    /**
+    显示HUD提示框
+    
+    :param: view    要显示HUD的窗口
+    :param: title   HUD的标题
+    :param: imgName 自定义HUD显示的图片
+    */
+    class func showCustomHUD(aMsg: String, aType: TSMessageNotificationType) {
+        switch aType {
+        case .Success:
+            TSMessage.showNotificationWithTitle("操作成功", subtitle: aMsg, type: aType)
+        case .Warning:
+            TSMessage.showNotificationWithTitle("MC哇提示", subtitle: aMsg, type: aType)
+        case .Error:
+            TSMessage.showNotificationWithTitle("出错啦~!", subtitle: aMsg, type: aType)
+        default:
+            TSMessage.showNotificationWithTitle("消息", subtitle: aMsg, type: aType)
+        }
+        
+    }
+    
+
+}
+
+
+
