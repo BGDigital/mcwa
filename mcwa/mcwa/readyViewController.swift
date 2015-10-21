@@ -95,8 +95,11 @@ class readyViewController: UIViewController, UICollectionViewDataSource {
         cell.backgroundColor = UIColor.clearColor()
         
         let iv = UIImageView(frame: cell.bounds)
-        iv.sd_setImageWithURL(NSURL(string: (self.users?[indexPath.row]["headImg"].stringValue)!)!, placeholderImage: UIImage(named: "test"))
-        iv.layer.cornerRadius = cell.bounds.size.height / 2
+        print(iv.bounds)
+        iv.layer.cornerRadius = iv.bounds.size.height / 2
+        iv.layer.masksToBounds = true
+        iv.sd_setImageWithURL(NSURL(string: self.users![indexPath.row]["headImg"].stringValue))
+        
         cell.addSubview(iv)
         
         return cell
