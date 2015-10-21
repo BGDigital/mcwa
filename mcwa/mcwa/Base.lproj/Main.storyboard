@@ -2069,7 +2069,7 @@
                         <animations/>
                         <color key="backgroundColor" red="0.21176470589999999" green="0.12549019610000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="contributionListCell" rowHeight="100" id="x3a-OY-O4i">
+                            <tableViewCell clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="contributionListCell" rowHeight="100" id="x3a-OY-O4i" customClass="contributionListCell" customModule="mcwa" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x3a-OY-O4i" id="kdV-wF-AGk">
@@ -2149,6 +2149,12 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="lb_accuracy" destination="gwP-Rc-7Cb" id="Dil-bW-JWj"/>
+                                    <outlet property="lb_answerCount" destination="X92-sN-okP" id="pX7-9W-Pf2"/>
+                                    <outlet property="lb_time" destination="FA6-PZ-sG1" id="HGc-OI-sLJ"/>
+                                    <outlet property="lb_title" destination="Tbz-OD-4nI" id="XtD-yA-Az3"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -2157,7 +2163,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="GC0-y3-l8g">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yAl-wW-urr">
+                        <barButtonItem key="rightBarButtonItem" image="addQustion" id="yAl-wW-urr">
                             <connections>
                                 <action selector="uploadQuestionAction:" destination="mRi-CR-Rod" id="K2g-ak-fHv"/>
                             </connections>
@@ -2931,6 +2937,7 @@
         <image name="Avatar_bg" width="30" height="30"/>
         <image name="addFlag" width="17" height="17"/>
         <image name="addQuestion" width="350" height="135"/>
+        <image name="addQustion" width="26" height="26"/>
         <image name="contribution" width="26" height="26"/>
         <image name="img_avatar" width="36" height="36"/>
         <image name="img_pic" width="26" height="26"/>
