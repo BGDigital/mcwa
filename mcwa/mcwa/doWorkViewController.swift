@@ -49,6 +49,11 @@ class doWorkViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //传消息到下一个界面
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //
+    }
+    
     //加载/刷新界面
     func refresh(Idx: Int) {
         if let singleQuestion = self.questions?[Idx] {
@@ -75,6 +80,7 @@ class doWorkViewController: UIViewController {
             let questionType = singleQuestion["questionType"].stringValue
             rightAnswer = singleQuestion["rightAnswer"].stringValue
             lb_Ques_Title.text = singleQuestion["title"].stringValue
+            questionSource = singleQuestion["score"].intValue
             //是否显示图片
             if let icon = singleQuestion["icon"].string  {
                 //有图
@@ -95,6 +101,14 @@ class doWorkViewController: UIViewController {
                 btn_Ques_Two.setTitle("错", forState: .Normal)
                 btn_Ques_Three.hidden = true
                 btn_Ques_Four.hidden = true
+                
+                if rightAnswer == "对" {
+                    btn_Ques_One.tag = 1
+                    rightBtn = btn_Ques_One
+                } else {
+                    btn_Ques_Two.tag = 1
+                    rightBtn = btn_Ques_Two
+                }
             } else {
                 //选择题目
                 for (name, btnidx) in arrAnswer {
@@ -157,6 +171,8 @@ class doWorkViewController: UIViewController {
                         self.refresh(self.currentQuestion)
                     } else {
                         print("做完了,自动!")
+                        print("做完,总计得分:\(self.totalSource)")
+                        self.performSegueWithIdentifier("showSource", sender: self)
                     }
                 }
             })
@@ -168,22 +184,46 @@ class doWorkViewController: UIViewController {
     @IBAction func chooseAnswer(sender: UIButton) {
         //点了按钮,先停计时器
         self.countDownTimer?.invalidate()
+        //设置按钮不能点击
+        btn_Ques_One.enabled = false
+        btn_Ques_Two.enabled = false
+        btn_Ques_Three.enabled = false
+        btn_Ques_Four.enabled = false
+        
         //判断对错,颜色区分
         if (sender.tag == 1) {
+            //回答正确,加分
             sender.backgroundColor = UIColor(hexString: "#5BB524")
+            self.totalSource  = self.totalSource + self.questionSource!
+            
+            self.lb_Source.text = "\(self.totalSource)"
+            self.lb_addSource.text = "+\(self.questionSource!)"
+            self.lb_addSource.hidden = false
+            
         } else {
+            //回答错误,不加分
             sender.backgroundColor = UIColor.redColor()
             //显示正确答案
             rightBtn?.backgroundColor = UIColor(hexString: "#5BB524")
         }
         //刷新题目,准备下一题
         NSTimer.after(2) { () -> Void in
+            //设置按钮不能点击
+            self.btn_Ques_One.enabled = true
+            self.btn_Ques_Two.enabled = true
+            self.btn_Ques_Three.enabled = true
+            self.btn_Ques_Four.enabled = true
+            
             self.currentQuestion++
             print(self.currentQuestion)
             if self.currentQuestion < self.questions?.count {
+                self.lb_addSource.hidden = true
                 self.refresh(self.currentQuestion)
             } else {
                 print("做完啦,手动")
+                print("做完,总计得分:\(self.totalSource)")
+                
+                self.performSegueWithIdentifier("showSource", sender: self)
             }
         }
     }

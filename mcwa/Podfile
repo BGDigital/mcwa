@@ -1,5 +1,6 @@
 platform :ios, "6.0"
 pod 'DBCamera', '~> 2.4'
-pod "AFNetworking", "~> 2.0"
+pod 'AFNetworking', '~> 2.0'
 pod 'SDWebImage', '~>3.7'
-pod "TSMessages"
+pod 'TSMessages'
+pod 'MJRefresh'

@@ -15,6 +15,7 @@ let wx_AppId = "wx49ba2c7147d2368d"
 let wx_AppKey = "85aa75ddb9b37d47698f24417a373134"
 let share_url = "http://www.mckuai.com"
 
+<<<<<<< HEAD
 //用户ID
 let D_USER_ID = "UserLoginId"
 //用户昵称
@@ -26,10 +27,35 @@ var appUserNickName: String = ""
 
 
 let URL_MC = "http://192.168.10.106/interface.do?"
+=======
+let URL_MC = "http://221.237.152.39:8081/interface.do?"
+>>>>>>> FETCH_HEAD
 //上传头像/图片
 let upload_url = URL_MC+"act=uploadImg"
 let addTalk_url = URL_MC+"act=uploadQuestion"
 let qqlogin_url = URL_MC+"act=login"
+
+//PageInfo 用于下拉刷新
+class PageInfo {
+    var currentPage: Int = 0
+    var pageCount: Int = 0
+    var pageSize: Int = 0
+    var allCount: Int = 0
+    
+    init(currentPage: Int, pageCount: Int, pageSize: Int, allCount: Int) {
+        self.currentPage = currentPage
+        self.pageCount = pageCount
+        self.pageSize = pageSize
+        self.allCount = allCount
+    }
+    
+    init(j: JSON) {
+        self.currentPage = j["page"].intValue
+        self.pageCount = j["pageCount"].intValue
+        self.pageSize = j["pageSize"].intValue
+        self.allCount = j["allCount"].intValue
+    }
+}
 
 class MCUtils {
 
