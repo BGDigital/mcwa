@@ -1414,6 +1414,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2uB-1l-STf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="EDw-ST-ZZc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MC 哇 !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75R-H1-Per">
@@ -1505,13 +1506,13 @@
                                 <exclude reference="oGP-h6-pwZ"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="cWK-hU-Gas"/>
+                                <exclude reference="aXv-UV-F14"/>
+                                <exclude reference="qGb-0l-jqR"/>
                                 <exclude reference="W4L-F3-iBY"/>
                                 <exclude reference="q2U-hR-lks"/>
                                 <exclude reference="FYg-tn-fcz"/>
                                 <exclude reference="jbZ-nh-WKH"/>
-                                <exclude reference="aXv-UV-F14"/>
-                                <exclude reference="qGb-0l-jqR"/>
-                                <exclude reference="cWK-hU-Gas"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1521,13 +1522,13 @@
                                 <include reference="oGP-h6-pwZ"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="cWK-hU-Gas"/>
+                                <include reference="aXv-UV-F14"/>
+                                <include reference="qGb-0l-jqR"/>
                                 <include reference="W4L-F3-iBY"/>
                                 <include reference="q2U-hR-lks"/>
                                 <include reference="FYg-tn-fcz"/>
                                 <include reference="jbZ-nh-WKH"/>
-                                <include reference="aXv-UV-F14"/>
-                                <include reference="qGb-0l-jqR"/>
-                                <include reference="cWK-hU-Gas"/>
                             </mask>
                         </variation>
                     </view>
@@ -1706,14 +1707,14 @@
                                             <exclude reference="N2Z-6o-7al"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <exclude reference="6mT-9i-sy5"/>
-                                            <exclude reference="8Pq-Kk-kqf"/>
-                                            <exclude reference="riy-Wy-Owo"/>
                                             <exclude reference="B04-bN-uWC"/>
                                             <exclude reference="hRm-mx-PY0"/>
                                             <exclude reference="1K7-dI-rmA"/>
                                             <exclude reference="3RU-gT-yrV"/>
                                             <exclude reference="8Vo-fQ-bv2"/>
+                                            <exclude reference="6mT-9i-sy5"/>
+                                            <exclude reference="8Pq-Kk-kqf"/>
+                                            <exclude reference="riy-Wy-Owo"/>
                                         </mask>
                                     </variation>
                                     <variation key="widthClass=compact">
@@ -1723,14 +1724,14 @@
                                             <include reference="N2Z-6o-7al"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <include reference="6mT-9i-sy5"/>
-                                            <include reference="8Pq-Kk-kqf"/>
-                                            <include reference="riy-Wy-Owo"/>
                                             <include reference="B04-bN-uWC"/>
                                             <include reference="hRm-mx-PY0"/>
                                             <include reference="1K7-dI-rmA"/>
                                             <include reference="3RU-gT-yrV"/>
                                             <include reference="8Vo-fQ-bv2"/>
+                                            <include reference="6mT-9i-sy5"/>
+                                            <include reference="8Pq-Kk-kqf"/>
+                                            <include reference="riy-Wy-Owo"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -2184,7 +2185,6 @@
             </objects>
             <point key="canvasLocation" x="303" y="973"/>
         </scene>
-<<<<<<< HEAD
         <!--Navigation Controller-->
         <scene sceneID="1PY-EP-BFS">
             <objects>
@@ -2222,8 +2222,6 @@
             </objects>
             <point key="canvasLocation" x="3294" y="1656"/>
         </scene>
-=======
->>>>>>> FETCH_HEAD
         <!--新增题目-->
         <scene sceneID="h2I-X9-3fN">
             <objects>
@@ -2233,7 +2231,7 @@
                         <viewControllerLayoutGuide type="bottom" id="dzj-jK-8Sd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pjz-ix-e2g">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jo0-hl-lMa">
@@ -2940,4 +2938,7 @@
         <image name="source_share" width="34" height="34"/>
         <image name="source_wa" width="34" height="34"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="v2s-Lb-fAa"/>
+    </inferredMetricsTieBreakers>
 </document>
