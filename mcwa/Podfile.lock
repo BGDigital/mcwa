@@ -24,6 +24,7 @@ PODS:
     - GPUImage (~> 0.1)
   - GPUImage (0.1.7)
   - HexColors (2.2.1)
+  - MJRefresh (2.4.12)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
@@ -33,6 +34,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - DBCamera (~> 2.4)
+  - MJRefresh
   - SDWebImage (~> 3.7)
   - TSMessages
 
@@ -41,6 +43,7 @@ SPEC CHECKSUMS:
   DBCamera: 7a4343a541e1264610f9f33176552b93170a843e
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   HexColors: abfd172e329dab59888614ccba6f216cec59289d
+  MJRefresh: ca8e9589895977df32d379d46e6b8a5450b3ff44
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   TSMessages: c8cc7b80f2a833af533872cd02010cac061532cc
 
