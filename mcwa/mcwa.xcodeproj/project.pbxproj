@@ -34,6 +34,8 @@
 		0B60CE5A1BCCA34E00B26089 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE591BCCA34E00B26089 /* libiconv.tbd */; };
 		0B60CE5C1BCCA38E00B26089 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE5B1BCCA38E00B26089 /* libstdc++.tbd */; };
 		0B60CE5F1BCCA5D600B26089 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B60CE5D1BCCA5D600B26089 /* libMobClickLibrary.a */; settings = {ASSET_TAGS = (); }; };
+		0B806ABF1BD76AF5006B280C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B806ABE1BD76AF5006B280C /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		0B806AC11BD76F7F006B280C /* SwiftyUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B806AC01BD76F7F006B280C /* SwiftyUserDefaults.swift */; settings = {ASSET_TAGS = (); }; };
 		E67E03E51BC6C46D002058DF /* contributionListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67E03E41BC6C46D002058DF /* contributionListController.swift */; settings = {ASSET_TAGS = (); }; };
 		E68962981BC613A300548875 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68962971BC613A300548875 /* AppDelegate.swift */; };
 		E689629A1BC613A300548875 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68962991BC613A300548875 /* ViewController.swift */; };
@@ -116,6 +118,8 @@
 		0B60CE5B1BCCA38E00B26089 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		0B60CE5D1BCCA5D600B26089 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		0B60CE5E1BCCA5D600B26089 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		0B806ABE1BD76AF5006B280C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0B806AC01BD76F7F006B280C /* SwiftyUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyUserDefaults.swift; sourceTree = "<group>"; };
 		2764C8C3690247D33931EAD4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D80F592DCAE4E563E5BC4FB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		841A6C177989C191E2481B5C /* libPods-mcwa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mcwa.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -324,6 +328,7 @@
 				0B60CE551BCC1D5400B26089 /* ShareUtil.swift */,
 				E6CFE2FF1BCE56C300657F36 /* readyViewController.swift */,
 				E6F8FC0D1BCEC113001ADE37 /* doWorkViewController.swift */,
+				0B806ABE1BD76AF5006B280C /* LoginViewController.swift */,
 			);
 			path = mcwa;
 			sourceTree = "<group>";
@@ -352,6 +357,7 @@
 				E6EBB3681BD0A70100E90C3B /* SwiftyTimer.swift */,
 				E6F8FCDB1BCF5F3E001ADE37 /* SwiftyJSON.swift */,
 				E68962C91BC65B4300548875 /* SwiftColors.swift */,
+				0B806AC01BD76F7F006B280C /* SwiftyUserDefaults.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -551,10 +557,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B806ABF1BD76AF5006B280C /* LoginViewController.swift in Sources */,
 				E6F8FC0E1BCEC113001ADE37 /* doWorkViewController.swift in Sources */,
 				E689629A1BC613A300548875 /* ViewController.swift in Sources */,
 				0B60CE081BCC0ED700B26089 /* share.swift in Sources */,
 				E6EBB36D1BD4EF6000E90C3B /*  addQuestionController.swift in Sources */,
+				0B806AC11BD76F7F006B280C /* SwiftyUserDefaults.swift in Sources */,
 				E6EBB3691BD0A70100E90C3B /* SwiftyTimer.swift in Sources */,
 				E6F8FCDC1BCF5F3E001ADE37 /* SwiftyJSON.swift in Sources */,
 				E68962981BC613A300548875 /* AppDelegate.swift in Sources */,

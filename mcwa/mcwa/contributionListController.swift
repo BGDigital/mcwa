@@ -13,6 +13,9 @@ class contributionListController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "贡献列表"
+        let barButtonItem = UIBarButtonItem()
+        barButtonItem.title = ""
+        self.navigationItem.backBarButtonItem = barButtonItem
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -89,5 +92,13 @@ class contributionListController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func uploadQuestionAction(sender: UIBarButtonItem) {
+        if(appUserIdSave<=0){
+            LoginViewController.showLoginViewPage(self.navigationController)
+        }else{
+            addQuestionController.showAddQuestionPage(self.navigationController)
+        }
+    }
+    
 
 }

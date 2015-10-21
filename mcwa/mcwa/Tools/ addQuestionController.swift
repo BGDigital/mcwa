@@ -42,15 +42,16 @@ class  addQuestionController: UIViewController,UITextFieldDelegate,UMSocialUIDel
     var icon:UIImage!
     
     var type:String!
-    var answerTitle:String!
-    var one:String!
-    var two:String!
-    var three:String!
-    var four:String!
-    var iconValue:String!
+    var answerTitle:String! = ""
+    var one:String! = ""
+    var two:String! = ""
+    var three:String! = ""
+    var four:String! = ""
+    var iconValue:String! = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationItem.leftBarButtonItem?.title = ""
         self.titleView.tag = 10
         self.titleView.delegate = self
         self.view.userInteractionEnabled = true
@@ -387,8 +388,8 @@ class  addQuestionController: UIViewController,UITextFieldDelegate,UMSocialUIDel
         }
         
         if(self.questionType == "判断题"){
-            one = reallyAnswer
-            type = "judge"
+            self.one = reallyAnswer
+            self.type = "judge"
         }else{
             if(one!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == "" || one == "正确答案"){
                 print("答案不能为空,必填项")
@@ -448,17 +449,20 @@ class  addQuestionController: UIViewController,UITextFieldDelegate,UMSocialUIDel
     }
     
     func postTalkToServer() {
-        let params = [
-            "authorId":String(),
-            "authorName":String(),
-            "questionType":self.type,
-            "titile":self.answerTitle,
-            "icon":self.self.iconValue,
-            "answerOne":self.one,
-            "answerTwo":self.two,
-            "answerThree":self.three,
-            "answerFour":self.four
-        ]
+
+            let params = [
+                "authorId":String(appUserIdSave),
+                "authorName":String(appUserNickName),
+                "questionType":self.type,
+                "title":self.answerTitle,
+                "icon":self.iconValue,
+                "answerOne":self.one,
+                "answerTwo":self.two,
+                "answerThree":self.three,
+                "answerFour":self.four
+            ]
+
+
         
         self.manager.POST(addTalk_url,
             parameters: params,
@@ -470,7 +474,7 @@ class  addQuestionController: UIViewController,UITextFieldDelegate,UMSocialUIDel
                     self.oneUploadBtn?.enabled = true
                     self.twoUploadBtn?.enabled = true
                     //                                    NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "returnPage", userInfo: nil, repeats: false)
-                    MCUtils.showCustomHUD("提交成功,返回查看", aType: .Error)
+                    MCUtils.showCustomHUD("提交成功,返回查看", aType: .Success)
                 }else{
                     self.oneUploadBtn?.enabled = true
                     self.twoUploadBtn?.enabled = true
@@ -484,6 +488,17 @@ class  addQuestionController: UIViewController,UITextFieldDelegate,UMSocialUIDel
                 self.twoUploadBtn?.enabled = true
                 MCUtils.showCustomHUD("提交失败,请稍候再试", aType: .Error)
         })
+    }
+    
+    
+    class func showAddQuestionPage(fromNavigation:UINavigationController?){
+        let addQuestion = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("addQuestion") as! addQuestionController
+        if (fromNavigation != nil) {
+            fromNavigation?.pushViewController(addQuestion, animated: true)
+        } else {
+            fromNavigation?.presentViewController(addQuestion, animated: true, completion: nil)
+        }
+        
     }
     
 
