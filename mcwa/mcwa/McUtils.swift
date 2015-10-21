@@ -101,5 +101,23 @@ class MCUtils {
 
 }
 
+/**
+*  UIImage 扩展
+*/
+extension UIImage {
+    //通过颜色创建图片
+    class func applicationCreateImageWithColor(color: UIColor) -> UIImage {
+        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()
+        CGContextSetFillColorWithColor(context, color.CGColor)
+        CGContextFillRect(context, rect)
+        let theImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return theImage
+    }
+    
+}
+
 
 

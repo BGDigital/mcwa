@@ -26,7 +26,7 @@ class rankinglistCell: UITableViewCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        selectionStyle = .None
         // Configure the view for the selected state
     }
     

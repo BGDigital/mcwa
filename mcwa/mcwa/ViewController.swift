@@ -104,6 +104,16 @@ class ViewController: UIViewController {
         return gradientLayer
         
     }
+    
+    
+    @IBAction func showLogin(sender: UIBarButtonItem) {
+        if(appUserIdSave<=0){
+            LoginViewController.showLoginViewPage(self.navigationController)
+        }else{
+            mineViewController.showMineInfoPage(self.navigationController)
+        }
+
+    }
 
 
 
