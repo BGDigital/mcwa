@@ -1415,7 +1415,7 @@
                         <animations/>
                         <color key="backgroundColor" red="0.21176470588235294" green="0.13333333333333333" blue="0.34901960784313724" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="rankinglistCell" rowHeight="65" id="ZhM-3n-q0p">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="rankinglistCell" rowHeight="65" id="ZhM-3n-q0p" customClass="rankinglistCell" customModule="mcwa" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZhM-3n-q0p" id="Eut-wr-UTT">
@@ -1428,6 +1428,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="azd-n7-s2O">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <animations/>
+                                                    <color key="backgroundColor" red="0.32549019610000002" green="0.64313725489999995" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="61" id="f05-uf-tDe">
                                                             <variation key="widthClass=compact" constant="40"/>
@@ -1540,36 +1541,76 @@
                                                 </mask>
                                             </variation>
                                         </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20G-gt-Sry">
+                                            <rect key="frame" x="27" y="20" width="22.5" height="17"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="127" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2Z-6o-7al">
+                                            <rect key="frame" x="20" y="37" width="36.5" height="24"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <animations/>
                                     <constraints>
+                                        <constraint firstItem="N2Z-6o-7al" firstAttribute="bottom" secondItem="Eut-wr-UTT" secondAttribute="bottomMargin" id="1K7-dI-rmA"/>
+                                        <constraint firstItem="N2Z-6o-7al" firstAttribute="leading" secondItem="Eut-wr-UTT" secondAttribute="leadingMargin" constant="4" id="3RU-gT-yrV"/>
                                         <constraint firstItem="SWz-UJ-EAM" firstAttribute="top" secondItem="Eut-wr-UTT" secondAttribute="top" constant="8" id="6mT-9i-sy5"/>
                                         <constraint firstItem="SWz-UJ-EAM" firstAttribute="leading" secondItem="Eut-wr-UTT" secondAttribute="leading" constant="8" id="8Pq-Kk-kqf"/>
+                                        <constraint firstItem="N2Z-6o-7al" firstAttribute="centerX" secondItem="20G-gt-Sry" secondAttribute="centerX" id="8Vo-fQ-bv2"/>
+                                        <constraint firstItem="20G-gt-Sry" firstAttribute="leading" secondItem="Eut-wr-UTT" secondAttribute="leadingMargin" constant="9" id="B04-bN-uWC"/>
+                                        <constraint firstItem="20G-gt-Sry" firstAttribute="top" secondItem="Eut-wr-UTT" secondAttribute="topMargin" constant="9" id="hRm-mx-PY0"/>
                                         <constraint firstAttribute="trailing" secondItem="SWz-UJ-EAM" secondAttribute="trailing" constant="8" id="riy-Wy-Owo"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="subviews">
                                             <exclude reference="SWz-UJ-EAM"/>
+                                            <exclude reference="20G-gt-Sry"/>
+                                            <exclude reference="N2Z-6o-7al"/>
                                         </mask>
                                         <mask key="constraints">
                                             <exclude reference="6mT-9i-sy5"/>
                                             <exclude reference="8Pq-Kk-kqf"/>
                                             <exclude reference="riy-Wy-Owo"/>
+                                            <exclude reference="B04-bN-uWC"/>
+                                            <exclude reference="hRm-mx-PY0"/>
+                                            <exclude reference="1K7-dI-rmA"/>
+                                            <exclude reference="3RU-gT-yrV"/>
+                                            <exclude reference="8Vo-fQ-bv2"/>
                                         </mask>
                                     </variation>
                                     <variation key="widthClass=compact">
                                         <mask key="subviews">
                                             <include reference="SWz-UJ-EAM"/>
+                                            <include reference="20G-gt-Sry"/>
+                                            <include reference="N2Z-6o-7al"/>
                                         </mask>
                                         <mask key="constraints">
                                             <include reference="6mT-9i-sy5"/>
                                             <include reference="8Pq-Kk-kqf"/>
                                             <include reference="riy-Wy-Owo"/>
+                                            <include reference="B04-bN-uWC"/>
+                                            <include reference="hRm-mx-PY0"/>
+                                            <include reference="1K7-dI-rmA"/>
+                                            <include reference="3RU-gT-yrV"/>
+                                            <include reference="8Vo-fQ-bv2"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <color key="backgroundColor" red="0.21176470588235294" green="0.13333333333333333" blue="0.34901960784313724" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="iv_Avatar" destination="zb0-d8-ekG" id="26C-C1-AWL"/>
+                                    <outlet property="iv_left_bg" destination="azd-n7-s2O" id="hBP-xk-BBI"/>
+                                    <outlet property="lb_No" destination="N2Z-6o-7al" id="wbe-Gt-AFk"/>
+                                    <outlet property="lb_source" destination="fTd-5O-DqI" id="LY8-MR-NwI"/>
+                                    <outlet property="lb_userName" destination="jEO-Hu-XR9" id="Chj-yX-dF7"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1578,6 +1619,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="GAn-IM-K8G"/>
+                    <connections>
+                        <outlet property="tableView" destination="Xju-kS-hHB" id="2fl-jl-9vS"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V1A-Au-KHU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
