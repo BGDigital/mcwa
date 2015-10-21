@@ -332,12 +332,9 @@
 				0B60CE551BCC1D5400B26089 /* ShareUtil.swift */,
 				E6CFE2FF1BCE56C300657F36 /* readyViewController.swift */,
 				E6F8FC0D1BCEC113001ADE37 /* doWorkViewController.swift */,
-<<<<<<< HEAD
 				0B806ABE1BD76AF5006B280C /* LoginViewController.swift */,
-=======
 				E68D4B6A1BD5EF4500FC8FDF /* sourceViewController.swift */,
 				E68D4B6C1BD7486400FC8FDF /* rankinglistCell.swift */,
->>>>>>> FETCH_HEAD
 			);
 			path = mcwa;
 			sourceTree = "<group>";
@@ -566,11 +563,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				0B806ABF1BD76AF5006B280C /* LoginViewController.swift in Sources */,
-=======
 				E68D4B6D1BD7486400FC8FDF /* rankinglistCell.swift in Sources */,
->>>>>>> FETCH_HEAD
 				E6F8FC0E1BCEC113001ADE37 /* doWorkViewController.swift in Sources */,
 				E689629A1BC613A300548875 /* ViewController.swift in Sources */,
 				0B60CE081BCC0ED700B26089 /* share.swift in Sources */,
