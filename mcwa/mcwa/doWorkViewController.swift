@@ -13,12 +13,28 @@ class doWorkViewController: UIViewController {
     var countDownTimer: NSTimer?
     var countDownNum: Float = 100      //到计时时间 10秒
     var currentQuestion: Int = 0  //当前做到的题目Idx
+    var questionId: Int!
     var rightAnswer: String?      //当前题目的正确答案
     var rightBtn: UIButton?
     var questionSource: Int?      //当前题目的分数
     var totalSource: Int = 0      //总得分
     var questions: Array<JSON>?   //题目数组
+    var answerStatus = Dictionary<Int, Int>() //用户答题的结果
     let arrAnswer = ["answerOne":1, "answerTwo":2, "answerThree":3, "answerFour":4]
+    
+    let manager = AFHTTPRequestOperationManager()
+    var sourceResult: Array<JSON>?
+    var json: JSON! {
+        didSet {
+            if "ok" == self.json["state"].stringValue {
+                print(self.json["dataObject"])
+                if let re = self.json["dataObject"].array {
+                    print(re)
+                    self.sourceResult = re
+                }
+            }
+        }
+    }
 
     @IBOutlet weak var lb_addSource: UILabel!
     @IBOutlet weak var lb_Source: UILabel!
@@ -51,7 +67,10 @@ class doWorkViewController: UIViewController {
     
     //传消息到下一个界面
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //
+        if segue.identifier == "showSource" {
+            let receive = segue.destinationViewController as! sourceViewController
+            receive.sourceResult = self.sourceResult
+        }
     }
     
     //加载/刷新界面
@@ -81,6 +100,7 @@ class doWorkViewController: UIViewController {
             rightAnswer = singleQuestion["rightAnswer"].stringValue
             lb_Ques_Title.text = singleQuestion["title"].stringValue
             questionSource = singleQuestion["score"].intValue
+            questionId = singleQuestion["id"].intValue
             //是否显示图片
             if let icon = singleQuestion["icon"].string  {
                 //有图
@@ -165,6 +185,9 @@ class doWorkViewController: UIViewController {
                 if self.countDownNum == 0 {
                     self.countDownTimer?.invalidate()
                     
+                    //做题结果写入字典
+                    self.answerStatus[self.questionId] = 0
+                    
                     self.currentQuestion++
                     print(self.currentQuestion)
                     if self.currentQuestion < self.questions?.count {
@@ -172,7 +195,7 @@ class doWorkViewController: UIViewController {
                     } else {
                         print("做完了,自动!")
                         print("做完,总计得分:\(self.totalSource)")
-                        self.performSegueWithIdentifier("showSource", sender: self)
+                        self.showSourcePage()
                     }
                 }
             })
@@ -193,6 +216,7 @@ class doWorkViewController: UIViewController {
         //判断对错,颜色区分
         if (sender.tag == 1) {
             //回答正确,加分
+            self.answerStatus[self.questionId] = 1
             sender.backgroundColor = UIColor(hexString: "#5BB524")
             self.totalSource  = self.totalSource + self.questionSource!
             
@@ -201,6 +225,7 @@ class doWorkViewController: UIViewController {
             self.lb_addSource.hidden = false
             
         } else {
+            self.answerStatus[self.questionId] = 0
             //回答错误,不加分
             sender.backgroundColor = UIColor.redColor()
             //显示正确答案
@@ -222,9 +247,42 @@ class doWorkViewController: UIViewController {
             } else {
                 print("做完啦,手动")
                 print("做完,总计得分:\(self.totalSource)")
-                
-                self.performSegueWithIdentifier("showSource", sender: self)
+                self.showSourcePage()
             }
+        }
+    }
+    
+    //显示用户做题的结果页
+    func showSourcePage() {
+        //act=report&userId=1&allScore=200&correct=4,5,6,7,8&error=1,2,3
+        var correct: String = ""
+        var error: String = ""
+        print(answerStatus)
+        for (qid, answer) in answerStatus  {
+            if answer != 0 {
+                correct = String(qid)+","+correct
+            } else {
+                error = String(qid)+","+error
+            }
+        }
+        let dict = [
+            "act":"report",
+            "userId": 2,
+            "allScore": totalSource,
+            "correct": correct,
+            "error": error ]
+        manager.GET(URL_MC,
+        //manager.GET("http://192.168.10.104/interface.do?",
+            parameters: dict,
+            success: {
+                (operation, responseObject) -> Void in
+                print(responseObject)
+                self.json = JSON(responseObject)
+                
+                //收到数据,跳转到准备页面
+                self.performSegueWithIdentifier("showSource", sender: self)
+            }) { (operation, error) -> Void in
+                print(error)
         }
     }
     
