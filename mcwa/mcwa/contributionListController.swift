@@ -19,7 +19,7 @@ class contributionListController: UITableViewController {
             if "ok" == self.json["state"].stringValue {
                 //分页信息
                 page = PageInfo(j: self.json["dataObject", "pageBean"])
-                //数据
+                
                 if let d = self.json["dataObject", "data"].array {
                     if page.currentPage == 1 {
                         //                        println("刷新数据")

@@ -20,6 +20,7 @@ class mineViewController: UIViewController {
     @IBOutlet weak var v_line_2: UIView!
     @IBOutlet weak var v_line_3: UIView!
     @IBOutlet weak var v_line_4: UIView!
+    @IBOutlet weak var btn_music: UIBarButtonItem!
     
     var manager = AFHTTPRequestOperationManager()
     var json: JSON! {
@@ -70,6 +71,22 @@ class mineViewController: UIViewController {
                 MCUtils.showCustomHUD("数据加载失败", aType: .Error)
         })
     }
+    
+    //开关背景音乐,改变状态
+    @IBAction func TurnOnOff(sender: UIBarButtonItem) {
+        if appMusicStatus == 1 {
+            //打开状态,点击关闭
+            appMusicStatus = 0
+            Defaults[D_APP_MUSIC_STATUS] = 0
+            sender.image = UIImage(assetIdentifier: .Music_Off)
+        } else {
+            //关闭状态,点击打开
+            appMusicStatus = 1
+            Defaults[D_APP_MUSIC_STATUS] = 1
+            sender.image = UIImage(assetIdentifier: .Music_On)
+        }
+    }
+    
 
     class func showMineInfoPage(fromNavigation:UINavigationController?){
         let mine = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("mineViewController") as! mineViewController

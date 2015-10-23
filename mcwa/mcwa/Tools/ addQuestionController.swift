@@ -445,7 +445,6 @@ class  addQuestionController: UIViewController,UITextFieldDelegate,UMSocialUIDel
         }else{
             self.postTalkToServer()
         }
-        
     }
     
     func postTalkToServer() {
@@ -461,7 +460,6 @@ class  addQuestionController: UIViewController,UITextFieldDelegate,UMSocialUIDel
                 "answerThree":self.three,
                 "answerFour":self.four
             ]
-
 
         
         self.manager.POST(addTalk_url,

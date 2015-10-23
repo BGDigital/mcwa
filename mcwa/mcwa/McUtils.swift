@@ -20,10 +20,13 @@ let share_url = "http://www.mckuai.com"
 let D_USER_ID = "UserLoginId"
 //用户昵称
 let D_USER_NICKNAME = "UserNickName"
+//音效状态
+let D_APP_MUSIC_STATUS = "AppMusicStatus"
 
 //保存的用户ID
 var appUserIdSave: Int = 0
 var appUserNickName: String = ""
+var appMusicStatus: Int = 1
 
 
 
@@ -105,6 +108,19 @@ class MCUtils {
 *  UIImage 扩展
 */
 extension UIImage {
+    
+        enum AssetIdentifier : String {
+            case Music_On = "music_on"
+            case Music_Off = "music_off"
+            
+        }
+        
+        convenience init!(assetIdentifier : AssetIdentifier) {
+            
+            self.init(named: assetIdentifier.rawValue)
+            
+        }
+        
     //通过颜色创建图片
     class func applicationCreateImageWithColor(color: UIColor) -> UIImage {
         let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
@@ -116,7 +132,19 @@ extension UIImage {
         UIGraphicsEndImageContext()
         return theImage
     }
-    
+
+}
+
+//CALayer 扩展
+extension CALayer {
+    var borderUIColor: UIColor {
+        get {
+            return UIColor(CGColor: self.borderColor!)
+        }
+        set {
+            self.borderColor = newValue.CGColor
+        }
+    }
 }
 
 

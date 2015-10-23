@@ -43,8 +43,8 @@ class sourceViewController: UIViewController {
         
         iv_center_avatar.layer.masksToBounds = true
         iv_center_avatar.layer.cornerRadius = 37.5
-        iv_center_avatar.layer.borderWidth = 0.5
-        iv_center_avatar.layer.borderColor = UIColor(hexString: "#30174F")!.CGColor
+//        iv_center_avatar.layer.borderWidth = 0.5
+//        iv_center_avatar.layer.borderColor = UIColor(hexString: "#30174F")!.CGColor
         
         v_center.layer.borderWidth = 0.5
         v_center.layer.borderColor = UIColor(hexString: "#645093")!.CGColor
