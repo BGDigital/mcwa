@@ -82,7 +82,7 @@ class rankinglistController: UITableViewController {
     func loadNewData() {
         //开始刷新
         //http://221.237.152.39:8081/interface.do?act=rankList&userId=1&page=1
-        let dict = ["act":"rankList", "userId": 1, "page": 1]
+        let dict = ["act":"rankList", "userId": appUserIdSave, "page": 1]
         manager.GET(URL_MC,
             parameters: dict,
             success: { (operation: AFHTTPRequestOperation!,
@@ -104,7 +104,7 @@ class rankinglistController: UITableViewController {
     
     func loadMoreData() {
         //        println("开始加载\(self.page.currentPage+1)页")
-        let dict = ["act":"rankList", "userId": 1, "page": page.currentPage+1]
+        let dict = ["act":"rankList", "userId": appUserIdSave, "page": page.currentPage+1]
         //println("加载:\(self.liveType),\(self.liveOrder)======")
         //开始刷新
         manager.GET(URL_MC,

@@ -15,18 +15,18 @@ let wx_AppId = "wx49ba2c7147d2368d"
 let wx_AppKey = "85aa75ddb9b37d47698f24417a373134"
 let share_url = "http://www.mckuai.com"
 
-
-//用户ID
-let D_USER_ID = "UserLoginId"
-//用户昵称
-let D_USER_NICKNAME = "UserNickName"
-//音效状态
-let D_APP_MUSIC_STATUS = "AppMusicStatus"
+extension DefaultsKeys {
+    static let UserAvater = DefaultsKey<String?>("UserAvatar")
+    static let NickName = DefaultsKey<String?>("UserNickName")
+    static let UserId = DefaultsKey<Int>("UserLoginId")
+    static let MusicStatus = DefaultsKey<Int>("AppMusicStatus")
+}
 
 //保存的用户ID
 var appUserIdSave: Int = 0
-var appUserNickName: String = ""
+var appUserNickName: String?
 var appMusicStatus: Int = 1
+var appUserAvatar: String?
 
 
 
@@ -91,10 +91,11 @@ class MCUtils {
     class func AnalysisUserInfo(j: JSON) {
         let userId = j["id"].intValue
         let nickName = j["nickName"].stringValue
+        let userAvatar = j["headImg"].stringValue
         //保存登录信息
-        Defaults[D_USER_ID] = userId
-        Defaults[D_USER_NICKNAME] = nickName
-
+        Defaults[DefaultsKeys.UserId] = userId
+        Defaults[DefaultsKeys.NickName] = nickName
+        Defaults[DefaultsKeys.UserAvater] = userAvatar
         
         appUserIdSave = userId
         appUserNickName = nickName

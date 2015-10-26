@@ -54,6 +54,12 @@ class doWorkViewController: UIViewController {
         super.viewDidLoad()
         lb_addSource.hidden = true
         lb_Source.text = "0"
+        if let url = appUserAvatar {
+            iv_avatar.image = UIImage(named: url)
+        } else {
+            print("默认头像")
+        }
+
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -169,8 +175,7 @@ class doWorkViewController: UIViewController {
             //这里应该要等一下,有个加载过程
             
             //开始倒计时
-//            countDownNum = 100
-            countDownNum = 50
+            countDownNum = 100
             //做题目倒计时
             self.countDownTimer = NSTimer.new(every: 0.1.second, { () -> Void in
                 self.countDownNum--
@@ -267,7 +272,7 @@ class doWorkViewController: UIViewController {
         }
         let dict = [
             "act":"report",
-            "userId": 2,
+            "userId": appUserIdSave,
             "allScore": totalSource,
             "correct": correct,
             "error": error ]

@@ -49,7 +49,15 @@ class mineViewController: UIViewController {
         v_line_4.backgroundColor = UIColor(hexString: "#3B2C56")
         loadNewData()
     }
-
+    
+    override func viewDidAppear(animated: Bool) {
+        if appMusicStatus == 1 {
+            btn_music.image = UIImage(assetIdentifier: .Music_On)
+        } else {
+            btn_music.image = UIImage(assetIdentifier: .Music_Off)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -58,7 +66,7 @@ class mineViewController: UIViewController {
     func loadNewData() {
         //开始刷新
         //http://221.237.152.39:8081/interface.do?act=userInfo&userId=2
-        let dict = ["act":"userInfo", "userId": 2]
+        let dict = ["act":"userInfo", "userId": appUserIdSave]
         manager.GET(URL_MC,
             parameters: dict,
             success: { (operation: AFHTTPRequestOperation!,
@@ -74,15 +82,16 @@ class mineViewController: UIViewController {
     
     //开关背景音乐,改变状态
     @IBAction func TurnOnOff(sender: UIBarButtonItem) {
+        print("appMusicStatus\(appMusicStatus)")
         if appMusicStatus == 1 {
             //打开状态,点击关闭
             appMusicStatus = 0
-            Defaults[D_APP_MUSIC_STATUS] = 0
+            Defaults[.MusicStatus] = 0
             sender.image = UIImage(assetIdentifier: .Music_Off)
         } else {
             //关闭状态,点击打开
             appMusicStatus = 1
-            Defaults[D_APP_MUSIC_STATUS] = 1
+            Defaults[.MusicStatus] = 1
             sender.image = UIImage(assetIdentifier: .Music_On)
         }
     }

@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var userAvatar: UIBarButtonItem!
     let manager = AFHTTPRequestOperationManager()
     var json: JSON! {
         didSet {
@@ -28,8 +29,21 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        appUserIdSave = Defaults[DefaultsKeys.UserId]
+        appUserNickName = Defaults[DefaultsKeys.NickName]
+        appMusicStatus = Defaults[DefaultsKeys.MusicStatus]
+        appUserAvatar = Defaults[DefaultsKeys.UserAvater]
         
+        if appUserIdSave > 0 {
+            if let url = appUserAvatar {
+                userAvatar.image = UIImage(named: url)
+            } else {
+                print("默认头像")
+            }
+        }
+        
+        // Do any additional setup after loading the view, typically from a nib.
+//        userAvatar.image = UIImage(named: "Avatar_default")
         //self.navigationItem.title = "MC哇!"
         
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
@@ -107,11 +121,11 @@ class ViewController: UIViewController {
     
     
     @IBAction func showLogin(sender: UIBarButtonItem) {
-//        if(appUserIdSave<=0){
-//            LoginViewController.showLoginViewPage(self.navigationController)
-//        }else{
+        if(appUserIdSave<=0){
+            LoginViewController.showLoginViewPage(self.navigationController)
+        }else{
             mineViewController.showMineInfoPage(self.navigationController)
-//        }
+        }
 
     }
 
