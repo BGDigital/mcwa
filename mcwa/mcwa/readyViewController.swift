@@ -12,7 +12,7 @@ class readyViewController: UIViewController, UICollectionViewDataSource {
 
     @IBOutlet weak var collectionTa: UICollectionView!
     
-    var countDownNum = 10
+    var countDownNum = 3
     var countDownTimer: NSTimer?
     var questions: Array<JSON>?
     var users: Array<JSON>?

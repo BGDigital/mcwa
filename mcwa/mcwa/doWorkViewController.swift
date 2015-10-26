@@ -287,8 +287,8 @@ class doWorkViewController: UIViewController {
             "allScore": totalSource,
             "correct": correct,
             "error": error ]
-        //manager.GET(URL_MC,
-        manager.GET("http://192.168.10.104/interface.do?",
+        manager.GET(URL_MC,
+//        manager.GET("http://192.168.10.104/interface.do?",
             parameters: dict,
             success: {
                 (operation, responseObject) -> Void in

@@ -152,47 +152,59 @@ class rankinglistController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 56
+        if appUserIdSave > 0 {
+            return 56
+        } else {
+            return 0
+        }
     }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if (self.user == nil) {return nil}
-        let headView = UIView(frame: CGRectMake(0, 0, tableView.bounds.size.width, 56))
-        headView.backgroundColor = UIColor(hexString: "#2C1B49")
-        //我的排名前面那个No.
-        let lb_no = UILabel(frame: CGRectMake(14, 8, 30, 17))
-        lb_no.textAlignment = .Center
-        lb_no.font = UIFont(name: lb_no.font.fontName, size: 13)
-        lb_no.textColor = UIColor.whiteColor()
-        lb_no.text = "No."
-        headView.addSubview(lb_no)
-        //我的排名
-        let lb_rankNo = UILabel(frame: CGRectMake(12, 25, 33, 24))
-        lb_rankNo.textAlignment = .Center
-        lb_rankNo.font = UIFont(name: lb_rankNo.font.fontName, size: 20)
-        lb_rankNo.textColor = UIColor.whiteColor()
-        lb_rankNo.text = self.user!["scoreRank"].stringValue
-        headView.addSubview(lb_rankNo)
-        //添加用户头像
-        let img_Avatar = UIImageView(frame: CGRectMake(56, 8, 40, 40))
-        let avater_Url = self.user!["headImg"].stringValue
-        print(avater_Url)
-        img_Avatar.sd_setImageWithURL(NSURL(string: avater_Url))
-        img_Avatar.layer.masksToBounds = true
-        img_Avatar.layer.cornerRadius = 20
-        headView.addSubview(img_Avatar)
-        //添加用户名称
-        let lb_userName = UILabel(frame: CGRectMake(104, 18, 186, 21))
-        lb_userName.textColor = UIColor.whiteColor()
-        lb_userName.text = "自己"//self.user!["nickName"].stringValue
-        headView.addSubview(lb_userName)
-        //添加用户分数
-        let lb_userSource = UILabel(frame: CGRectMake(tableView.bounds.size.width - 74, 18, 71, 21))
-        lb_userSource.textColor = UIColor.whiteColor()
-        lb_userSource.textAlignment = .Center
-        lb_userSource.text = self.user!["allScore"].stringValue+" 分"
-        headView.addSubview(lb_userSource)
-        return headView
+        if (self.user == nil)
+        {
+            return nil
+        } else {
+            if appUserIdSave > 0 {
+                let headView = UIView(frame: CGRectMake(0, 0, tableView.bounds.size.width, 56))
+                headView.backgroundColor = UIColor(hexString: "#2C1B49")
+                //我的排名前面那个No.
+                let lb_no = UILabel(frame: CGRectMake(14, 8, 30, 17))
+                lb_no.textAlignment = .Center
+                lb_no.font = UIFont(name: lb_no.font.fontName, size: 13)
+                lb_no.textColor = UIColor.whiteColor()
+                lb_no.text = "No."
+                headView.addSubview(lb_no)
+                //我的排名
+                let lb_rankNo = UILabel(frame: CGRectMake(12, 25, 33, 24))
+                lb_rankNo.textAlignment = .Center
+                lb_rankNo.font = UIFont(name: lb_rankNo.font.fontName, size: 20)
+                lb_rankNo.textColor = UIColor.whiteColor()
+                lb_rankNo.text = self.user!["scoreRank"].stringValue
+                headView.addSubview(lb_rankNo)
+                //添加用户头像
+                let img_Avatar = UIImageView(frame: CGRectMake(56, 8, 40, 40))
+                let avater_Url = self.user!["headImg"].stringValue
+                print(avater_Url)
+                img_Avatar.sd_setImageWithURL(NSURL(string: avater_Url))
+                img_Avatar.layer.masksToBounds = true
+                img_Avatar.layer.cornerRadius = 20
+                headView.addSubview(img_Avatar)
+                //添加用户名称
+                let lb_userName = UILabel(frame: CGRectMake(104, 18, 186, 21))
+                lb_userName.textColor = UIColor.whiteColor()
+                lb_userName.text = "自己"//self.user!["nickName"].stringValue
+                headView.addSubview(lb_userName)
+                //添加用户分数
+                let lb_userSource = UILabel(frame: CGRectMake(tableView.bounds.size.width - 74, 18, 71, 21))
+                lb_userSource.textColor = UIColor.whiteColor()
+                lb_userSource.textAlignment = .Center
+                lb_userSource.text = self.user!["allScore"].stringValue+" 分"
+                headView.addSubview(lb_userSource)
+                return headView
+            } else {
+                return nil
+            }
+        }
     }
 
     /*

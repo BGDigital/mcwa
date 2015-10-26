@@ -32,8 +32,12 @@ class mineViewController: UIViewController {
                 lb_answerCount.text = self.json["dataObject", "answerNum"].stringValue
                 lb_QuestionCount.text = self.json["dataObject", "uploadNum"].stringValue
                 lb_totalSource.text = self.json["dataObject", "allScore"].stringValue
-                let avgSource = (self.json["dataObject", "allScore"].intValue / self.json["dataObject", "answerNum"].intValue)
-                lb_avgSource.text = String(avgSource)
+                if self.json["dataObject", "answerNum"].intValue == 0 {
+                    lb_avgSource.text = self.json["dataObject", "allScore"].stringValue
+                } else {
+                    let avgSource = (self.json["dataObject", "allScore"].intValue / self.json["dataObject", "answerNum"].intValue)
+                    lb_avgSource.text = String(avgSource)
+                }
             }
         }
     }
