@@ -59,7 +59,7 @@ class doWorkViewController: UIViewController {
         iv_avatar.layer.borderColor = UIColor(hexString: "#493568")?.CGColor
         iv_avatar.layer.borderWidth = 1.5
         if let url = appUserAvatar {
-            iv_avatar.sd_setImageWithURL(NSURL(string: url))
+            iv_avatar.sd_setImageWithURL(NSURL(string: url), placeholderImage: UIImage(named: "avatar_default"))
         } else {
             print("默认头像")
         }

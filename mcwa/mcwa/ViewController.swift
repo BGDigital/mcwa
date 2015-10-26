@@ -54,8 +54,10 @@ class ViewController: UIViewController {
             if let url = appUserAvatar {
                 avatar = UIImage(data: NSData(contentsOfURL: NSURL(string: url)!)!)
             } else {
-                avatar = UIImage(named: "avatar_bg")
+                avatar = UIImage(named: "avatar_default")
             }
+        } else {
+            avatar = UIImage(named: "avatar_default")
         }
         let buttonBack: UIButton = UIButton(type: UIButtonType.Custom)
         buttonBack.frame = CGRectMake(5, 0, 30, 30)
