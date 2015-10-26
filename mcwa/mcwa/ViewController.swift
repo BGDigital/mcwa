@@ -29,22 +29,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        appUserIdSave = Defaults[DefaultsKeys.UserId]
-        appUserNickName = Defaults[DefaultsKeys.NickName]
-        appMusicStatus = Defaults[DefaultsKeys.MusicStatus]
-        appUserAvatar = Defaults[DefaultsKeys.UserAvater]
-        
-        if appUserIdSave > 0 {
-            if let url = appUserAvatar {
-                userAvatar.image = UIImage(named: url)
-            } else {
-                print("默认头像")
-            }
-        }
         
         // Do any additional setup after loading the view, typically from a nib.
-//        userAvatar.image = UIImage(named: "Avatar_default")
-        //self.navigationItem.title = "MC哇!"
         
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
@@ -58,9 +44,42 @@ class ViewController: UIViewController {
         self.view.layer.contents = UIImage(named: "main_bg")!.CGImage
         //方法二 说的是占内存
         //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "main_bg")!)
+//        if appUserIdSave > 0 {
+//                            if let url = appUserAvatar {
+//                                let a = UIImage(data: NSData(contentsOfURL: NSURL(string: url)!)!)
+//                                let scaleImg = originImage(a!, scaleToSize: CGSize(width: 10, height: 10))
+//                                userAvatar.setBackgroundImage(scaleImg, forState: .Normal, barMetrics: UIBarMetrics.Default)
+//
+//                            } else {
+//                                print("默认头像")
+//                            }
+//                        }
+        custom_leftbar()
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+    }
+    
+    func custom_leftbar() {
+        var avatar: UIImage?
+        if appUserIdSave > 0 {
+            if let url = appUserAvatar {
+                avatar = UIImage(data: NSData(contentsOfURL: NSURL(string: url)!)!)
+            } else {
+                avatar = UIImage(named: "avatar_bg")
+            }
+        }
+        let buttonBack: UIButton = UIButton(type: UIButtonType.Custom)
+        buttonBack.frame = CGRectMake(5, 0, 30, 30)
+        buttonBack.setImage(avatar, forState: UIControlState.Normal)
+        buttonBack.addTarget(self, action: "showLogin:", forControlEvents: UIControlEvents.TouchUpInside)
+        buttonBack.layer.masksToBounds = true
+        buttonBack.layer.cornerRadius = 15
+        buttonBack.layer.borderWidth = 1.5
+        buttonBack.layer.borderColor = UIColor(hexString: "#675580")?.CGColor
+        let leftBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: buttonBack)
+        self.navigationItem.setLeftBarButtonItem(leftBarButtonItem, animated: true)
 
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -90,14 +109,10 @@ class ViewController: UIViewController {
         }
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        self.navigationItem.title = ""
-    }
-    
     override func viewWillAppear(animated: Bool) {
         self.navigationItem.title = "MC哇!"
     }
-        
+    
     //颜色渐变
     func turquoiseColor() -> CAGradientLayer {
         
