@@ -54,8 +54,12 @@ class doWorkViewController: UIViewController {
         super.viewDidLoad()
         lb_addSource.hidden = true
         lb_Source.text = "0"
+        iv_avatar.layer.masksToBounds = true
+        iv_avatar.layer.cornerRadius = 18
+        iv_avatar.layer.borderColor = UIColor(hexString: "#493568")?.CGColor
+        iv_avatar.layer.borderWidth = 1.5
         if let url = appUserAvatar {
-            iv_avatar.image = UIImage(named: url)
+            iv_avatar.sd_setImageWithURL(NSURL(string: url))
         } else {
             print("默认头像")
         }
@@ -105,7 +109,7 @@ class doWorkViewController: UIViewController {
             let questionType = singleQuestion["questionType"].stringValue
             rightAnswer = singleQuestion["rightAnswer"].stringValue
             lb_Ques_Title.text = singleQuestion["title"].stringValue
-            questionSource = singleQuestion["score"].intValue
+//            questionSource = singleQuestion["score"].intValue
             questionId = singleQuestion["id"].intValue
             //是否显示图片
             if let icon = singleQuestion["icon"].string  {
@@ -192,16 +196,17 @@ class doWorkViewController: UIViewController {
                     
                     //做题结果写入字典
                     self.answerStatus[self.questionId] = 0
-                    
-                    self.currentQuestion++
-                    print(self.currentQuestion)
-                    if self.currentQuestion < self.questions?.count {
-                        self.refresh(self.currentQuestion)
-                    } else {
-                        print("做完了,自动!")
-                        print("做完,总计得分:\(self.totalSource)")
-                        self.showSourcePage()
-                    }
+                    NSTimer.after(1.5) {
+                        self.currentQuestion++
+                        print(self.currentQuestion)
+                        if self.currentQuestion < self.questions?.count {
+                            self.refresh(self.currentQuestion)
+                        } else {
+                            print("做完了,自动!")
+                            print("做完,总计得分:\(self.totalSource)")
+                            self.showSourcePage()
+                        }
+                    } 
                 }
             })
             self.countDownTimer?.start()
@@ -223,6 +228,10 @@ class doWorkViewController: UIViewController {
             //回答正确,加分
             self.answerStatus[self.questionId] = 1
             sender.backgroundColor = UIColor(hexString: "#5BB524")
+            let str = lb_time.text!
+            //剩余时间四舍五入
+            questionSource = lroundf(Float(str)!)
+            print("questionSource:\(questionSource)")
             self.totalSource  = self.totalSource + self.questionSource!
             
             self.lb_Source.text = "\(self.totalSource)"
@@ -270,14 +279,16 @@ class doWorkViewController: UIViewController {
                 error = String(qid)+","+error
             }
         }
+        print("correct:\(correct)")
+        print("error:\(error)")
         let dict = [
             "act":"report",
             "userId": appUserIdSave,
             "allScore": totalSource,
             "correct": correct,
             "error": error ]
-        manager.GET(URL_MC,
-        //manager.GET("http://192.168.10.104/interface.do?",
+        //manager.GET(URL_MC,
+        manager.GET("http://192.168.10.104/interface.do?",
             parameters: dict,
             success: {
                 (operation, responseObject) -> Void in

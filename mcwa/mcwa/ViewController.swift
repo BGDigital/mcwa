@@ -44,16 +44,6 @@ class ViewController: UIViewController {
         self.view.layer.contents = UIImage(named: "main_bg")!.CGImage
         //方法二 说的是占内存
         //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "main_bg")!)
-//        if appUserIdSave > 0 {
-//                            if let url = appUserAvatar {
-//                                let a = UIImage(data: NSData(contentsOfURL: NSURL(string: url)!)!)
-//                                let scaleImg = originImage(a!, scaleToSize: CGSize(width: 10, height: 10))
-//                                userAvatar.setBackgroundImage(scaleImg, forState: .Normal, barMetrics: UIBarMetrics.Default)
-//
-//                            } else {
-//                                print("默认头像")
-//                            }
-//                        }
         custom_leftbar()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
     }
