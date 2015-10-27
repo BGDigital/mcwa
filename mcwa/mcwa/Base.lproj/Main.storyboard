@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uUI-vl-8dE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uUI-vl-8dE">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -1016,6 +1016,9 @@
                                         <color key="backgroundColor" red="0.35686274509999999" green="0.70980392160000005" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="炫耀一下" image="source_share"/>
+                                        <connections>
+                                            <action selector="shareTo:" destination="0cd-h5-g53" eventType="touchUpInside" id="jcd-51-NgK"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
@@ -2381,6 +2384,9 @@
                                         <include reference="bTR-8d-JAr"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="shareTo:" destination="00o-sA-Ytt" eventType="touchUpInside" id="uk1-jm-4y0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>

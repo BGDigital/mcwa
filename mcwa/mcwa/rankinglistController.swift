@@ -258,5 +258,13 @@ class rankinglistController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func viewWillAppear(animated: Bool) {
+        MobClick.beginLogPageView("rankinglistController")
+    }
+    override func viewWillDisappear(animated: Bool) {
+        MobClick.endLogPageView("rankinglistController")
+        
+    }
 
 }

@@ -118,5 +118,13 @@ class readyViewController: UIViewController, UICollectionViewDataSource {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func viewWillAppear(animated: Bool) {
+        MobClick.beginLogPageView("readyViewController")
+    }
+    override func viewWillDisappear(animated: Bool) {
+        MobClick.endLogPageView("readyViewController")
+        
+    }
 
 }

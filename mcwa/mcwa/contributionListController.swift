@@ -206,5 +206,13 @@ class contributionListController: UITableViewController {
         }
     }
     
+    override func viewWillAppear(animated: Bool) {
+        MobClick.beginLogPageView("contributionListController")
+    }
+    override func viewWillDisappear(animated: Bool) {
+        MobClick.endLogPageView("contributionListController")
+        
+    }
+    
 
 }

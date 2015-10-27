@@ -84,4 +84,12 @@ class LoginViewController: UIViewController,UMSocialUIDelegate {
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        MobClick.beginLogPageView("LoginViewController")
+    }
+    override func viewWillDisappear(animated: Bool) {
+        MobClick.endLogPageView("LoginViewController")
+        
+    }
+    
 }
