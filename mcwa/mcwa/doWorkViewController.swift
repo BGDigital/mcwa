@@ -312,5 +312,13 @@ class doWorkViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func viewWillAppear(animated: Bool) {
+        MobClick.beginLogPageView("doWorkViewController")
+    }
+    override func viewWillDisappear(animated: Bool) {
+        MobClick.endLogPageView("doWorkViewController")
+        
+    }
 
 }

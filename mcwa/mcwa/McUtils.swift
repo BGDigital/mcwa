@@ -11,8 +11,8 @@ import Foundation
 let UMAppKey = "561bcfe1e0f55a0219005cab"
 let qq_AppId = "1104907496"
 let qq_AppKey = "DbdC0Qvfkj4yOLsG"
-let wx_AppId = "wx49ba2c7147d2368d"
-let wx_AppKey = "85aa75ddb9b37d47698f24417a373134"
+let wx_AppId = "wxc49b6a0e3c78364d"
+let wx_AppKey = "d4624c36b6795d1d99dcf0547af5443d"
 let share_url = "http://www.mckuai.com"
 
 extension DefaultsKeys {
