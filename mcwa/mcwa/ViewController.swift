@@ -103,7 +103,12 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         self.navigationItem.title = "MC哇!"
+        MobClick.beginLogPageView("viewController")
         self.navigationController?.navigationBarHidden = false
+    }
+    override func viewWillDisappear(animated: Bool) {
+        MobClick.endLogPageView("viewController")
+
     }
     
     //颜色渐变
