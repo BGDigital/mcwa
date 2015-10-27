@@ -103,6 +103,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         self.navigationItem.title = "MC哇!"
+        self.navigationController?.navigationBarHidden = false
     }
     
     //颜色渐变

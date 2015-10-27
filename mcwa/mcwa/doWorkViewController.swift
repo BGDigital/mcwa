@@ -63,6 +63,8 @@ class doWorkViewController: UIViewController {
         } else {
             print("默认头像")
         }
+        
+        self.navigationController?.navigationBarHidden = true
 
     }
     

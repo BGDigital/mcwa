@@ -51,6 +51,7 @@ class sourceViewController: UIViewController {
         
         
         showSourceInfo()
+        self.navigationController?.navigationBarHidden = true
         // Do any additional setup after loading the view.
     }
 
@@ -112,8 +113,7 @@ class sourceViewController: UIViewController {
     
     //这里想返回到主界面
     @IBAction func backToMain(sender: UIButton) {
-        //let main = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("mainViewController") as! ViewController
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
 
