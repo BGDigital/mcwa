@@ -99,6 +99,7 @@ class MCUtils {
         
         appUserIdSave = userId
         appUserNickName = nickName
+        appUserAvatar = userAvatar
 
     }
     

@@ -52,6 +52,10 @@ class readyViewController: UIViewController, UICollectionViewDataSource {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidDisappear(animated: Bool) {
+        self.countDownTimer?.invalidate()
+    }
+    
 //    func run() {
 //        self.countDownNum--
 //        self.lb_countDown.text = "\(self.countDownNum)"
