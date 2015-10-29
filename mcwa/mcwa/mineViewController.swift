@@ -21,11 +21,12 @@ class mineViewController: UIViewController,UMSocialUIDelegate {
     @IBOutlet weak var v_line_3: UIView!
     @IBOutlet weak var v_line_4: UIView!
     @IBOutlet weak var btn_music: UIBarButtonItem!
-    
+    var scoreRank:Int = 0
     var manager = AFHTTPRequestOperationManager()
     var json: JSON! {
         didSet {
             if "ok" == self.json["state"].stringValue {
+                scoreRank = self.json["dataObject","scoreRank"].intValue
                 let avatar_Url = self.json["dataObject", "headImg"].stringValue
                 iv_userAvatar.sd_setImageWithURL(NSURL(string: avatar_Url))
                 lb_nickName.text = self.json["dataObject", "nickName"].stringValue
@@ -119,7 +120,7 @@ class mineViewController: UIViewController,UMSocialUIDelegate {
         view.layer.renderInContext(context)
         let shareImg: UIImage! = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        ShareUtil.shareInitWithTextAndPicture(self, text: "我正在玩mc哇,这里有来自世界各地我的世界minecraft玩家,我已经是第55名了,谁敢来挑战我,敢show出你的排名吗?",image:shareImg,shareUrl:share_url,callDelegate:self)
+        ShareUtil.shareInitWithTextAndPicture(self, text: "我正在玩mc哇,这里有来自世界各地我的世界minecraft玩家,我已经是第"+String(scoreRank)+"名了,谁敢来挑战我,敢show出你的排名吗?",image:shareImg,shareUrl:share_url,callDelegate:self)
     }
     
     

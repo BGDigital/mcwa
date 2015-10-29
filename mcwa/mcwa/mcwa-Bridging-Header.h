@@ -17,3 +17,5 @@
 #import "MJRefresh.h"
 
 #import "MBProgressHUD.h"
+
+#import "WXApi.h"

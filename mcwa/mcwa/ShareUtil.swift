@@ -16,10 +16,10 @@ class ShareUtil {
         
         UMSocialConfig.setFinishToastIsHidden(true, position: UMSocialiToastPositionTop)
         
-        UMSocialData.defaultData().extConfig.qzoneData.title = "mc哇-我的世界全球排名测试小游戏"
-        UMSocialData.defaultData().extConfig.qqData.title = "mc哇-我的世界全球排名小游戏"
-        UMSocialData.defaultData().extConfig.wechatSessionData.title = "mc哇-我的世界全球排名小游戏"
-        UMSocialData.defaultData().extConfig.wechatTimelineData.title = "mc哇-我的世界全球排名测试小游戏"
+        UMSocialData.defaultData().extConfig.qzoneData.title = "MC哇-最好玩的我的世界百科知识问答游戏"
+        UMSocialData.defaultData().extConfig.qqData.title = "MC哇-最好玩的我的世界百科知识问答游戏"
+        UMSocialData.defaultData().extConfig.wechatSessionData.title = "MC哇-最好玩的我的世界百科知识问答游戏"
+        UMSocialData.defaultData().extConfig.wechatTimelineData.title = "MC哇-最好玩的我的世界百科知识问答游戏"
         
         UMSocialData.defaultData().extConfig.qzoneData.url = shareUrl;
         UMSocialData.defaultData().extConfig.qqData.url = shareUrl;

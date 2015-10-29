@@ -10,12 +10,17 @@ import Foundation
 import UIKit
 
 class LoginViewController: UIViewController,UMSocialUIDelegate {
+    @IBOutlet weak var loginBtn: UIButton!
     var manager = AFHTTPRequestOperationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "登录"
         self.view.layer.contents = UIImage(named: "login_bg")!.CGImage
         // Do any additional setup after loading the view.
+        if(!WXApi.isWXAppInstalled()){
+            self.loginBtn.hidden = true
+            self.navigationItem.title = ""
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -23,17 +28,17 @@ class LoginViewController: UIViewController,UMSocialUIDelegate {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func loginAction(sender: UIButton) {
-        let snsPlatform:UMSocialSnsPlatform = UMSocialSnsPlatformManager.getSocialPlatformWithName(UMShareToQQ)
+        let snsPlatform:UMSocialSnsPlatform = UMSocialSnsPlatformManager.getSocialPlatformWithName(UMShareToWechatSession)
         snsPlatform.loginClickHandler(self,UMSocialControllerService.defaultControllerService(),true,{(response:UMSocialResponseEntity!) ->Void in
             if(response.responseCode == UMSResponseCodeSuccess){
-                UMSocialDataService.defaultDataService().requestSnsInformation(UMShareToQQ, completion: {(res:UMSocialResponseEntity!) ->Void in
+                UMSocialDataService.defaultDataService().requestSnsInformation(UMShareToWechatSession, completion: {(res:UMSocialResponseEntity!) ->Void in
                     var data = res.data
                     let openId:String = data["openid"] as! String!
                     let nickName:String = data["screen_name"] as! String!
                     let headImg:String = data["profile_image_url"] as! String!
                     let accessToken:String = data["access_token"] as! String!
-                    let gender:String = data["gender"] as! String!
-                    
+                    let genderInt:Int = data["gender"] as! Int
+                    let gender:String = genderInt==1 ? "男":"女"
                     let params = [
                         "accessToken": accessToken,
                         "openId": openId,
