@@ -16,10 +16,10 @@ let wx_AppKey = "d4624c36b6795d1d99dcf0547af5443d"
 let share_url = "http://www.mckuai.com"
 
 //用户登录,注销Delegate
-protocol LoginDelegate {
+@objc protocol LoginDelegate {
 //    var isLogined: Int? {get set}
-    func loginSuccessfull()
-    func loginout()
+    optional func loginSuccessfull()
+    optional func loginout()
 }
 
 
@@ -40,7 +40,7 @@ var appUserAvatar: String?
 
 
 
-let URL_MC = "http://221.237.152.39:8081/interface.do?"
+let URL_MC = "http://wa.mckuai.com/interface.do?"
 
 //上传头像/图片
 let upload_url = URL_MC+"act=uploadImg"
@@ -51,6 +51,7 @@ var player_bg = Player()
 var player_click = Player()
 let right_click = NSBundle.mainBundle().pathForResource("right", ofType: "mp3")!
 let error_click = NSBundle.mainBundle().pathForResource("error", ofType: "mp3")!
+let music_bg = NSBundle.mainBundle().pathForResource("background", ofType: "mp3")!
 
 //PageInfo 用于下拉刷新
 class PageInfo {

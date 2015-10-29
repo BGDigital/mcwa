@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, LoginDelegate, PlayerDelegate {
+class ViewController: UIViewController, PlayerDelegate {
 
     @IBOutlet weak var userAvatar: UIBarButtonItem!
     let manager = AFHTTPRequestOperationManager()
@@ -26,14 +26,17 @@ class ViewController: UIViewController, LoginDelegate, PlayerDelegate {
     }
     var questions: Array<JSON>?
     var users: Array<JSON>?
+    var buttonBack: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //背景音乐
         player_bg.delegate = self
-        let path = NSBundle.mainBundle().pathForResource("background", ofType: "mp3")!
         player_bg.forever = true
-        player_bg.playFileAtPath(path)
+        print("appMusicStatus:\(appMusicStatus)")
+        if appMusicStatus == 1 {
+            player_bg.playFileAtPath(music_bg)
+        }
         
         // Do any additional setup after loading the view, typically from a nib.
         
@@ -58,16 +61,6 @@ class ViewController: UIViewController, LoginDelegate, PlayerDelegate {
     }
 
     
-    func loginSuccessfull() {
-        print("loginSuccessfull")
-        custom_leftbar()
-    }
-    
-    func loginout() {
-        print("loginout")
-        custom_leftbar()
-    }
-    
     func custom_leftbar() {
         var avatar: UIImage?
         if appUserLogined {
@@ -79,7 +72,7 @@ class ViewController: UIViewController, LoginDelegate, PlayerDelegate {
         } else {
             avatar = UIImage(named: "avatar_default")
         }
-        let buttonBack: UIButton = UIButton(type: UIButtonType.Custom)
+        buttonBack = UIButton(type: UIButtonType.Custom)
         buttonBack.frame = CGRectMake(5, 0, 30, 30)
         buttonBack.setImage(avatar, forState: UIControlState.Normal)
         buttonBack.addTarget(self, action: "showLogin:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -98,9 +91,9 @@ class ViewController: UIViewController, LoginDelegate, PlayerDelegate {
     }
     
     @IBAction func beginWa(sender: UIButton) {
-        manager.GET(
-            "http://221.237.152.39:8081/interface.do?act=question",
-            parameters: nil,
+        let dict = ["act":"question"]
+        manager.GET(URL_MC,
+            parameters: dict,
             success: {
                 (operation, responseObject) -> Void in
                 self.json = JSON(responseObject)
@@ -126,8 +119,17 @@ class ViewController: UIViewController, LoginDelegate, PlayerDelegate {
         MobClick.beginLogPageView("viewController")
         self.navigationController?.navigationBarHidden = false
     }
+    
     override func viewWillDisappear(animated: Bool) {
         MobClick.endLogPageView("viewController")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if appUserLogined {
+            buttonBack.setImage(UIImage(data: NSData(contentsOfURL: NSURL(string: appUserAvatar!)!)!), forState: .Normal)
+        } else {
+            buttonBack.setImage(UIImage(named: "avatar_default"), forState: .Normal)
+        }
 
     }
     
@@ -154,12 +156,7 @@ class ViewController: UIViewController, LoginDelegate, PlayerDelegate {
     
     
     @IBAction func showLogin(sender: UIBarButtonItem) {
-        if(appUserIdSave<=0){
-            LoginViewController.showLoginViewPage(self.navigationController, delegate: self)
-        }else{
-            mineViewController.showMineInfoPage(self.navigationController, delegate: self)
-        }
-
+        mineViewController.showMineInfoPage(self.navigationController)
     }
 
 

@@ -60,7 +60,7 @@ class LoginViewController: UIViewController,UMSocialUIDelegate {
                                     MCUtils.AnalysisUserInfo(json["dataObject"])
                                     self.navigationController?.popViewControllerAnimated(true)
                                     MCUtils.showCustomHUD("登录成功", aType: .Success)
-                                    self.Delegate?.loginSuccessfull()
+                                    self.Delegate?.loginSuccessfull!()
                                 }else{
                                     MCUtils.showCustomHUD("登录失败,请稍候再试", aType: .Error)
                                 }

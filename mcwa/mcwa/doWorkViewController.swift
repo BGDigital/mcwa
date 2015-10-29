@@ -58,7 +58,11 @@ class doWorkViewController: UIViewController, PlayerDelegate {
         iv_avatar.layer.cornerRadius = 18
         iv_avatar.layer.borderColor = UIColor(hexString: "#493568")?.CGColor
         iv_avatar.layer.borderWidth = 1.5
-        iv_avatar.sd_setImageWithURL(NSURL(string: appUserAvatar!), placeholderImage: UIImage(named: "avatar_default"))
+        if appUserLogined {
+            iv_avatar.sd_setImageWithURL(NSURL(string: appUserAvatar!), placeholderImage: UIImage(named: "avatar_default"))
+        } else {
+            iv_avatar.image = UIImage(named: "avatar_default")
+        }
         
         player_click.delegate = self
         player_click.forever = false
@@ -81,6 +85,7 @@ class doWorkViewController: UIViewController, PlayerDelegate {
         if segue.identifier == "showSource" {
             let receive = segue.destinationViewController as! sourceViewController
             receive.sourceResult = self.sourceResult
+            receive.totalSource = self.totalSource
         }
     }
     

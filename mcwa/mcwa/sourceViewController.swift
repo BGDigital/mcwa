@@ -28,7 +28,7 @@ class sourceViewController: UIViewController,UMSocialUIDelegate {
     @IBOutlet weak var btn_doAgain: UIButton!
     @IBOutlet weak var btn_share: UIButton!
     var sourceResult: Array<JSON>?
-    
+    var totalSource: Int?
     var scoreRank:String = ""
     
     override func viewDidLoad() {
@@ -50,8 +50,19 @@ class sourceViewController: UIViewController,UMSocialUIDelegate {
         v_center.layer.borderWidth = 0.5
         v_center.layer.borderColor = UIColor(hexString: "#645093")!.CGColor
         
-        
-        showSourceInfo()
+        if appUserLogined {
+            showSourceInfo()
+        } else {
+            v_top.hidden = true
+            v_bottom.hidden = true
+            
+            lb_center_no.text = "0"
+            iv_center_avatar.image = UIImage(named: "avatar_default")
+            iv_center_avatar.layer.masksToBounds = true
+            iv_center_avatar.layer.cornerRadius = 37.5//iv_center_avatar.bounds.size.height / 2
+            lb_center_source.text = String(self.totalSource!)
+            
+        }
         self.navigationController?.navigationBarHidden = true
         // Do any additional setup after loading the view.
     }
