@@ -129,7 +129,7 @@ class rankinglistController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if (!self.datasource.isEmpty) {
-//            self.tableView.backgroundView = nil
+            self.tableView.backgroundView = nil
             return self.datasource.count
         } else {
             MCUtils.showEmptyView(self.tableView, aImg: UIImage(named: "avatar_default")!, aText: "什么也没有,下拉刷新试试?")

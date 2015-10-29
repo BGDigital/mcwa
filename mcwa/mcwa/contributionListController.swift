@@ -62,17 +62,8 @@ class contributionListController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        if isFirstLoad {
-            loadDataWithoutMJRefresh()
-        }
-    }
-    
-    func loadDataWithoutMJRefresh() {
-        //        hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        //        hud?.labelText = MCUtils.TEXT_LOADING
         loadNewData()
     }
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -84,6 +75,7 @@ class contributionListController: UITableViewController {
     func loadNewData() {
         //开始刷新
         //http://221.237.152.39:8081/interface.do?act=uploadList&userId=2&page=1
+        if appUserIdSave == 0 {return}
         let dict = ["act":"uploadList", "userId": appUserIdSave, "page": 1]
         manager.GET(URL_MC,
             parameters: dict,
@@ -131,7 +123,11 @@ class contributionListController: UITableViewController {
             //            self.tableView.backgroundView = nil
             return self.datasource.count
         } else {
-            MCUtils.showEmptyView(self.tableView, aImg: UIImage(named: "avatar_default")!, aText: "什么也没有,下拉刷新试试?")
+            if appUserLogined {
+                MCUtils.showEmptyView(self.tableView, aImg: UIImage(named: "avatar_default")!, aText: "什么也没有,下拉刷新试试?")
+            } else {
+                MCUtils.showEmptyView(self.tableView, aImg: UIImage(named: "avatar_default")!, aText: "你还没有登录,请先登录")
+            }
             return 0
         }
     }
