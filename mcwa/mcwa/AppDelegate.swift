@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //友盟分享
         UMSocialData.setAppKey(UMAppKey)
+        UMSocialConfig.hiddenNotInstallPlatforms(shareToNames)
         UMSocialQQHandler.setQQWithAppId(qq_AppId, appKey: qq_AppKey, url: share_url)
         UMSocialWechatHandler.setWXAppId(wx_AppId, appSecret: wx_AppKey, url: share_url)
 //        UMSocialConfig.hiddenNotInstallPlatforms(shareToNames)

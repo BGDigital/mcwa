@@ -29,6 +29,7 @@ class sourceViewController: UIViewController,UMSocialUIDelegate {
     @IBOutlet weak var btn_share: UIButton!
     var sourceResult: Array<JSON>?
     
+    var scoreRank:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,6 +89,7 @@ class sourceViewController: UIViewController,UMSocialUIDelegate {
                 v_center.hidden = true
             } else {
                 v_center.hidden = false
+                self.scoreRank = me["scoreRank"].stringValue
                 lb_center_no.text = me["scoreRank"].stringValue
                 iv_center_avatar.sd_setImageWithURL(NSURL(string: me["headImg"].stringValue))
                 iv_center_avatar.layer.masksToBounds = true
@@ -124,7 +126,7 @@ class sourceViewController: UIViewController,UMSocialUIDelegate {
         view.layer.renderInContext(context)
         let shareImg: UIImage! = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        ShareUtil.shareInitWithTextAndPicture(self, text: "我正在玩mc哇,这里有来自世界各地我的世界minecraft玩家,我已经是第55名了,谁敢来挑战我,敢show出你的排名吗?",image:shareImg,shareUrl:share_url,callDelegate:self)
+        ShareUtil.shareInitWithTextAndPicture(self, text: "我正在玩mc哇,这里有来自世界各地我的世界minecraft玩家,我已经是第"+self.scoreRank+"名了,谁敢来挑战我,敢show出你的排名吗?",image:shareImg,shareUrl:share_url,callDelegate:self)
     }
     
     func didFinishGetUMSocialDataInViewController(response: UMSocialResponseEntity!) {
