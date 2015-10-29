@@ -117,6 +117,40 @@ class MCUtils {
     }
     
 
+    /**
+     UITableView 空数据时显示的类型
+     
+     :param: tv 要显示内容的TableView
+     errorType: 1,空数据时; 2,加载失败
+     */
+    class func showEmptyView(tv: UITableView, aImg: UIImage, aText: String) {
+        let v = UIView(frame: tv.frame)
+        let img = UIImageView(image: aImg)
+        let btnX = (v.bounds.size.width - img.bounds.size.width) / 2
+        var btnY: CGFloat!
+        if let headHeight = tv.tableHeaderView?.bounds.size.height {
+            if tv.tableHeaderView?.hidden == false {
+                btnY = (v.bounds.size.height + headHeight - img.bounds.size.height) / 2
+            } else {
+                btnY = (v.bounds.size.height - img.bounds.size.height) / 2
+            }
+        } else {
+            btnY = (v.bounds.size.height - img.bounds.size.height) / 2
+        }
+        img.frame = CGRectMake(btnX, btnY, img.bounds.size.width, img.bounds.size.height)
+        v.addSubview(img)
+        
+        let lb = UILabel(frame: CGRectMake(0, btnY+img.frame.size.height+10, v.bounds.size.width, 20))
+        lb.text = aText
+        lb.numberOfLines = 2;
+        lb.textAlignment = .Center;
+        lb.textColor = UIColor.lightGrayColor()
+        v.addSubview(lb)
+        
+        tv.backgroundView = v
+        tv.separatorStyle = UITableViewCellSeparatorStyle.None
+    }
+
 }
 
 /**

@@ -2440,19 +2440,20 @@
                     </view>
                     <navigationItem key="navigationItem" id="tZw-b0-ZmD">
                         <rightBarButtonItems>
+                            <barButtonItem image="loginout" id="co9-nz-h3q">
+                                <connections>
+                                    <action selector="onLoginout:" destination="00o-sA-Ytt" id="APt-AL-8q1"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem image="music_on" id="Uwp-Ef-Jgj">
                                 <connections>
                                     <action selector="TurnOnOff:" destination="00o-sA-Ytt" id="gzW-Wf-C69"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="注销" id="co9-nz-h3q">
-                                <connections>
-                                    <action selector="onLoginout:" destination="00o-sA-Ytt" id="APt-AL-8q1"/>
-                                </connections>
-                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="btn_loginout" destination="co9-nz-h3q" id="7Bh-fP-Jmu"/>
                         <outlet property="btn_music" destination="Uwp-Ef-Jgj" id="oNr-sS-Xox"/>
                         <outlet property="iv_userAvatar" destination="FU4-j2-FK5" id="cnB-61-puf"/>
                         <outlet property="lb_QuestionCount" destination="lB0-g2-gAz" id="ZJq-HM-873"/>
@@ -3378,6 +3379,7 @@
         <image name="contribution" width="26" height="26"/>
         <image name="img_avatar" width="36" height="36"/>
         <image name="img_pic" width="26" height="26"/>
+        <image name="loginout" width="26" height="26"/>
         <image name="mcwa" width="237" height="237"/>
         <image name="music_on" width="26" height="26"/>
         <image name="ranking" width="26" height="26"/>

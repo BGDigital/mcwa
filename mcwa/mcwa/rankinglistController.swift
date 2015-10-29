@@ -132,7 +132,7 @@ class rankinglistController: UITableViewController {
 //            self.tableView.backgroundView = nil
             return self.datasource.count
         } else {
-//            MCUtils.showEmptyView(self.tableView, aImg: Load_Empty!, aText: "什么也没有,下拉刷新试试?")
+            MCUtils.showEmptyView(self.tableView, aImg: UIImage(named: "avatar_default")!, aText: "什么也没有,下拉刷新试试?")
             return 0
         }
     }

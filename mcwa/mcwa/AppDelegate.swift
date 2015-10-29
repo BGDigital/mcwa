@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        appUserLogined = Defaults[DefaultsKeys.logined]
         appUserIdSave = Defaults[DefaultsKeys.UserId]
         appUserNickName = Defaults[DefaultsKeys.NickName]
         appMusicStatus = Defaults[DefaultsKeys.MusicStatus]

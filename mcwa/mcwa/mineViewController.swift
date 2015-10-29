@@ -21,6 +21,7 @@ class mineViewController: UIViewController,UMSocialUIDelegate {
     @IBOutlet weak var v_line_3: UIView!
     @IBOutlet weak var v_line_4: UIView!
     @IBOutlet weak var btn_music: UIBarButtonItem!
+    @IBOutlet weak var btn_loginout: UIBarButtonItem!
     
     var Delegate: LoginDelegate?
     var scoreRank:Int = 0
@@ -79,7 +80,6 @@ class mineViewController: UIViewController,UMSocialUIDelegate {
             success: { (operation: AFHTTPRequestOperation!,
                 responseObject: AnyObject!) in
                 self.json = JSON(responseObject)
-                //                self.hud?.hide(true)
             },
             failure: { (operation: AFHTTPRequestOperation!,
                 error: NSError!) in
