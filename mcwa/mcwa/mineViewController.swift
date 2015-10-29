@@ -44,7 +44,7 @@ class mineViewController: UIViewController,UMSocialUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.iv_userAvatar.layer.masksToBounds = true
-        self.iv_userAvatar.layer.cornerRadius = self.iv_userAvatar.bounds.height / 2
+        self.iv_userAvatar.layer.cornerRadius = (self.view.bounds.size.width * 0.333) / 2
         self.iv_userAvatar.layer.borderColor = UIColor.whiteColor().CGColor
         self.iv_userAvatar.layer.borderWidth = 2
         v_line_1.backgroundColor = UIColor(hexString: "#3B2C56")
