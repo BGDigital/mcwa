@@ -90,13 +90,16 @@ class mineViewController: UIViewController,UMSocialUIDelegate {
     //开关背景音乐,改变状态
     @IBAction func TurnOnOff(sender: UIBarButtonItem) {
         print("appMusicStatus\(appMusicStatus)")
+        let p = player_bg.player
         if appMusicStatus == 1 {
+            p.pause()
             //打开状态,点击关闭
             appMusicStatus = 0
             Defaults[.MusicStatus] = 0
             sender.image = UIImage(assetIdentifier: .Music_Off)
         } else {
             //关闭状态,点击打开
+            p.play()
             appMusicStatus = 1
             Defaults[.MusicStatus] = 1
             sender.image = UIImage(assetIdentifier: .Music_On)

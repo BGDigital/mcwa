@@ -91,7 +91,7 @@ class sourceViewController: UIViewController,UMSocialUIDelegate {
                 v_center.hidden = false
                 self.scoreRank = me["scoreRank"].stringValue
                 lb_center_no.text = me["scoreRank"].stringValue
-                iv_center_avatar.sd_setImageWithURL(NSURL(string: me["headImg"].stringValue))
+                iv_center_avatar.sd_setImageWithURL(NSURL(string: me["headImg"].stringValue), placeholderImage: UIImage(named: "avatar_default"))
                 iv_center_avatar.layer.masksToBounds = true
                 iv_center_avatar.layer.cornerRadius = 37.5//iv_center_avatar.bounds.size.height / 2
                 lb_center_source.text = me["allScore"].stringValue

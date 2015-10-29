@@ -47,6 +47,11 @@ let upload_url = URL_MC+"act=uploadImg"
 let addTalk_url = URL_MC+"act=uploadQuestion"
 let qqlogin_url = URL_MC+"act=login"
 
+var player_bg = Player()
+var player_click = Player()
+let right_click = NSBundle.mainBundle().pathForResource("right", ofType: "mp3")!
+let error_click = NSBundle.mainBundle().pathForResource("error", ofType: "mp3")!
+
 //PageInfo 用于下拉刷新
 class PageInfo {
     var currentPage: Int = 0

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class doWorkViewController: UIViewController {
+class doWorkViewController: UIViewController, PlayerDelegate {
 
     var countDownTimer: NSTimer?
     var countDownNum: Float = 100      //到计时时间 10秒
@@ -58,11 +58,10 @@ class doWorkViewController: UIViewController {
         iv_avatar.layer.cornerRadius = 18
         iv_avatar.layer.borderColor = UIColor(hexString: "#493568")?.CGColor
         iv_avatar.layer.borderWidth = 1.5
-        if let url = appUserAvatar {
-            iv_avatar.sd_setImageWithURL(NSURL(string: url), placeholderImage: UIImage(named: "avatar_default"))
-        } else {
-            print("默认头像")
-        }
+        iv_avatar.sd_setImageWithURL(NSURL(string: appUserAvatar!), placeholderImage: UIImage(named: "avatar_default"))
+        
+        player_click.delegate = self
+        player_click.forever = false
         
         self.navigationController?.navigationBarHidden = true
 
@@ -227,6 +226,7 @@ class doWorkViewController: UIViewController {
         
         //判断对错,颜色区分
         if (sender.tag == 1) {
+            player_click.playFileAtPath(right_click)
             //回答正确,加分
             self.answerStatus[self.questionId] = 1
             sender.backgroundColor = UIColor(hexString: "#5BB524")
@@ -241,6 +241,7 @@ class doWorkViewController: UIViewController {
             self.lb_addSource.hidden = false
             
         } else {
+            player_click.playFileAtPath(error_click)
             self.answerStatus[self.questionId] = 0
             //回答错误,不加分
             sender.backgroundColor = UIColor.redColor()
@@ -314,6 +315,10 @@ class doWorkViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func soundFinished(sender: AnyObject) {
+        print("play finished!")
+    }
     
     override func viewWillAppear(animated: Bool) {
         MobClick.beginLogPageView("doWorkViewController")

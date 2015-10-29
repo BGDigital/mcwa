@@ -8,10 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, LoginDelegate {
+class ViewController: UIViewController, LoginDelegate, PlayerDelegate {
 
     @IBOutlet weak var userAvatar: UIBarButtonItem!
-    
     let manager = AFHTTPRequestOperationManager()
     var json: JSON! {
         didSet {
@@ -30,6 +29,12 @@ class ViewController: UIViewController, LoginDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //背景音乐
+        player_bg.delegate = self
+        let path = NSBundle.mainBundle().pathForResource("background", ofType: "mp3")!
+        player_bg.forever = true
+        player_bg.playFileAtPath(path)
+        
         // Do any additional setup after loading the view, typically from a nib.
         
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
@@ -47,6 +52,11 @@ class ViewController: UIViewController, LoginDelegate {
         custom_leftbar()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
     }
+    
+    func soundFinished(sender: AnyObject) { // delegate message from Player
+        print("play finished")
+    }
+
     
     func loginSuccessfull() {
         print("loginSuccessfull")
