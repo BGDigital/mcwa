@@ -15,7 +15,16 @@ let wx_AppId = "wxc49b6a0e3c78364d"
 let wx_AppKey = "d4624c36b6795d1d99dcf0547af5443d"
 let share_url = "http://www.mckuai.com"
 
+//用户登录,注销Delegate
+protocol LoginDelegate {
+//    var isLogined: Int? {get set}
+    func loginSuccessfull()
+    func loginout()
+}
+
+
 extension DefaultsKeys {
+    static let logined = DefaultsKey<Bool>("UserLogined")
     static let UserAvater = DefaultsKey<String?>("UserAvatar")
     static let NickName = DefaultsKey<String?>("UserNickName")
     static let UserId = DefaultsKey<Int>("UserLoginId")
@@ -24,6 +33,7 @@ extension DefaultsKeys {
 
 //保存的用户ID
 var appUserIdSave: Int = 0
+var appUserLogined: Bool = false
 var appUserNickName: String?
 var appMusicStatus: Int = 1
 var appUserAvatar: String?
@@ -60,7 +70,7 @@ class PageInfo {
 }
 
 class MCUtils {
-
+    
     /**
     显示HUD提示框
     
@@ -96,10 +106,13 @@ class MCUtils {
         Defaults[DefaultsKeys.UserId] = userId
         Defaults[DefaultsKeys.NickName] = nickName
         Defaults[DefaultsKeys.UserAvater] = userAvatar
+        Defaults[DefaultsKeys.logined] = true
+        
         
         appUserIdSave = userId
         appUserNickName = nickName
         appUserAvatar = userAvatar
+        appUserLogined = true
 
     }
     

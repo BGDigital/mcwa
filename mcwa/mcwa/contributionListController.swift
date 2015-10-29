@@ -200,7 +200,7 @@ class contributionListController: UITableViewController {
     */
     @IBAction func uploadQuestionAction(sender: UIBarButtonItem) {
         if(appUserIdSave<=0){
-            LoginViewController.showLoginViewPage(self.navigationController)
+            LoginViewController.showLoginViewPage(self.navigationController, delegate: nil)
         }else{
             addQuestionController.showAddQuestionPage(self.navigationController)
         }

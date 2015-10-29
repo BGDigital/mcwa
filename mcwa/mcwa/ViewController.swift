@@ -8,9 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, LoginDelegate {
 
     @IBOutlet weak var userAvatar: UIBarButtonItem!
+    
     let manager = AFHTTPRequestOperationManager()
     var json: JSON! {
         didSet {
@@ -29,7 +30,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view, typically from a nib.
         
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
@@ -48,9 +48,19 @@ class ViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
     }
     
+    func loginSuccessfull() {
+        print("loginSuccessfull")
+        custom_leftbar()
+    }
+    
+    func loginout() {
+        print("loginout")
+        custom_leftbar()
+    }
+    
     func custom_leftbar() {
         var avatar: UIImage?
-        if appUserIdSave > 0 {
+        if appUserLogined {
             if let url = appUserAvatar {
                 avatar = UIImage(data: NSData(contentsOfURL: NSURL(string: url)!)!)
             } else {
@@ -135,13 +145,12 @@ class ViewController: UIViewController {
     
     @IBAction func showLogin(sender: UIBarButtonItem) {
         if(appUserIdSave<=0){
-            LoginViewController.showLoginViewPage(self.navigationController)
+            LoginViewController.showLoginViewPage(self.navigationController, delegate: self)
         }else{
-            mineViewController.showMineInfoPage(self.navigationController)
+            mineViewController.showMineInfoPage(self.navigationController, delegate: self)
         }
 
     }
-
 
 
 }

@@ -21,6 +21,8 @@ class mineViewController: UIViewController,UMSocialUIDelegate {
     @IBOutlet weak var v_line_3: UIView!
     @IBOutlet weak var v_line_4: UIView!
     @IBOutlet weak var btn_music: UIBarButtonItem!
+    
+    var Delegate: LoginDelegate?
     var scoreRank:Int = 0
     var manager = AFHTTPRequestOperationManager()
     var json: JSON! {
@@ -102,8 +104,9 @@ class mineViewController: UIViewController,UMSocialUIDelegate {
     }
     
 
-    class func showMineInfoPage(fromNavigation:UINavigationController?){
+    class func showMineInfoPage(fromNavigation:UINavigationController?, delegate: LoginDelegate?){
         let mine = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("mineViewController") as! mineViewController
+        mine.Delegate = delegate
         if (fromNavigation != nil) {
             fromNavigation?.pushViewController(mine, animated: true)
         } else {
@@ -131,6 +134,21 @@ class mineViewController: UIViewController,UMSocialUIDelegate {
         }
     }
     
+    @IBAction func onLoginout(sender: UIBarButtonItem) {
+        //注销登录
+        appUserIdSave = 0
+        appUserAvatar = ""
+        appUserNickName = ""
+        appUserLogined = false
+        
+        Defaults[DefaultsKeys.UserId] = 0
+        Defaults[DefaultsKeys.NickName] = ""
+        Defaults[DefaultsKeys.UserAvater] = ""
+        Defaults[DefaultsKeys.logined] = false
+        
+        Delegate?.loginout()
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 
     /*
     // MARK: - Navigation

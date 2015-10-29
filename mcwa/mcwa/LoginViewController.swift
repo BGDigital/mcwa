@@ -11,6 +11,8 @@ import UIKit
 
 class LoginViewController: UIViewController,UMSocialUIDelegate {
     @IBOutlet weak var loginBtn: UIButton!
+    
+    var Delegate: LoginDelegate?
     var manager = AFHTTPRequestOperationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +60,7 @@ class LoginViewController: UIViewController,UMSocialUIDelegate {
                                     MCUtils.AnalysisUserInfo(json["dataObject"])
                                     self.navigationController?.popViewControllerAnimated(true)
                                     MCUtils.showCustomHUD("登录成功", aType: .Success)
+                                    self.Delegate?.loginSuccessfull()
                                 }else{
                                     MCUtils.showCustomHUD("登录失败,请稍候再试", aType: .Error)
                                 }
@@ -79,8 +82,9 @@ class LoginViewController: UIViewController,UMSocialUIDelegate {
 
     }
     
-    class func showLoginViewPage(fromNavigation:UINavigationController?){
+    class func showLoginViewPage(fromNavigation:UINavigationController?, delegate: LoginDelegate?){
         let loginView = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("loginViewController") as! LoginViewController
+        loginView.Delegate = delegate
         if (fromNavigation != nil) {
             fromNavigation?.pushViewController(loginView, animated: true)
         } else {

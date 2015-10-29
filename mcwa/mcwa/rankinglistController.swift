@@ -152,7 +152,7 @@ class rankinglistController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if appUserIdSave > 0 {
+        if appUserLogined {
             return 56
         } else {
             return 0
@@ -171,7 +171,7 @@ class rankinglistController: UITableViewController {
         {
             return nil
         } else {
-            if appUserIdSave > 0 {
+            if appUserLogined {
                 let headView = UIView(frame: CGRectMake(0, 0, tableView.bounds.size.width, 56))
                 headView.backgroundColor = UIColor(hexString: "#2C1B49")
                 //我的排名前面那个No.
