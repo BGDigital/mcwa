@@ -132,16 +132,7 @@ class MCUtils {
         let v = UIView(frame: tv.frame)
         let img = UIImageView(image: aImg)
         let btnX = (v.bounds.size.width - img.bounds.size.width) / 2
-        var btnY: CGFloat!
-        if let headHeight = tv.tableHeaderView?.bounds.size.height {
-            if tv.tableHeaderView?.hidden == false {
-                btnY = (v.bounds.size.height + headHeight - img.bounds.size.height) / 2
-            } else {
-                btnY = (v.bounds.size.height - img.bounds.size.height) / 2
-            }
-        } else {
-            btnY = (v.bounds.size.height - img.bounds.size.height) / 2
-        }
+        let btnY = (v.bounds.size.height - img.bounds.size.height - 70) / 2
         img.frame = CGRectMake(btnX, btnY, img.bounds.size.width, img.bounds.size.height)
         v.addSubview(img)
         
@@ -149,7 +140,7 @@ class MCUtils {
         lb.text = aText
         lb.numberOfLines = 2;
         lb.textAlignment = .Center;
-        lb.textColor = UIColor.lightGrayColor()
+        lb.textColor = UIColor(hexString: "#9494CC")
         v.addSubview(lb)
         
         tv.backgroundView = v

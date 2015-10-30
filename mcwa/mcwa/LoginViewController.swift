@@ -29,6 +29,29 @@ class LoginViewController: UIViewController,UMSocialUIDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func loginGuest(sender: UIButton) {
+        let dict = ["act":"tempLogin"]
+        manager.GET(URL_MC,
+            parameters: dict,
+            success: {
+                (operation, responseObject) -> Void in
+                var json = JSON(responseObject)
+                if "ok" == json["state"].stringValue {
+                    
+                    MCUtils.AnalysisUserInfo(json["dataObject"])
+                    self.navigationController?.popViewControllerAnimated(true)
+                    MCUtils.showCustomHUD("登录成功", aType: .Success)
+                    self.Delegate?.loginSuccessfull!()
+                }else{
+                    MCUtils.showCustomHUD("登录失败,请稍候再试", aType: .Error)
+                }
+            }) { (operation, error) -> Void in
+                print(error)
+        }
+
+    }
+    
     @IBAction func loginAction(sender: UIButton) {
         let snsPlatform:UMSocialSnsPlatform = UMSocialSnsPlatformManager.getSocialPlatformWithName(UMShareToWechatSession)
         snsPlatform.loginClickHandler(self,UMSocialControllerService.defaultControllerService(),true,{(response:UMSocialResponseEntity!) ->Void in

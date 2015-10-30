@@ -37,9 +37,9 @@
 		0B806ABF1BD76AF5006B280C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B806ABE1BD76AF5006B280C /* LoginViewController.swift */; };
 		0B806AC11BD76F7F006B280C /* SwiftyUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B806AC01BD76F7F006B280C /* SwiftyUserDefaults.swift */; };
 		E6597C701BE1FE6D00EE1B4D /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6597C6F1BE1FE6D00EE1B4D /* Player.swift */; };
-		E6597C741BE1FEBD00EE1B4D /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6597C721BE1FEBD00EE1B4D /* background.mp3 */; };
-		E6597C751BE1FEBD00EE1B4D /* right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6597C731BE1FEBD00EE1B4D /* right.mp3 */; };
 		E6597C771BE1FEE800EE1B4D /* error.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6597C761BE1FEE800EE1B4D /* error.mp3 */; };
+		E6597C7F1BE37B3100EE1B4D /* right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6597C7E1BE37B3100EE1B4D /* right.mp3 */; };
+		E6597C811BE37BF500EE1B4D /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6597C801BE37BF500EE1B4D /* background.mp3 */; };
 		E67E03E51BC6C46D002058DF /* contributionListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67E03E41BC6C46D002058DF /* contributionListController.swift */; };
 		E68962981BC613A300548875 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68962971BC613A300548875 /* AppDelegate.swift */; };
 		E689629A1BC613A300548875 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68962991BC613A300548875 /* ViewController.swift */; };
@@ -132,9 +132,9 @@
 		841A6C177989C191E2481B5C /* libPods-mcwa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mcwa.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0FCB9F095E671DDC8FF847C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E6597C6F1BE1FE6D00EE1B4D /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		E6597C721BE1FEBD00EE1B4D /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background.mp3; sourceTree = "<group>"; };
-		E6597C731BE1FEBD00EE1B4D /* right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = right.mp3; sourceTree = "<group>"; };
 		E6597C761BE1FEE800EE1B4D /* error.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = error.mp3; sourceTree = "<group>"; };
+		E6597C7E1BE37B3100EE1B4D /* right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = right.mp3; sourceTree = "<group>"; };
+		E6597C801BE37BF500EE1B4D /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background.mp3; sourceTree = "<group>"; };
 		E67E03E41BC6C46D002058DF /* contributionListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = contributionListController.swift; sourceTree = "<group>"; };
 		E68962941BC613A300548875 /* mcwa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mcwa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E68962971BC613A300548875 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -292,9 +292,9 @@
 		E6597C711BE1FEBD00EE1B4D /* mp3 */ = {
 			isa = PBXGroup;
 			children = (
-				E6597C721BE1FEBD00EE1B4D /* background.mp3 */,
+				E6597C801BE37BF500EE1B4D /* background.mp3 */,
 				E6597C761BE1FEE800EE1B4D /* error.mp3 */,
-				E6597C731BE1FEBD00EE1B4D /* right.mp3 */,
+				E6597C7E1BE37B3100EE1B4D /* right.mp3 */,
 			);
 			path = mp3;
 			sourceTree = "<group>";
@@ -505,16 +505,16 @@
 				0B60CE2C1BCC134B00B26089 /* UMSCommentDetailController.xib in Resources */,
 				0B60CE3C1BCC13C200B26089 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				0B60CE311BCC134B00B26089 /* UMSLoginViewController.xib in Resources */,
+				E6597C7F1BE37B3100EE1B4D /* right.mp3 in Resources */,
 				0B60CE2E1BCC134B00B26089 /* UMSCommentInputControlleriPad.xib in Resources */,
 				E6597C771BE1FEE800EE1B4D /* error.mp3 in Resources */,
 				0B60CE301BCC134B00B26089 /* UMShareEditViewControlleriPad.xib in Resources */,
 				E689629F1BC613A300548875 /* Assets.xcassets in Resources */,
-				E6597C741BE1FEBD00EE1B4D /* background.mp3 in Resources */,
 				0B60CE2A1BCC134B00B26089 /* UMSocialLocalizable.strings in Resources */,
 				E689629D1BC613A300548875 /* Main.storyboard in Resources */,
 				0B60CE321BCC134B00B26089 /* UMSnsAccountViewController.xib in Resources */,
 				0B60CE331BCC134B00B26089 /* UMSShareListController.xib in Resources */,
-				E6597C751BE1FEBD00EE1B4D /* right.mp3 in Resources */,
+				E6597C811BE37BF500EE1B4D /* background.mp3 in Resources */,
 				0B60CE341BCC134B00B26089 /* UMSocialSDKResourcesNew.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
