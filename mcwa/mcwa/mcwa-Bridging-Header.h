@@ -16,6 +16,6 @@
 #import "TSMessage.h"
 #import "MJRefresh.h"
 
-#import "MBProgressHUD.h"
+//#import "MBProgressHUD.h"
 
 #import "WXApi.h"

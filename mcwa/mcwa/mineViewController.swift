@@ -70,7 +70,7 @@ class mineViewController: UIViewController,UMSocialUIDelegate, LoginDelegate, UI
     }
     
     override func viewDidAppear(animated: Bool) {
-        if appMusicStatus == 1 {
+        if appMusicStatus == 0 {
             btn_music.image = UIImage(assetIdentifier: .Music_On)
         } else {
             btn_music.image = UIImage(assetIdentifier: .Music_Off)
@@ -98,27 +98,27 @@ class mineViewController: UIViewController,UMSocialUIDelegate, LoginDelegate, UI
         })
     }
     
-    //开关背景音乐,改变状态
+    //开关背景音乐,改变状态 0:播放,1:停止
     @IBAction func TurnOnOff(sender: UIBarButtonItem) {
         print("appMusicStatus\(appMusicStatus)")
         if let p = player_bg.player {
-            if appMusicStatus == 1 {
+            if appMusicStatus == 0 {
                 //打开状态,点击关闭
-                appMusicStatus = 0
-                Defaults[.MusicStatus] = 0
+                appMusicStatus = 1
+                Defaults[.MusicStatus] = 1
                 sender.image = UIImage(assetIdentifier: .Music_Off)
                 p.pause()
             } else {
                 //关闭状态,点击打开
-                appMusicStatus = 1
-                Defaults[.MusicStatus] = 1
+                appMusicStatus = 0
+                Defaults[.MusicStatus] = 0
                 sender.image = UIImage(assetIdentifier: .Music_On)
                 p.play()
             }
         } else {
             //关闭状态,点击打开
-            appMusicStatus = 1
-            Defaults[.MusicStatus] = 1
+            appMusicStatus = 0
+            Defaults[.MusicStatus] = 0
             sender.image = UIImage(assetIdentifier: .Music_On)
             player_bg.playFileAtPath(music_bg)
         }

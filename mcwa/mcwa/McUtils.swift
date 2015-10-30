@@ -13,7 +13,7 @@ let qq_AppId = "1104907496"
 let qq_AppKey = "DbdC0Qvfkj4yOLsG"
 let wx_AppId = "wxc49b6a0e3c78364d"
 let wx_AppKey = "d4624c36b6795d1d99dcf0547af5443d"
-let share_url = "http://www.mckuai.com"
+let share_url = "http://wa.mckuai.com/down"
 
 //用户登录,注销Delegate
 @objc protocol LoginDelegate {
@@ -35,7 +35,7 @@ extension DefaultsKeys {
 var appUserIdSave: Int = 0
 var appUserLogined: Bool = false
 var appUserNickName: String?
-var appMusicStatus: Int = 1
+var appMusicStatus: Int = 0
 var appUserAvatar: String?
 
 
@@ -113,7 +113,6 @@ class MCUtils {
         Defaults[DefaultsKeys.NickName] = nickName
         Defaults[DefaultsKeys.UserAvater] = userAvatar
         Defaults[DefaultsKeys.logined] = true
-        
         
         appUserIdSave = userId
         appUserNickName = nickName

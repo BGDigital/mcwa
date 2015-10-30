@@ -124,9 +124,9 @@ class contributionListController: UITableViewController {
             return self.datasource.count
         } else {
             if appUserLogined {
-                MCUtils.showEmptyView(self.tableView, aImg: UIImage(named: "avatar_default")!, aText: "什么也没有,下拉刷新试试?")
+                MCUtils.showEmptyView(self.tableView, aImg: UIImage(named: "empty_data")!, aText: "什么也没有,下拉刷新试试?")
             } else {
-                MCUtils.showEmptyView(self.tableView, aImg: UIImage(named: "avatar_default")!, aText: "你还没有登录,请先登录")
+                MCUtils.showEmptyView(self.tableView, aImg: UIImage(named: "empty_data")!, aText: "你还没有登录,请先登录")
             }
             return 0
         }

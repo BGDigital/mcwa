@@ -34,7 +34,7 @@ class ViewController: UIViewController, PlayerDelegate {
         player_bg.delegate = self
         player_bg.forever = true
         print("appMusicStatus:\(appMusicStatus)")
-        if appMusicStatus == 1 {
+        if (appMusicStatus == 0) {
             player_bg.playFileAtPath(music_bg)
         }
         

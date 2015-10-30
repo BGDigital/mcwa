@@ -45,7 +45,6 @@
 		E689629A1BC613A300548875 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68962991BC613A300548875 /* ViewController.swift */; };
 		E689629D1BC613A300548875 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E689629B1BC613A300548875 /* Main.storyboard */; };
 		E689629F1BC613A300548875 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E689629E1BC613A300548875 /* Assets.xcassets */; };
-		E68962A21BC613A300548875 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E68962A01BC613A300548875 /* LaunchScreen.storyboard */; };
 		E68962AD1BC613A300548875 /* mcwaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68962AC1BC613A300548875 /* mcwaTests.swift */; };
 		E68962B81BC613A400548875 /* mcwaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68962B71BC613A400548875 /* mcwaUITests.swift */; };
 		E68962CA1BC65B4300548875 /* SwiftColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68962C91BC65B4300548875 /* SwiftColors.swift */; };
@@ -142,7 +141,6 @@
 		E68962991BC613A300548875 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E689629C1BC613A300548875 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E689629E1BC613A300548875 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E68962A11BC613A300548875 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E68962A31BC613A300548875 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E68962A81BC613A300548875 /* mcwaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mcwaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E68962AC1BC613A300548875 /* mcwaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mcwaTests.swift; sourceTree = "<group>"; };
@@ -345,7 +343,6 @@
 				E68962991BC613A300548875 /* ViewController.swift */,
 				E689629B1BC613A300548875 /* Main.storyboard */,
 				E689629E1BC613A300548875 /* Assets.xcassets */,
-				E68962A01BC613A300548875 /* LaunchScreen.storyboard */,
 				E68962A31BC613A300548875 /* Info.plist */,
 				E67E03E41BC6C46D002058DF /* contributionListController.swift */,
 				E6E32BD61BC81EE9007D04C2 /* rankinglistController.swift */,
@@ -505,7 +502,6 @@
 			files = (
 				0B60CE2F1BCC134B00B26089 /* UMShareEditViewController.xib in Resources */,
 				0B60CE2D1BCC134B00B26089 /* UMSCommentInputController.xib in Resources */,
-				E68962A21BC613A300548875 /* LaunchScreen.storyboard in Resources */,
 				0B60CE2C1BCC134B00B26089 /* UMSCommentDetailController.xib in Resources */,
 				0B60CE3C1BCC13C200B26089 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				0B60CE311BCC134B00B26089 /* UMSLoginViewController.xib in Resources */,
@@ -664,14 +660,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		E68962A01BC613A300548875 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E68962A11BC613A300548875 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -764,6 +752,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
@@ -800,6 +789,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
