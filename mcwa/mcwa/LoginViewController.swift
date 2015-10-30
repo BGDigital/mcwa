@@ -36,6 +36,7 @@ class LoginViewController: UIViewController,UMSocialUIDelegate {
             parameters: dict,
             success: {
                 (operation, responseObject) -> Void in
+                print(responseObject)
                 var json = JSON(responseObject)
                 if "ok" == json["state"].stringValue {
                     

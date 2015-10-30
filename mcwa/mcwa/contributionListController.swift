@@ -120,7 +120,7 @@ class contributionListController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if (!self.datasource.isEmpty) {
-            //            self.tableView.backgroundView = nil
+            self.tableView.backgroundView = nil
             return self.datasource.count
         } else {
             if appUserLogined {
