@@ -57,7 +57,7 @@ class sourceViewController: UIViewController,UMSocialUIDelegate {
             v_top.hidden = true
             v_bottom.hidden = true
             
-            lb_center_no.text = ""
+            lb_center_no.text = "--"
             iv_center_avatar.image = UIImage(named: "avatar_default")
             iv_center_avatar.layer.masksToBounds = true
             iv_center_avatar.layer.cornerRadius = 37.5//iv_center_avatar.bounds.size.height / 2
