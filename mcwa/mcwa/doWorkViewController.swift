@@ -276,6 +276,7 @@ class doWorkViewController: UIViewController, PlayerDelegate {
     
     //显示用户做题的结果页
     func showSourcePage() {
+        self.pleaseWait()
         //act=report&userId=1&allScore=200&correct=4,5,6,7,8&error=1,2,3
         var correct: String = ""
         var error: String = ""
@@ -302,10 +303,12 @@ class doWorkViewController: UIViewController, PlayerDelegate {
                 (operation, responseObject) -> Void in
                 print(responseObject)
                 self.json = JSON(responseObject)
-                
+                self.clearAllNotice()
                 //收到数据,跳转到准备页面
                 self.performSegueWithIdentifier("showSource", sender: self)
             }) { (operation, error) -> Void in
+                self.clearAllNotice()
+                self.noticeError("提交出错", autoClear: true, autoClearTime: 3)
                 print(error)
         }
     }
@@ -331,6 +334,10 @@ class doWorkViewController: UIViewController, PlayerDelegate {
     override func viewWillDisappear(animated: Bool) {
         MobClick.endLogPageView("doWorkViewController")
         
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
 
 }

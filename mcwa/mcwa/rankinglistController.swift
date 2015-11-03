@@ -98,7 +98,7 @@ class rankinglistController: UITableViewController {
                 //                println("Error: " + error.localizedDescription)
                 self.tableView.header.endRefreshing()
 //                self.hud?.hide(true)
-                MCUtils.showCustomHUD("数据加载失败", aType: .Error)
+                MCUtils.showCustomHUD(self, aMsg: "获取数据失败,请重试", aType: .Error)
         })
     }
     
@@ -119,7 +119,7 @@ class rankinglistController: UITableViewController {
                 error: NSError!) in
                 //                println("Error: " + error.localizedDescription)
                 self.tableView.footer.endRefreshing()
-                MCUtils.showCustomHUD("数据加载失败", aType: .Error)
+                MCUtils.showCustomHUD(self, aMsg: "获取数据失败,请重试", aType: .Error)
         })
     }
 

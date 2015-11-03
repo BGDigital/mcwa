@@ -1156,21 +1156,21 @@
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="vFP-Os-64A"/>
-                                        <exclude reference="Nfz-yn-TqC"/>
-                                        <exclude reference="bdY-gg-x2M"/>
-                                        <exclude reference="mog-TD-h0i"/>
-                                        <exclude reference="9fj-4H-jpC"/>
-                                        <exclude reference="Uz0-OR-aji"/>
-                                        <exclude reference="7n8-kb-fVv"/>
-                                        <exclude reference="hLZ-6W-Si7"/>
-                                        <exclude reference="k9g-gJ-rXM"/>
-                                        <exclude reference="nom-mj-4LW"/>
-                                        <exclude reference="SbT-zz-zle"/>
                                         <exclude reference="2JM-Jh-TiT"/>
                                         <exclude reference="bo8-Gx-kUr"/>
                                         <exclude reference="e6H-ED-iy2"/>
+                                        <exclude reference="k9g-gJ-rXM"/>
+                                        <exclude reference="nom-mj-4LW"/>
+                                        <exclude reference="SbT-zz-zle"/>
+                                        <exclude reference="7n8-kb-fVv"/>
+                                        <exclude reference="hLZ-6W-Si7"/>
                                         <exclude reference="Rmi-zC-vdu"/>
                                         <exclude reference="dyn-4O-fKe"/>
+                                        <exclude reference="9fj-4H-jpC"/>
+                                        <exclude reference="Uz0-OR-aji"/>
+                                        <exclude reference="Nfz-yn-TqC"/>
+                                        <exclude reference="bdY-gg-x2M"/>
+                                        <exclude reference="mog-TD-h0i"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -1185,21 +1185,21 @@
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="vFP-Os-64A"/>
-                                        <include reference="Nfz-yn-TqC"/>
-                                        <include reference="bdY-gg-x2M"/>
-                                        <include reference="mog-TD-h0i"/>
-                                        <include reference="9fj-4H-jpC"/>
-                                        <include reference="Uz0-OR-aji"/>
-                                        <include reference="7n8-kb-fVv"/>
-                                        <include reference="hLZ-6W-Si7"/>
-                                        <include reference="k9g-gJ-rXM"/>
-                                        <include reference="nom-mj-4LW"/>
-                                        <include reference="SbT-zz-zle"/>
                                         <include reference="2JM-Jh-TiT"/>
                                         <include reference="bo8-Gx-kUr"/>
                                         <include reference="e6H-ED-iy2"/>
+                                        <include reference="k9g-gJ-rXM"/>
+                                        <include reference="nom-mj-4LW"/>
+                                        <include reference="SbT-zz-zle"/>
+                                        <include reference="7n8-kb-fVv"/>
+                                        <include reference="hLZ-6W-Si7"/>
                                         <include reference="Rmi-zC-vdu"/>
                                         <include reference="dyn-4O-fKe"/>
+                                        <include reference="9fj-4H-jpC"/>
+                                        <include reference="Uz0-OR-aji"/>
+                                        <include reference="Nfz-yn-TqC"/>
+                                        <include reference="bdY-gg-x2M"/>
+                                        <include reference="mog-TD-h0i"/>
                                     </mask>
                                 </variation>
                             </view>

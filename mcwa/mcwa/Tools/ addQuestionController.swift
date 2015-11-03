@@ -242,7 +242,7 @@ class  addQuestionController: UIViewController,UITextFieldDelegate,UMSocialUIDel
     func sendReply() {
         let answer:String! = self.textView.text
         if(answer.characters.count > 10 || answer!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == ""){
-            MCUtils.showCustomHUD("不能为空或者超过最大字数限制", aType: .Error)
+            MCUtils.showCustomHUD(self, aMsg: "不能为空或者超过最大字数限制", aType: .Error)
         }else{
             if(answerFlag == 1){
                 self.answerOne.text = answer
@@ -367,6 +367,7 @@ class  addQuestionController: UIViewController,UITextFieldDelegate,UMSocialUIDel
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     @IBAction func addQuestionAction(sender: UIButton) {
+        print("addQuestionAction............")
         self.oneUploadBtn?.enabled = false
         self.twoUploadBtn?.enabled = false
         self.type = "choice"
@@ -378,12 +379,16 @@ class  addQuestionController: UIViewController,UITextFieldDelegate,UMSocialUIDel
         
         if(answerTitle.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == "" || answerTitle == "   这里写题目"){
             print("题目不能为空,必填项")
-            MCUtils.showCustomHUD("题目不能为空,必填项", aType: .Error)
+            MCUtils.showCustomHUD(self, aMsg: "题目不能为空,必填项", aType: .Error)
+            self.oneUploadBtn?.enabled = true
+            self.twoUploadBtn?.enabled = true
             return
         }
         if(answerTitle.characters.count > 50){
             print("题目字数不能超过50字")
-            MCUtils.showCustomHUD("题目字数不能超过50字", aType: .Error)
+            MCUtils.showCustomHUD(self, aMsg: "题目字数不能超过50字", aType: .Error)
+            self.oneUploadBtn?.enabled = true
+            self.twoUploadBtn?.enabled = true
             return
         }
         
@@ -393,22 +398,30 @@ class  addQuestionController: UIViewController,UITextFieldDelegate,UMSocialUIDel
         }else{
             if(one!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == "" || one == "正确答案"){
                 print("答案不能为空,必填项")
-                MCUtils.showCustomHUD("答案不能为空,必填项", aType: .Error)
+                MCUtils.showCustomHUD(self, aMsg: "答案不能为空,必填项", aType: .Error)
+                self.oneUploadBtn?.enabled = true
+                self.twoUploadBtn?.enabled = true
                 return
             }
             if(two!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == "" || two == "错误答案"){
                 print("答案不能为空,必填项")
-                MCUtils.showCustomHUD("答案不能为空,必填项", aType: .Error)
+                MCUtils.showCustomHUD(self, aMsg: "答案不能为空,必填项", aType: .Error)
+                self.oneUploadBtn?.enabled = true
+                self.twoUploadBtn?.enabled = true
                 return
             }
             if(three!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == "" || three == "错误答案"){
                 print("答案不能为空,必填项")
-                MCUtils.showCustomHUD("答案不能为空,必填项", aType: .Error)
+                MCUtils.showCustomHUD(self, aMsg: "答案不能为空,必填项", aType: .Error)
+                self.oneUploadBtn?.enabled = true
+                self.twoUploadBtn?.enabled = true
                 return
             }
             if(four!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == "" || four == "错误答案"){
                 print("答案不能为空,必填项")
-                MCUtils.showCustomHUD("答案不能为空,必填项", aType: .Error)
+                MCUtils.showCustomHUD(self, aMsg: "答案不能为空,必填项", aType: .Error)
+                self.oneUploadBtn?.enabled = true
+                self.twoUploadBtn?.enabled = true
                 return
             }
         }
@@ -431,7 +444,7 @@ class  addQuestionController: UIViewController,UITextFieldDelegate,UMSocialUIDel
                     }else{
                         self.oneUploadBtn?.enabled = true
                         self.twoUploadBtn?.enabled = true
-                        MCUtils.showCustomHUD("图片上传失败,请稍候再试", aType: .Error)
+                        MCUtils.showCustomHUD(self, aMsg: "图片上传失败,请稍候再试", aType: .Error)
                     }
                     
                 },
@@ -439,7 +452,7 @@ class  addQuestionController: UIViewController,UITextFieldDelegate,UMSocialUIDel
                     error: NSError!) in
                     self.oneUploadBtn?.enabled = true
                     self.twoUploadBtn?.enabled = true
-                    MCUtils.showCustomHUD("图片上传失败,请稍候再试", aType: .Error)
+                    MCUtils.showCustomHUD(self, aMsg: "图片上传失败,请稍候再试", aType: .Error)
             })
 
         }else{
@@ -472,11 +485,11 @@ class  addQuestionController: UIViewController,UITextFieldDelegate,UMSocialUIDel
                     self.oneUploadBtn?.enabled = true
                     self.twoUploadBtn?.enabled = true
                     //                                    NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "returnPage", userInfo: nil, repeats: false)
-                    MCUtils.showCustomHUD("提交成功,返回查看", aType: .Success)
+                    MCUtils.showCustomHUD(self, aMsg: "提交成功,返回查看", aType: .Success)
                 }else{
                     self.oneUploadBtn?.enabled = true
                     self.twoUploadBtn?.enabled = true
-                    MCUtils.showCustomHUD("提交失败,请稍候再试", aType: .Error)
+                    MCUtils.showCustomHUD(self, aMsg: "提交失败,请稍候再试", aType: .Error)
                 }
                 
             },
@@ -484,7 +497,7 @@ class  addQuestionController: UIViewController,UITextFieldDelegate,UMSocialUIDel
                 error: NSError!) in
                 self.oneUploadBtn?.enabled = true
                 self.twoUploadBtn?.enabled = true
-                MCUtils.showCustomHUD("提交失败,请稍候再试", aType: .Error)
+                MCUtils.showCustomHUD(self, aMsg: "提交失败,请稍候再试", aType: .Error)
         })
     }
     

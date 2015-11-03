@@ -37,6 +37,7 @@ var appUserLogined: Bool = false
 var appUserNickName: String?
 var appMusicStatus: Int = 0
 var appUserAvatar: String?
+var appNetWorkStatus: Bool = false
 
 
 
@@ -84,16 +85,20 @@ class MCUtils {
     :param: title   HUD的标题
     :param: imgName 自定义HUD显示的图片
     */
-    class func showCustomHUD(aMsg: String, aType: TSMessageNotificationType) {
+    class func showCustomHUD(VC: UIViewController, aMsg: String, aType: TSMessageNotificationType) {
         switch aType {
         case .Success:
-            TSMessage.showNotificationWithTitle("操作成功", subtitle: aMsg, type: aType)
+            TSMessage.showNotificationInViewController(VC.navigationController, title: "成功", subtitle: aMsg, image: nil, type: aType, duration: 0, callback: nil, buttonTitle: nil, buttonCallback: nil, atPosition: .NavBarOverlay, canBeDismissedByUser: true)
+            //TSMessage.showNotificationWithTitle("操作成功", subtitle: aMsg, type: aType)
         case .Warning:
-            TSMessage.showNotificationWithTitle("MC哇提示", subtitle: aMsg, type: aType)
+            TSMessage.showNotificationInViewController(VC.navigationController, title: "提示", subtitle: aMsg, image: nil, type: aType, duration: 0, callback: nil, buttonTitle: nil, buttonCallback: nil, atPosition: .NavBarOverlay, canBeDismissedByUser: true)
+            //TSMessage.showNotificationWithTitle("MC哇提示", subtitle: aMsg, type: aType)
         case .Error:
-            TSMessage.showNotificationWithTitle("出错啦~!", subtitle: aMsg, type: aType)
+            TSMessage.showNotificationInViewController(VC.navigationController, title: "出错啦", subtitle: aMsg, image: nil, type: aType, duration: 0, callback: nil, buttonTitle: nil, buttonCallback: nil, atPosition: .NavBarOverlay, canBeDismissedByUser: true)
+//            TSMessage.showNotificationWithTitle("出错啦~!", subtitle: aMsg, type: aType)
         default:
-            TSMessage.showNotificationWithTitle("消息", subtitle: aMsg, type: aType)
+            TSMessage.showNotificationInViewController(VC.navigationController, title: "消息", subtitle: aMsg, image: nil, type: aType, duration: 0, callback: nil, buttonTitle: nil, buttonCallback: nil, atPosition: .NavBarOverlay, canBeDismissedByUser: true)
+            //TSMessage.showNotificationWithTitle("消息", subtitle: aMsg, type: aType)
         }
         
     }
@@ -120,6 +125,36 @@ class MCUtils {
         appUserLogined = true
 
     }
+    
+    /**
+     检查网络状态
+     */
+    class func checkNetWorkState(VC: UIViewController) -> Void {
+        //网络状态
+        AFNetworkReachabilityManager.sharedManager().startMonitoring()
+        AFNetworkReachabilityManager.sharedManager().setReachabilityStatusChangeBlock({st in
+            switch st {
+            case .ReachableViaWiFi:
+                print("网络状态:WIFI")
+                appNetWorkStatus = true
+                //                TSMessage.showNotificationWithTitle("哇哦~", subtitle: "你在WIFI网络下面,随便畅玩吧", type: .Success)
+            case .ReachableViaWWAN:
+                print("网络状态:3G")
+                appNetWorkStatus = true
+                TSMessage.showNotificationInViewController(VC.navigationController, title: "警告!警告!", subtitle: "你正在使用流量上网,且玩且珍惜吧", image: nil, type: .Warning, duration: 0, callback: nil, buttonTitle: nil, buttonCallback: nil, atPosition: .NavBarOverlay, canBeDismissedByUser: true)
+            case .NotReachable:
+                print("网络状态:不可用")
+                appNetWorkStatus = false
+                TSMessage.showNotificationInViewController(VC.navigationController, title: "出错啦~!", subtitle: "网络状态异常,请检查网络连接", image: nil, type: .Error, duration: 0, callback: nil, buttonTitle: nil, buttonCallback: nil, atPosition: .NavBarOverlay, canBeDismissedByUser: true)
+            default:
+                print("网络状态:火星")
+                appNetWorkStatus = false
+                TSMessage.showNotificationInViewController(VC.navigationController, title: "出错啦~!", subtitle: "网络状态异常,请检查网络连接", image: nil, type: .Error, duration: 0, callback: nil, buttonTitle: nil, buttonCallback: nil, atPosition: .NavBarOverlay, canBeDismissedByUser: true)
+            }
+        })
+        AFNetworkReachabilityManager.sharedManager().stopMonitoring()
+    }
+
     
 
     /**

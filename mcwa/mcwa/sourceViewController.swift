@@ -163,7 +163,10 @@ class sourceViewController: UIViewController,UMSocialUIDelegate {
     }
     override func viewWillDisappear(animated: Bool) {
         MobClick.endLogPageView("sourceViewController")
-        
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
 
 }

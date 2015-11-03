@@ -40,6 +40,7 @@
 		E6597C771BE1FEE800EE1B4D /* error.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6597C761BE1FEE800EE1B4D /* error.mp3 */; };
 		E6597C7F1BE37B3100EE1B4D /* right.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6597C7E1BE37B3100EE1B4D /* right.mp3 */; };
 		E6597C811BE37BF500EE1B4D /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6597C801BE37BF500EE1B4D /* background.mp3 */; };
+		E6597C831BE8540800EE1B4D /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6597C821BE8540800EE1B4D /* SwiftNotice.swift */; };
 		E67E03E51BC6C46D002058DF /* contributionListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67E03E41BC6C46D002058DF /* contributionListController.swift */; };
 		E68962981BC613A300548875 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68962971BC613A300548875 /* AppDelegate.swift */; };
 		E689629A1BC613A300548875 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68962991BC613A300548875 /* ViewController.swift */; };
@@ -135,6 +136,7 @@
 		E6597C761BE1FEE800EE1B4D /* error.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = error.mp3; sourceTree = "<group>"; };
 		E6597C7E1BE37B3100EE1B4D /* right.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = right.mp3; sourceTree = "<group>"; };
 		E6597C801BE37BF500EE1B4D /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background.mp3; sourceTree = "<group>"; };
+		E6597C821BE8540800EE1B4D /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
 		E67E03E41BC6C46D002058DF /* contributionListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = contributionListController.swift; sourceTree = "<group>"; };
 		E68962941BC613A300548875 /* mcwa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mcwa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E68962971BC613A300548875 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 				E6F8FCDB1BCF5F3E001ADE37 /* SwiftyJSON.swift */,
 				E68962C91BC65B4300548875 /* SwiftColors.swift */,
 				0B806AC01BD76F7F006B280C /* SwiftyUserDefaults.swift */,
+				E6597C821BE8540800EE1B4D /* SwiftNotice.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 				E68D4B6F1BD7DCCF00FC8FDF /* contributionListCell.swift in Sources */,
 				E6EBB3691BD0A70100E90C3B /* SwiftyTimer.swift in Sources */,
 				E6F8FCDC1BCF5F3E001ADE37 /* SwiftyJSON.swift in Sources */,
+				E6597C831BE8540800EE1B4D /* SwiftNotice.swift in Sources */,
 				E68962981BC613A300548875 /* AppDelegate.swift in Sources */,
 				E6CFE3001BCE56C300657F36 /* readyViewController.swift in Sources */,
 				E67E03E51BC6C46D002058DF /* contributionListController.swift in Sources */,

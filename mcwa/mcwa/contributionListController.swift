@@ -92,7 +92,7 @@ class contributionListController: UITableViewController {
                 //                println("Error: " + error.localizedDescription)
                 self.tableView.header.endRefreshing()
                 //                self.hud?.hide(true)
-                MCUtils.showCustomHUD("数据加载失败", aType: .Error)
+                MCUtils.showCustomHUD(self, aMsg: "获取数据失败", aType: .Error)
         })
     }
     
@@ -113,7 +113,7 @@ class contributionListController: UITableViewController {
                 error: NSError!) in
                 //                println("Error: " + error.localizedDescription)
                 self.tableView.footer.endRefreshing()
-                MCUtils.showCustomHUD("数据加载失败", aType: .Error)
+                MCUtils.showCustomHUD(self, aMsg: "获取数据失败", aType: .Error)
         })
     }
 

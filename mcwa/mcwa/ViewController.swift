@@ -30,6 +30,8 @@ class ViewController: UIViewController, PlayerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        MCUtils.checkNetWorkState(self)
         //背景音乐
         player_bg.delegate = self
         player_bg.forever = true
@@ -65,7 +67,12 @@ class ViewController: UIViewController, PlayerDelegate {
         var avatar: UIImage?
         if appUserLogined {
             if let url = appUserAvatar {
-                avatar = UIImage(data: NSData(contentsOfURL: NSURL(string: url)!)!)
+                //这里要判断网络状态
+                if appNetWorkStatus {
+                    avatar = UIImage(data: NSData(contentsOfURL: NSURL(string: url)!)!)
+                } else {
+                    avatar = UIImage(named: "avatar_default")
+                }
             } else {
                 avatar = UIImage(named: "avatar_default")
             }
@@ -91,16 +98,20 @@ class ViewController: UIViewController, PlayerDelegate {
     }
     
     @IBAction func beginWa(sender: UIButton) {
+        self.pleaseWait()
+        
         let dict = ["act":"question"]
         manager.GET(URL_MC,
             parameters: dict,
             success: {
                 (operation, responseObject) -> Void in
                 self.json = JSON(responseObject)
-                
+                self.clearAllNotice()
                 //收到数据,跳转到准备页面
                 self.performSegueWithIdentifier("showReady", sender: self)
             }) { (operation, error) -> Void in
+                self.clearAllNotice()
+                MCUtils.showCustomHUD(self, aMsg: "获取题库失败,请重试", aType: .Error)
                 print(error)
         }
     }
@@ -126,7 +137,11 @@ class ViewController: UIViewController, PlayerDelegate {
     
     override func viewDidAppear(animated: Bool) {
         if appUserLogined {
-            buttonBack.setImage(UIImage(data: NSData(contentsOfURL: NSURL(string: appUserAvatar!)!)!), forState: .Normal)
+            if appNetWorkStatus {
+                buttonBack.setImage(UIImage(data: NSData(contentsOfURL: NSURL(string: appUserAvatar!)!)!), forState: .Normal)
+            } else {
+                buttonBack.setImage(UIImage(named: "avatar_default"), forState: .Normal)
+            }
         } else {
             buttonBack.setImage(UIImage(named: "avatar_default"), forState: .Normal)
         }

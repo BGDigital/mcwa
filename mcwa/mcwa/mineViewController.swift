@@ -84,6 +84,7 @@ class mineViewController: UIViewController,UMSocialUIDelegate, LoginDelegate, UI
     
     func loadNewData() {
         //开始刷新
+        self.pleaseWait()
         //http://221.237.152.39:8081/interface.do?act=userInfo&userId=2
         let dict = ["act":"userInfo", "userId": appUserIdSave]
         manager.GET(URL_MC,
@@ -91,10 +92,12 @@ class mineViewController: UIViewController,UMSocialUIDelegate, LoginDelegate, UI
             success: { (operation: AFHTTPRequestOperation!,
                 responseObject: AnyObject!) in
                 self.json = JSON(responseObject)
+                self.clearAllNotice()
             },
             failure: { (operation: AFHTTPRequestOperation!,
                 error: NSError!) in
-                MCUtils.showCustomHUD("数据加载失败", aType: .Error)
+                self.clearAllNotice()
+                MCUtils.showCustomHUD(self, aMsg: "获取账号信息失败,请重试", aType: .Error)
         })
     }
     
