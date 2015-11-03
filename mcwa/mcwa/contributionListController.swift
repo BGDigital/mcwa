@@ -85,21 +85,16 @@ class contributionListController: UITableViewController {
                 self.isFirstLoad = false
                 self.json = JSON(responseObject)
                 self.tableView.header.endRefreshing()
-                //                self.hud?.hide(true)
             },
             failure: { (operation: AFHTTPRequestOperation!,
                 error: NSError!) in
-                //                println("Error: " + error.localizedDescription)
                 self.tableView.header.endRefreshing()
-                //                self.hud?.hide(true)
                 MCUtils.showCustomHUD(self, aMsg: "获取数据失败", aType: .Error)
         })
     }
     
     func loadMoreData() {
-        //        println("开始加载\(self.page.currentPage+1)页")
         let dict = ["act":"uploadList", "userId": appUserIdSave, "page": page.currentPage+1]
-        //println("加载:\(self.liveType),\(self.liveOrder)======")
         //开始刷新
         manager.GET(URL_MC,
             parameters: dict,
@@ -111,12 +106,11 @@ class contributionListController: UITableViewController {
             },
             failure: { (operation: AFHTTPRequestOperation!,
                 error: NSError!) in
-                //                println("Error: " + error.localizedDescription)
                 self.tableView.footer.endRefreshing()
                 MCUtils.showCustomHUD(self, aMsg: "获取数据失败", aType: .Error)
         })
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if (!self.datasource.isEmpty) {
@@ -160,9 +154,10 @@ class contributionListController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
+            self.tableView.beginUpdates()
+            self.datasource.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            self.tableView.endUpdates()
         }    
     }
     

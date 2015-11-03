@@ -42,8 +42,15 @@ class contributionListCell: UITableViewCell {
             iv_statusIcon.image = UIImage(named: "cont_1")
             lb_answerCount.textColor = UIColor.whiteColor()
             lb_answerCount.text = json["allCount"].stringValue
-            let accuracy = (json["rightCount"].floatValue / json["allCount"].floatValue) * 100
-            lb_accuracy.text = "正确率:\(accuracy)"
+            let rightCount = json["rightCount"].floatValue
+            let allCount = json["allCount"].floatValue
+            var accuracy: Float
+            if allCount == 0 {
+                accuracy = (rightCount / allCount) * 100
+            } else {
+                accuracy = 0
+            }
+            lb_accuracy.text = "正确率:\(accuracy)%"
             lb_accuracy.hidden = false
         case "passing":
             iv_statusIcon.image = UIImage(named: "cont_2")

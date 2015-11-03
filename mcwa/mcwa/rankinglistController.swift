@@ -48,7 +48,6 @@ class rankinglistController: UITableViewController {
     }
 
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "排行榜"
@@ -62,17 +61,8 @@ class rankinglistController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        if isFirstLoad {
-            loadDataWithoutMJRefresh()
-        }
-    }
-    
-    func loadDataWithoutMJRefresh() {
-//        hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-//        hud?.labelText = MCUtils.TEXT_LOADING
         loadNewData()
     }
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -82,6 +72,7 @@ class rankinglistController: UITableViewController {
     func loadNewData() {
         //开始刷新
         //http://221.237.152.39:8081/interface.do?act=rankList&userId=1&page=1
+        self.pleaseWait()
         let dict = ["act":"rankList", "userId": appUserIdSave, "page": 1]
         manager.GET(URL_MC,
             parameters: dict,
@@ -92,12 +83,14 @@ class rankinglistController: UITableViewController {
                 self.json = JSON(responseObject)
                 self.tableView.header.endRefreshing()
 //                self.hud?.hide(true)
+                self.clearAllNotice()
             },
             failure: { (operation: AFHTTPRequestOperation!,
                 error: NSError!) in
                 //                println("Error: " + error.localizedDescription)
                 self.tableView.header.endRefreshing()
 //                self.hud?.hide(true)
+                self.clearAllNotice()
                 MCUtils.showCustomHUD(self, aMsg: "获取数据失败,请重试", aType: .Error)
         })
     }
@@ -220,17 +213,13 @@ class rankinglistController: UITableViewController {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
 
-    /*
+
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
             // Delete the row from the data source
+            self.datasource.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
     }
     */
 
