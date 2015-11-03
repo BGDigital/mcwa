@@ -33,7 +33,7 @@ class rankinglistCell: UITableViewCell {
     func update(json: JSON) {
         //        println(json)
         let avatar_url = json["headImg"].stringValue
-        self.iv_Avatar.sd_setImageWithURL(NSURL(string: avatar_url))
+        self.iv_Avatar.yy_imageURL = NSURL(string: avatar_url)
         self.lb_userName.text = json["nickName"].stringValue
         self.lb_source.text = json["allScore"].stringValue+"分"
         self.lb_No.text = json["scoreRank"].stringValue

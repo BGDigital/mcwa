@@ -32,7 +32,7 @@ class mineViewController: UIViewController,UMSocialUIDelegate, LoginDelegate, UI
             if "ok" == self.json["state"].stringValue {
                 scoreRank = self.json["dataObject","scoreRank"].intValue
                 let avatar_Url = self.json["dataObject", "headImg"].stringValue
-                iv_userAvatar.sd_setImageWithURL(NSURL(string: avatar_Url))
+                iv_userAvatar.yy_setImageWithURL(NSURL(string: avatar_Url), options: YYWebImageOptions.ProgressiveBlur)
                 lb_nickName.text = self.json["dataObject", "nickName"].stringValue
                 lb_answerCount.text = self.json["dataObject", "answerNum"].stringValue
                 lb_QuestionCount.text = self.json["dataObject", "uploadNum"].stringValue

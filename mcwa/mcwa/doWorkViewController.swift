@@ -59,7 +59,7 @@ class doWorkViewController: UIViewController, PlayerDelegate {
         iv_avatar.layer.borderColor = UIColor(hexString: "#493568")?.CGColor
         iv_avatar.layer.borderWidth = 1.5
         if appUserLogined {
-            iv_avatar.sd_setImageWithURL(NSURL(string: appUserAvatar!), placeholderImage: UIImage(named: "avatar_default"))
+            iv_avatar.yy_setImageWithURL(NSURL(string: appUserAvatar!), placeholder: UIImage(named: "avatar_default"))
         } else {
             iv_avatar.image = UIImage(named: "avatar_default")
         }
@@ -123,7 +123,8 @@ class doWorkViewController: UIViewController, PlayerDelegate {
                 print("有图")
                 v_Ques_Image.hidden = false
                 self.co_Ques_One.constant = 10
-                iv_Ques_Image.sd_setImageWithURL(NSURL(string: icon), placeholderImage: UIImage(named: "test"))
+
+                iv_Ques_Image.yy_setImageWithURL(NSURL(string: icon), options: YYWebImageOptions.ProgressiveBlur)
             } else {
                 print("无图")
                 v_Ques_Image.hidden = true

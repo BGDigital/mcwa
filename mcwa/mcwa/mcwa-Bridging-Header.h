@@ -8,7 +8,7 @@
 #import "MobClick.h"
 
 #import "AFNetWorking.h"
-#import "UIImageView+WebCache.h"
+#import "YYWebImage/YYWebImage.h"
 
 #import "DBCameraViewController.h"
 #import "DBCameraContainerViewController.h"

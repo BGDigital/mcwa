@@ -102,7 +102,8 @@ class readyViewController: UIViewController, UICollectionViewDataSource {
         print(iv.bounds)
         iv.layer.cornerRadius = iv.bounds.size.height / 2
         iv.layer.masksToBounds = true
-        iv.sd_setImageWithURL(NSURL(string: self.users![indexPath.row]["headImg"].stringValue))
+        let url = NSURL(string: self.users![indexPath.row]["headImg"].stringValue)
+        iv.yy_setImageWithURL(url, options: .Progressive)
         
         cell.addSubview(iv)
         

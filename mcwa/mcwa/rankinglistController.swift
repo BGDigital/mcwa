@@ -185,7 +185,8 @@ class rankinglistController: UITableViewController {
                 let img_Avatar = UIImageView(frame: CGRectMake(56, 8, 40, 40))
                 let avater_Url = self.user!["headImg"].stringValue
                 print(avater_Url)
-                img_Avatar.sd_setImageWithURL(NSURL(string: avater_Url))
+                img_Avatar.yy_imageURL = NSURL(string: avater_Url)
+//                img_Avatar.yy_setImageWithURL(NSURL(string: avater_Url))
                 img_Avatar.layer.masksToBounds = true
                 img_Avatar.layer.cornerRadius = 20
                 headView.addSubview(img_Avatar)

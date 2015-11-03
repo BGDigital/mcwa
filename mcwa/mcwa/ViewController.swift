@@ -64,24 +64,9 @@ class ViewController: UIViewController, PlayerDelegate {
 
     
     func custom_leftbar() {
-        var avatar: UIImage?
-        if appUserLogined {
-            if let url = appUserAvatar {
-                //这里要判断网络状态
-                if appNetWorkStatus {
-                    avatar = UIImage(data: NSData(contentsOfURL: NSURL(string: url)!)!)
-                } else {
-                    avatar = UIImage(named: "avatar_default")
-                }
-            } else {
-                avatar = UIImage(named: "avatar_default")
-            }
-        } else {
-            avatar = UIImage(named: "avatar_default")
-        }
         buttonBack = UIButton(type: UIButtonType.Custom)
         buttonBack.frame = CGRectMake(5, 0, 30, 30)
-        buttonBack.setImage(avatar, forState: UIControlState.Normal)
+        buttonBack.yy_setImageWithURL(NSURL(string: appUserAvatar!), forState: .Normal, placeholder: UIImage(named: "avatar_default"))
         buttonBack.addTarget(self, action: "showLogin:", forControlEvents: UIControlEvents.TouchUpInside)
         buttonBack.layer.masksToBounds = true
         buttonBack.layer.cornerRadius = 15
@@ -136,15 +121,17 @@ class ViewController: UIViewController, PlayerDelegate {
     }
     
     override func viewDidAppear(animated: Bool) {
-        if appUserLogined {
-            if appNetWorkStatus {
-                buttonBack.setImage(UIImage(data: NSData(contentsOfURL: NSURL(string: appUserAvatar!)!)!), forState: .Normal)
-            } else {
-                buttonBack.setImage(UIImage(named: "avatar_default"), forState: .Normal)
-            }
-        } else {
-            buttonBack.setImage(UIImage(named: "avatar_default"), forState: .Normal)
-        }
+        buttonBack.yy_setImageWithURL(NSURL(string: appUserAvatar!), forState: .Normal, placeholder: UIImage(named: "avatar_default"))
+//        if appUserLogined {
+//            buttonBack.yy_setImageWithURL(NSURL(string: appUserAvatar!), forState: .Normal, placeholder: UIImage(named: "avatar_default"))
+////            if appNetWorkStatus {
+////                buttonBack.setImage(UIImage(data: NSData(contentsOfURL: NSURL(string: appUserAvatar!)!)!), forState: .Normal)
+////            } else {
+////                buttonBack.setImage(UIImage(named: "avatar_default"), forState: .Normal)
+////            }
+//        } else {
+//            buttonBack.setImage(UIImage(named: "avatar_default"), forState: .Normal)
+//        }
 
     }
     
