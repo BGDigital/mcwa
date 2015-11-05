@@ -66,7 +66,11 @@ class ViewController: UIViewController, PlayerDelegate {
     func custom_leftbar() {
         buttonBack = UIButton(type: UIButtonType.Custom)
         buttonBack.frame = CGRectMake(5, 0, 30, 30)
-        buttonBack.yy_setImageWithURL(NSURL(string: appUserAvatar!), forState: .Normal, placeholder: UIImage(named: "avatar_default"))
+        if let url = appUserAvatar {
+            buttonBack.yy_setImageWithURL(NSURL(string: url), forState: .Normal, placeholder: UIImage(named: "avatar_default"))
+        } else {
+            buttonBack.setImage(UIImage(named: "avatar_default"), forState: .Normal)
+        }
         buttonBack.addTarget(self, action: "showLogin:", forControlEvents: UIControlEvents.TouchUpInside)
         buttonBack.layer.masksToBounds = true
         buttonBack.layer.cornerRadius = 15
@@ -121,18 +125,11 @@ class ViewController: UIViewController, PlayerDelegate {
     }
     
     override func viewDidAppear(animated: Bool) {
-        buttonBack.yy_setImageWithURL(NSURL(string: appUserAvatar!), forState: .Normal, placeholder: UIImage(named: "avatar_default"))
-//        if appUserLogined {
-//            buttonBack.yy_setImageWithURL(NSURL(string: appUserAvatar!), forState: .Normal, placeholder: UIImage(named: "avatar_default"))
-////            if appNetWorkStatus {
-////                buttonBack.setImage(UIImage(data: NSData(contentsOfURL: NSURL(string: appUserAvatar!)!)!), forState: .Normal)
-////            } else {
-////                buttonBack.setImage(UIImage(named: "avatar_default"), forState: .Normal)
-////            }
-//        } else {
-//            buttonBack.setImage(UIImage(named: "avatar_default"), forState: .Normal)
-//        }
-
+        if let url = appUserAvatar {
+            buttonBack.yy_setImageWithURL(NSURL(string: url), forState: .Normal, placeholder: UIImage(named: "avatar_default"))
+        } else {
+            buttonBack.setImage(UIImage(named: "avatar_default"), forState: .Normal)
+        }
     }
     
     //颜色渐变

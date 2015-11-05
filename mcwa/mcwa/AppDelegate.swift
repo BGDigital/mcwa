@@ -13,7 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         appUserLogined = Defaults[DefaultsKeys.logined]
@@ -39,7 +38,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let appversion = majorVersion as! String
         MobClick.setAppVersion(appversion)
         MobClick.setLogEnabled(true)//集成测试
+        
+        //友盟推送
+        UMessage.startWithAppkey(UMAppKey, launchOptions: launchOptions)
+        if #available(iOS 8, *) {
+            // iOS 8或更高版本
+            let action1 = UIMutableUserNotificationAction()
+            action1.identifier = "action1_identifier"
+            action1.title = "Accept"
+            action1.activationMode = .Foreground  //当点击的时候启动程序
+            
+            let action2 = UIMutableUserNotificationAction()
+            action2.identifier = "action2_identifier"
+            action2.title = "Reject"
+            action2.activationMode = .Background  //当点击的时候不启动程序,在后台处理
+            action2.authenticationRequired = true //需要解锁才能处理,如果action.activationMode = .Foreground 则这个属性被忽略
+            action2.destructive = true
+            
+            let categorys = UIMutableUserNotificationCategory()
+            categorys.identifier = "category1"   //这组动作的唯一标示
+            categorys.setActions([action1, action2], forContext: .Default)
+            
+            let userSettings = UIUserNotificationSettings(forTypes: [.Badge, .Sound, .Alert], categories: NSSet(object: categorys) as? Set<UIUserNotificationCategory>)
+            UMessage.registerRemoteNotificationAndUserNotificationSettings(userSettings)
+        } else { 
+            // iOS8之前的版本 
+            UMessage.registerForRemoteNotificationTypes([.Badge, .Sound, .Alert])
+        }
+        UMessage.setLogEnabled(true)
         return true
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        UMessage.registerDeviceToken(deviceToken)
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        UMessage.didReceiveRemoteNotification(userInfo)
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        //如果注册不成功，打印错误信息，可以在网上找到对应的解决方案
+        //如果注册成功，可以删掉这个方法
+        print("didFailToRegisterForRemoteNotificationsWithError:\(error)")
     }
 
     func applicationWillResignActive(application: UIApplication) {

@@ -6,6 +6,7 @@
 #import "UMSocialQQHandler.h"
 #import "UMSocialWechatHandler.h"
 #import "MobClick.h"
+#import "UMessage.h"
 
 #import "AFNetWorking.h"
 #import "YYWebImage/YYWebImage.h"
@@ -15,7 +16,5 @@
 
 #import "TSMessage.h"
 #import "MJRefresh.h"
-
-//#import "MBProgressHUD.h"
 
 #import "WXApi.h"
