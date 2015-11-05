@@ -123,8 +123,7 @@ class doWorkViewController: UIViewController, PlayerDelegate {
                 print("有图")
                 v_Ques_Image.hidden = false
                 self.co_Ques_One.constant = 10
-
-                iv_Ques_Image.yy_setImageWithURL(NSURL(string: icon), options: YYWebImageOptions.ProgressiveBlur)
+                iv_Ques_Image.yy_setImageWithURL(NSURL(string: icon), options: [.SetImageWithFadeAnimation, .ProgressiveBlur])
             } else {
                 print("无图")
                 v_Ques_Image.hidden = true

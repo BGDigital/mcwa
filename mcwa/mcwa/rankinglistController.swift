@@ -153,27 +153,27 @@ class rankinglistController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        var transform: CATransform3D
-        transform = CATransform3DMakeRotation(CGFloat((90.0*M_PI) / 180), 0.0, 0.7, 0.4)
-        transform.m34 = 1.0 / -600
-        
-        cell.layer.shadowColor = UIColor.blackColor().CGColor
-        cell.layer.shadowOffset = CGSizeMake(10, 10)
-        cell.alpha = 0
-        cell.layer.transform = transform
-        cell.layer.anchorPoint = CGPointMake(0, 0.5)
-        
-        UIView.beginAnimations("transform", context: nil)
-        UIView.setAnimationDuration(0.5)
-        cell.layer.transform = CATransform3DIdentity
-        cell.alpha = 1
-        cell.layer.shadowOffset = CGSizeMake(0, 0)
-        cell.frame = CGRectMake(0, cell.frame.origin.y, cell.frame.size.width, cell.frame.size.height)
-        UIView.commitAnimations()
+//        var transform: CATransform3D
+//        transform = CATransform3DMakeRotation(CGFloat((90.0*M_PI) / 180), 0.0, 0.7, 0.4)
+//        transform.m34 = 1.0 / -600
+//        
+//        cell.layer.shadowColor = UIColor.blackColor().CGColor
+//        cell.layer.shadowOffset = CGSizeMake(10, 10)
+//        cell.alpha = 0
+//        cell.layer.transform = transform
+//        cell.layer.anchorPoint = CGPointMake(0, 0.5)
+//        
+//        UIView.beginAnimations("transform", context: nil)
+//        UIView.setAnimationDuration(0.5)
+//        cell.layer.transform = CATransform3DIdentity
+//        cell.alpha = 1
+//        cell.layer.shadowOffset = CGSizeMake(0, 0)
+//        cell.frame = CGRectMake(0, cell.frame.origin.y, cell.frame.size.width, cell.frame.size.height)
+//        UIView.commitAnimations()
         //拉伸效果
-//        cell.layer.transform = CATransform3DMakeScale(0.1, 0.1, 1)
-//        UIView.animateWithDuration(0.25, animations: {
-//            cell.layer.transform = CATransform3DMakeScale(1, 1, 1)})
+        cell.layer.transform = CATransform3DMakeScale(0.1, 0.1, 1)
+        UIView.animateWithDuration(0.25, animations: {
+            cell.layer.transform = CATransform3DMakeScale(1, 1, 1)})
     }
 
     
